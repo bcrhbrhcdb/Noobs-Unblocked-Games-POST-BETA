@@ -4,14 +4,14 @@
     background-color: rgb(23,107,170);
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 25px;
     border: none;
     border-radius: 10px;
-    height: 50px;
+    height: 75px;
     width: auto;
     padding: 10px 20px;
     margin: 10px;
-    justify-content: flex-start;
+
 }
 #navBar:hover{
     background-color: white;
@@ -20,11 +20,17 @@
     transition: 0.1s;
     border: 5px solid black;
     border-radius: 50px;
-    height: 50px;
+    height: 80px;
     width: auto;
     padding: 10px 20px;
     margin: 10px;
     justify-content: flex-start;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transform-style: preliminary-value;
+    transform: scale(1.05);
 }
 
 #navBar:active{
@@ -40,12 +46,11 @@
     margin: 10px;
     justify-content: flex-start;
 }
-
 .nav-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    background-color: rgb(165,188,80);
+    background-color: rgb(244,204,67);
     border-radius: 10px;
     height: auto;
     width: auto;
@@ -56,4 +61,29 @@
     flex-shrink: 1;
     flex-basis: auto;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.title{
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+body{
+    background-color: rgb(165,188,80);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+.box{
+    height: 100px;
+    background-color: rgb(244,204,67);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    padding: 10px;
+
 }
