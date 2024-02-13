@@ -1,3 +1,59 @@
-body{
-    background-color: rgb(165, 188, 80);
+
+
+#navBar{
+    background-color: rgb(23,107,170);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+    justify-content: flex-start;
+}
+#navBar:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.1s;
+    border: 5px solid black;
+    border-radius: 50px;
+    height: 50px;
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+    justify-content: flex-start;
+}
+
+#navBar:active{
+    background-color: rgb(23,107,170);
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+    border: 5px solid black;
+    border-radius: 50px;
+    height: 50px;
+    width: auto;
+    padding: 10px 10px;
+    margin: 10px;
+    justify-content: flex-start;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(165,188,80);
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    margin: 5px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
