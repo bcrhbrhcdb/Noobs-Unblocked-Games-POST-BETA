@@ -11,6 +11,12 @@
     width: auto;
     padding: 10px 20px;
     margin: 10px;
+    transition-duration: 5s; 
+    -webkit-transition: all 1s ease; 
+    -moz-transition: all 1s ease; 
+    -o-transition: all 0.25s ease; 
+    -ms-transition: all 0.25s ease; 
+    transition: all 0.25s ease; 
 
 }
 #navBar:hover{
@@ -129,23 +135,55 @@ a:visited{
     border: 2px solid black;
     justify-content: center;
     align-items: center;
+    transition-duration: 5s; 
+    -webkit-transition: all 1s ease; 
+    -moz-transition: all 1s ease; 
+    -o-transition: all 1s ease; 
+    -ms-transition: all 0.25s ease; 
+    transition: all 0.25s ease; 
 }
 .search::placeholder{
     color: white;
     opacity: 70%;
 }
 .search:hover{
+    transform: scale(1.075); 
     background-color: white;
-    color:rgb(86, 72, 72);
-    transition-duration: 0.3s;
-    transition-property: all;
-    transition-timing-function: ease;
-    transform-style: preliminary-value;
-    transform: scale(1.1);
+    border: 5px solid black;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 10, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .search:hover::placeholder{
-    color:rgb(86, 72, 72)
+    color: rgb(86, 72, 72);
 }
-.search:hover::placeholder{
-    background-color: red;
+.search:focus{
+    transform: scale(1.075); 
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 10, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
+}
+.search-btn{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    border: 2px solid black;
+    background-color: rgb(23,107,170);
+    transition-duration: 5s; 
+    -webkit-transition: all 1s ease; 
+    -moz-transition: all 1s ease; 
+    -o-transition: all 1s ease; 
+    -ms-transition: all 0.25s ease; 
+    transition: all 0.25s ease; 
+}
+.search-btn:hover{
+    transform: scale(1.075); 
+    background-color: white;
+    border: 5px solid black;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 10, 0.5), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    color: black;
 }
