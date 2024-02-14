@@ -63,13 +63,15 @@
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .title{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
-    color: white;
+    height: auto;
+    width: auto;
     margin: 10px;
     padding: 10px;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(86, 72, 72);
     
 }
 body{
@@ -78,12 +80,72 @@ body{
     margin: 0;
 }
 .box{
-    height: 100px;
+    height: auto;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
     padding: 10px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(86, 72, 72);
+}
+a:link{
+    text-decoration: none;
+    color: rgb(86, 72, 72);
+}
+a:visited{
+    text-decoration: none;
+    color: white;
+    border: 5px solid black;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+.search{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+    margin: 10px;
+    border: none;
+    background-color: rgb(23,107,170);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+}
+.search::placeholder{
+    color: white;
+    opacity: 70%;
+}
+.search:hover{
+    background-color: white;
+    color:rgb(86, 72, 72);
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transform-style: preliminary-value;
+    transform: scale(1.1);
+}
+.search:hover::placeholder{
+    color:rgb(86, 72, 72)
+}
+.search:hover::placeholder{
+    background-color: red;
 }
