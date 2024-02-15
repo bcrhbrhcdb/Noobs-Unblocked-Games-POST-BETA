@@ -191,3 +191,31 @@ a:visited{
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
+.proxy{
+    height: auto;
+    background-color: rgb(244,204,67);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: auto;
+    align-items: auto;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(86, 72, 72);
+
+}
+.img{
+    border-radius: 50px;
+    height: 145px;
+    margin: 10px;
+    padding: 10px;
+    width: 145px;
+    border: none;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
