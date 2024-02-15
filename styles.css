@@ -91,7 +91,7 @@ body{
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 10px;
+    margin: 5px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -204,17 +204,17 @@ a:visited{
     align-items: auto;
     flex-direction: column;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color: rgb(86, 72, 72);
 
 }
 .img{
     border-radius: 50px;
-    height: 145px;
+    height: 120px;
     margin: 10px;
     padding: 10px;
-    width: 145px;
+    width: 120px;
     border: none;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
