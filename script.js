@@ -38,3 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+//full screen button
+
+const fullScreenButton = document.getElementById('screen');
