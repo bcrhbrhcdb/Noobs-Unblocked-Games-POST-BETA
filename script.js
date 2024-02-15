@@ -42,30 +42,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const fullscreenButton = document.getElementById('fullscreenButton');
-    const iframes = document.querySelectorAll('iframe');
+    const iframe = document.getElementById('screen'); // Get the iframe by its ID
 
     fullscreenButton.addEventListener('click', function() {
         if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch((err) => {
-                alert(`Error attempting to enable fullscreen mode for the document: ${err.message} (${err.name})`);
-            });
-            for (let i = 0; i < iframes.length; i++) {
-                if (iframes[i].requestFullscreen) {
-                    iframes[i].requestFullscreen().catch((err) => {
-                        alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
-                    });
-                }
+            // Request fullscreen for the iframe
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen().catch((err) => {
+                    alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
+                });
+            } else {
+                alert('Fullscreen API is not supported by your browser.');
             }
         } else {
+            // Exit fullscreen mode
             if (document.exitFullscreen) {
                 document.exitFullscreen();
-            }
-            for (let i = 0; i < iframes.length; i++) {
-                if (iframes[i].contentDocument.exitFullscreen) {
-                    iframes[i].contentDocument.exitFullscreen();
-                }
             }
         }
     });
 });
+
 
