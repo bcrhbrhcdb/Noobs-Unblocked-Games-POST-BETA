@@ -231,6 +231,25 @@ a:visited{
     align-items: center;
 }
 .allButton{   
-       border-radius: 50px;       border: #a5bc50 5px solid;       background-color: #176baa;       color: white;       font-size: 34px;       width: 100%;       font-weight: bold;       transition: transform 0.5s;     }     button:hover {       background-color: #a5bc50;       transform: translateY(-7px);       border: #176baa 5px solid;     
+       border-radius: 50px;       
+       border: none;      
+       background-color: #176baa;       
+       color: white;       
+       font-size: 34px;      
+        width: 100%;       
+        font-weight: bold;       
+        transition: transform 0.5s;     
+        padding: 2px;
+        margin: 2px;
+        display: inline-block;
+    }     
+    .allButton:hover {       
+        background-color: white;       
+        transform: translateY(-7px);       
+        border: #176baa 5px solid;
+        color:rgb(86, 72, 72);
+        border: black 5px solid;
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        
 
 }

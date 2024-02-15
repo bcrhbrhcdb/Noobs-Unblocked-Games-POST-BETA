@@ -40,4 +40,30 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 //full screen button
 
-const fullScreenButton = document.getElementById('screen');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const fullscreenButton = document.getElementById('fullscreenButton');
+    const iframes = document.querySelectorAll('iframe');
+
+    fullscreenButton.addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch((err) => {
+                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+            });
+            for (let i = 0; i < iframes.length; i++) {
+                iframes[i].requestFullscreen().catch((err) => {
+                    alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
+                });
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            for (let i = 0; i < iframes.length; i++) {
+                if (iframes[i].contentDocument.exitFullscreen) {
+                    iframes[i].contentDocument.exitFullscreen();
+                }
+            }
+        }
+    });
+});
+
