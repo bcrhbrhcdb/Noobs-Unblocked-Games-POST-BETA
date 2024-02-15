@@ -218,3 +218,15 @@ a:visited{
     border: none;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.frame{
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    display: center;
+    justify-content: center;
+    align-items: center;
+}
