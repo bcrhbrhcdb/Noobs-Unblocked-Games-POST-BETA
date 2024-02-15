@@ -47,12 +47,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fullscreenButton.addEventListener('click', function() {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen().catch((err) => {
-                alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+                alert(`Error attempting to enable fullscreen mode for the document: ${err.message} (${err.name})`);
             });
             for (let i = 0; i < iframes.length; i++) {
-                iframes[i].requestFullscreen().catch((err) => {
-                    alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
-                });
+                if (iframes[i].requestFullscreen) {
+                    iframes[i].requestFullscreen().catch((err) => {
+                        alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
+                    });
+                }
             }
         } else {
             if (document.exitFullscreen) {
