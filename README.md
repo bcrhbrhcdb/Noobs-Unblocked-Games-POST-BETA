@@ -1,1 +1,1 @@
-Hello! I am a new web deveolper, hoping to get better at javascript (probably not happening). Thats pretty much it tbh lol
+I just finished adding css and styling, I am working on content and update log. Stay tuned! In the meantime, report any suggestions, bugs and thoughts in the issues tab. 
