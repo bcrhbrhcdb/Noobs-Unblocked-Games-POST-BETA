@@ -192,23 +192,21 @@ a:visited{
     -webkit-appearance: none;
 }
 .content{
-    height: 400px;
+    height: 375px;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
     padding: 5px;
-    display: flex;
-    justify-content: auto;
-    align-items: auto;
+    display: inline-flex;
+    justify-content: right;
     flex-direction: column;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
     color: rgb(86, 72, 72);
     width: 200px;
-    display: inline-block;
 }
 p, h3{
     color:rgb(86, 72, 72)
