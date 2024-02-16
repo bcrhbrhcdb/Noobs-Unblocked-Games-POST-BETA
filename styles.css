@@ -191,24 +191,36 @@ a:visited{
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
-.content{
-    height: 375px;
+.content {
+    height: 400px;;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 5px;
-    padding: 5px;
-    flex-wrap: wrap;
-    align-items: center;
+    margin: 5px; /* You can remove this if you're using gap */
+    padding: 10px;
     display: inline-block;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     color: rgb(86, 72, 72);
-    width: 200px;
-}
+    width: 250px;
+  }
+  .items{
+    display: flex;
+    flex-direction: row;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
 p, h3{
     color:rgb(86, 72, 72)
 }
@@ -220,6 +232,20 @@ p, h3{
     width: 120px;
     border: none;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 5s; 
+    -webkit-transition: all 1s ease; 
+    -moz-transition: all 1s ease; 
+    -o-transition: all 1s ease; 
+    -ms-transition: all 0.25s ease; 
+    transition: all 0.25s ease; 
+}
+.img:hover{
+    transition-duration: 0.3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transform-style: preliminary-value;
+    transform: scale(1.05);
+    border: 5px solid black;
 }
 .frame{
     border: none;
