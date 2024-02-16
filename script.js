@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        const offset = 360; // Offset in pixels (2px from the edge of the screen)
+        const offset = 400; // Offset in pixels (2px from the edge of the screen)
         return (
             rect.top >= -offset &&
             rect.left >= -offset &&
