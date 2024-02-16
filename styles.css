@@ -199,7 +199,7 @@ a:visited{
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
     padding: 10px;
-    display: inline-block;
+    display: flex;
     justify-content: auto;
     align-items: auto;
     flex-direction: column;
@@ -207,7 +207,8 @@ a:visited{
     font-size: 25px;
     font-weight: bold;
     color: rgb(86, 72, 72);
-
+    width: 275px;
+    display: inline-block;
 }
 p, h3{
     color:rgb(86, 72, 72)
