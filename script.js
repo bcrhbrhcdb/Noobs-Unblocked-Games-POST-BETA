@@ -1,43 +1,66 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('query');
+    const games = document.querySelectorAll('.content');
     const resultsContainer = document.getElementById('search-results');
 
-    searchInput.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        resultsContainer.innerHTML = ''; // Clear previous results
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        const offset = 360; // Offset in pixels (2px from the edge of the screen)
+        return (
+            rect.top >= -offset &&
+            rect.left >= -offset &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth) + offset
+        );
+    }
 
-        const allGames = document.querySelectorAll('.searchable, .game'); // Select all game elements
+    function checkPosition() {
+        for (let game of games) {
+            if (isElementInViewport(game)) {
+                game.classList.add('in-view');
+            } else {
+                game.classList.remove('in-view');
+            }
+        }
+    }
 
-        allGames.forEach(game => {
-            if (game.textContent.toLowerCase().includes(searchTerm)) {
-                const gameItem = document.createElement('li');
-                gameItem.textContent = game.textContent;
-                
-                // Check for image and link
-                const gameImage = game.querySelector('img');
-                if (gameImage && gameImage.alt.toLowerCase().includes(searchTerm)) {
-                    const image = document.createElement('img');
-                    image.src = gameImage.src;
-                    gameItem.appendChild(image);
-                }
+    window.addEventListener('scroll', checkPosition);
+    window.addEventListener('load', checkPosition);
 
-                const gameLink = game.querySelector('a');
-                if (gameLink && gameLink.textContent.toLowerCase().includes(searchTerm)) {
-                    const link = document.createElement('a');
-                    link.href = gameLink.href;
-                    link.textContent = gameLink.textContent;
-                    gameItem.appendChild(link);
-                }
+    searchInput.addEventListener('input', () => {
+        const searchText = searchInput.value.toLowerCase();
+        let hasResults = false;
+        resultsContainer.innerHTML = '';
 
-                resultsContainer.appendChild(gameItem);
+        games.forEach(game => {
+            const gameTitle = game.querySelector('h3').textContent.toLowerCase();
+            if (gameTitle.includes(searchText)) {
+                game.classList.remove('hidden');
+                hasResults = true;
+            } else {
+                game.classList.add('hidden');
             }
         });
 
-        if (resultsContainer.innerHTML === '') {
-            resultsContainer.innerHTML = '<li>No results found.</li>';
+        if (!hasResults) {
+            resultsContainer.innerHTML = '<div class="no-results">No results found</div>';
+        } else {
+            resultsContainer.innerHTML = ''; // Clear "No results found" message when there are results
         }
+
+        // Recheck the position after filtering
+        checkPosition();
     });
+
+    // Initial check to see which games are in view
+    checkPosition();
 });
+
+
+
+
+
+ 
 //full screen button
 
 document.addEventListener('DOMContentLoaded', (event) => {

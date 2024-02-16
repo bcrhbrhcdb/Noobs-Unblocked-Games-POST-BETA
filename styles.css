@@ -191,7 +191,7 @@ a:visited{
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
-.proxy{
+.content{
     height: auto;
     background-color: rgb(244,204,67);
     border: none;
@@ -208,6 +208,9 @@ a:visited{
     font-weight: bold;
     color: rgb(86, 72, 72);
 
+}
+p, h3{
+    color:rgb(86, 72, 72)
 }
 .img{
     border-radius: 50px;
@@ -252,4 +255,45 @@ a:visited{
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         
 
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.content {
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+}
+
+.in-view {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.hidden {
+    display: none; /* Hide elements that are not supposed to be shown */
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.no-results {
+    animation: fadeIn 1s forwards; /* Fade in when there are no results */
+}
+
+/* Optional: If you want to explicitly fade out the message when results appear */
+.no-results.fade-out {
+    animation: fadeOut 1s forwards;
 }
