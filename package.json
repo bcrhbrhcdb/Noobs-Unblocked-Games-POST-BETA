@@ -1,0 +1,15 @@
+{
+  "name": "my-app-name",
+  "version": "1.0.0",
+  "description": "My App",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
