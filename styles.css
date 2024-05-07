@@ -1,4 +1,6 @@
-
+li{
+    text-align: left;
+}
 
 #navBar{
     background-color: rgb(23,107,170);
