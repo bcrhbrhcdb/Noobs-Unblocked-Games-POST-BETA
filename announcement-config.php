@@ -1,3 +1,26 @@
+<?php
+// Announcement details
+$announcement = array(
+    'message' => 'This is an important announcement for all users.',
+    'startDate' => '2023-05-01',
+    'endDate' => '2023-06-30'
+);
+
+// Check if the announcement should be displayed
+$currentDate = date('Y-m-d');
+if ($currentDate >= $announcement['startDate'] && $currentDate <= $announcement['endDate']) {
+    // Generate the HTML for the announcement banner
+    $announcementHtml = '<div class="announcement-banner">';
+    $announcementHtml .= '  <div class="announcement-content">';
+    $announcementHtml .= '    <p>' . $announcement['message'] . '</p>';
+    $announcementHtml .= '    <button class="close-button">Close</button>';
+    $announcementHtml .= '  </div>';
+    $announcementHtml .= '</div>';
+} else {
+    $announcementHtml = '';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +31,11 @@
     <link rel='icon' href="images/favicon/favicon.ico" />
 </head>
 <body>
+    <?php echo $announcementHtml; ?>
+
     <div class='box'>
         <h1 class='title'>Noobs Unblocked Games</h1>
-        </div>
+    </div>
     <div class="nav-container">
         <nav>
         <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/'><button id="navBar">Home</button></a>

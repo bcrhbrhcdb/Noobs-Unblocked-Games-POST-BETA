@@ -349,31 +349,23 @@ border-radius: 10px;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(244,204,67);
+    background-color: rgb(23, 107, 170);
     color: white;
     font-weight: bold;
     font-size: 25px;
-    border: none;
-    border-radius: 10px;
-    height: auto;
     padding: 20px;
-    margin: 0;
     text-align: center;
     z-index: 9999;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
-  .announcement-banner a {
-    color: white;
-    text-decoration: underline;
+  .announcement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
-  .announcement-banner a:hover {
-    color: rgb(244,204,67);
-  }
-  
-  .announcement-banner .close-button {
-    background-color: rgb(244,204,67);
+  .close-button {
+    background-color: rgb(244, 204, 67);
     color: rgb(86, 72, 72);
     border: 2px solid black;
     border-radius: 50px;
@@ -382,11 +374,5 @@ border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     margin-left: 20px;
-    transition: transform 0.3s ease;
   }
   
-  .announcement-banner .close-button:hover {
-    background-color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
