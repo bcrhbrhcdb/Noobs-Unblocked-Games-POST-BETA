@@ -108,10 +108,10 @@ body{
     color: rgb(86, 72, 72);
     transition: transform 0.3s ease-in-out; /* Add this line */
   }
-  .nav-container{
+  .nav-container, .content{
     transition: transform 0.3s ease-in-out; /* Add this line */
   }
-  .nav-container:hover{
+  .nav-container:hover, .content:hover{
     transform: scale(1.1);
   }
   .box:hover {
@@ -377,7 +377,7 @@ border-radius: 10px;
     font-weight: bold;
     font-size: 25px;
     position: fixed;
-    width: auto;
+    width: 100%;
     z-index: 1;
     text-align: center;
   }
@@ -398,4 +398,7 @@ border-radius: 10px;
   @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+  }
+  #close{
+    cursor: pointer;
   }
