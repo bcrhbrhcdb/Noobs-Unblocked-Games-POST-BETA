@@ -34,13 +34,13 @@
         <h4>Just drag a button to your bookmarks bar and click the bookmark to use.</h4>
         <h1>Blooket Hack</h1>
         <p>Currently, I only have a auto answer. Press '`' to activate (a button will show when active) and it will auto answer.</p>
-        <a id="button1" data-file-paths="bookmarklets/blooket.txt" draggable="true" class="allButton">
+        <a id="button1" data-file-paths="bookmarklets/blooket.txt" data-bookmarklet="" draggable="true" class="allButton">
             <span class="buttonName">Blooket</span>
-            <p class="hiddenCode" draggable="true">Blooket</p>
+            <p class="hiddenCode" draggable="true"></p>
         </a>
-        <a id="button2" data-file-paths="bookmarklets/test.txt" draggable="true" class="allButton">
+        <a id="button2" data-file-paths="bookmarklets/test.txt" data-bookmarklet="" draggable="true" class="allButton">
             <span class="buttonName">Button 2</span>
-            <p class="hiddenCode" draggable="true">Button 2</p>
+            <p class="hiddenCode" draggable="true"></p>
         </a>
     </div>
     <style>
@@ -65,8 +65,8 @@
           var hiddenCodeElement = link.querySelector('p.hiddenCode');
           hiddenCodeElement.textContent = data.trim();
 
-          // Update the link's href with the bookmarklet code
-          link.href = data.trim();
+          // Update the data-bookmarklet attribute with the bookmarklet code
+          link.setAttribute('data-bookmarklet', data.trim());
         })
         .catch(function(error) {
           console.error('Error reading file:', error);
