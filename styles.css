@@ -2,7 +2,7 @@ li{
     text-align: left;
 }
 
-#navBar{
+#navBar, .navBar{
     background-color: rgb(23,107,170);
     color: white;
     font-weight: bold;
@@ -21,7 +21,7 @@ li{
     transition: all 0.25s ease; 
 
 }
-#navBar:hover{
+#navBar:hover, .navBar:hover{
     background-color: white;
     color: black;
     cursor: pointer;
