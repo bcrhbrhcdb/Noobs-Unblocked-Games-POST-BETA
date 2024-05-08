@@ -14,6 +14,9 @@ navBarButtons.forEach(button => {
   // Add a click event listener to the button
   button.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent the default button click behavior
+    if (hacks[buttonId]) {
+      eval(hacks[buttonId]); // Execute the code when the button is clicked
+    }
   });
 
   // Add a dragstart event listener to the button
@@ -31,18 +34,16 @@ navBarButtons.forEach(button => {
           // Append the text content to the combinedText variable
           combinedText += textContent + '\n';
 
-          // If all files have been read, update the button text and store the hack
+          // If all files have been read, update the button's href and store the hack
           if (i === textFilePaths.length - 1) {
-            button.textContent = combinedText.trim();
+            button.href = combinedText.trim();
+            button.textContent = 'Drag me!';
 
             // Store the hack in the hacks object
             hacks[buttonId] = combinedText.trim();
 
-            // Create a bookmarklet URL
-            const bookmarkletUrl = `javascript:(function(){${combinedText.trim()}})();`;
-
             // Set the data transfer type to 'text/uri-list' to create a bookmark
-            event.dataTransfer.setData('text/uri-list', bookmarkletUrl);
+            event.dataTransfer.setData('text/uri-list', button.href);
           }
         })
         .catch(error => {
