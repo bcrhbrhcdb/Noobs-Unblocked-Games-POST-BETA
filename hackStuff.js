@@ -1,5 +1,5 @@
 // Get all the buttons and draggable text elements
-const navBarButtons = document.querySelectorAll('.navBar');
+const navBarButtons = document.querySelectorAll('.allButton');
 
 // Object to store the hacks for each button
 const hacks = {};
