@@ -34,51 +34,16 @@
         <h4>Just drag a button to your bookmarks bar and click the bookmark to use.</h4>
         <h1>Blooket Hack</h1>
         <p>Currently, I only have a auto answer. Press '`' to activate (a button will show when active) and it will auto answer.</p>
-        <a id="button1" data-file-paths="bookmarklets/blooket.txt" data-bookmarklet="" draggable="true" class="allButton">
+        <a id="button1" data-file-paths="bookmarklets/blooket.txt" draggable="true" class="allButton">
             <span class="buttonName">Blooket</span>
-            <p class="hiddenCode" draggable="true"></p>
+            <p class="hiddenCode" draggable="true">Blooket</p>
         </a>
-        <a id="button2" data-file-paths="bookmarklets/test.txt" data-bookmarklet="" draggable="true" class="allButton">
+        <a id="button2" data-file-paths="bookmarklets/test.txt" draggable="true" class="allButton">
             <span class="buttonName">Button 2</span>
-            <p class="hiddenCode" draggable="true"></p>
+            <p class="hiddenCode" draggable="true">Button 2</p>
         </a>
     </div>
-    <style>
-        a:link, a:hover, a:visited{
-            text-decoration: none;
-            color: white
-        }
-    </style>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var bookmarkletLinks = document.querySelectorAll('a[data-file-paths]');
-
-    bookmarkletLinks.forEach(function(link) {
-      var filePath = link.getAttribute('data-file-paths');
-
-      fetch(filePath)
-        .then(function(response) {
-          return response.text();
-        })
-        .then(function(data) {
-          // Find the hidden <p> element within the link
-          var hiddenCodeElement = link.querySelector('p.hiddenCode');
-          hiddenCodeElement.textContent = data.trim();
-
-          // Update the data-bookmarklet attribute with the bookmarklet code
-          link.setAttribute('data-bookmarklet', data.trim());
-
-          // Add dragstart event listener to the <p> element
-          hiddenCodeElement.addEventListener('dragstart', function(event) {
-            event.dataTransfer.setData('text/plain', event.target.textContent);
-            link.setAttribute('data-bookmarklet', event.target.textContent);
-          });
-        })
-        .catch(function(error) {
-          console.error('Error reading file:', error);
-        });
-    });
-  });
+<script src="hacks.js">
 </script>
 </body>
 </html>
