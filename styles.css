@@ -329,3 +329,9 @@ a:link, a:hover, a:visited{
     text-decoration: none;
     color: white
 }
+.hiddenCode {
+    display: none;
+}
+.buttonName {
+    display: inline-block;
+}
