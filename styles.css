@@ -344,35 +344,3 @@ border: none;
 background-color:  rgb(165,188,80);  
 border-radius: 10px;
 }
-.announcement-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(23, 107, 170);
-    color: white;
-    font-weight: bold;
-    font-size: 25px;
-    padding: 20px;
-    text-align: center;
-    z-index: 9999;
-  }
-  
-  .announcement-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .close-button {
-    background-color: rgb(244, 204, 67);
-    color: rgb(86, 72, 72);
-    border: 2px solid black;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-left: 20px;
-  }
-  
