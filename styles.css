@@ -86,6 +86,7 @@ body{
     background-color: rgb(165,188,80);
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    z-index: 2;
 }
 .box{
     height: auto;
@@ -261,19 +262,20 @@ p, h3{
     justify-content: center;
     align-items: center;
 }
-.allButton{   
-       border-radius: 50px;       
-       border: none;      
-       background-color: #176baa;       
-       color: white;       
-       font-size: 34px;      
-        width: 100%;       
-        font-weight: bold;       
-        transition: transform 0.5s;     
-        padding: 2px;
-        margin: 2px;
-        display: inline-block;
-    }     
+.allButton {   
+    border-radius: 50px;       
+    border: none;      
+    background-color: #176baa;       
+    color: white;       
+    font-size: 34px;      
+    width: 100%;       
+    font-weight: bold;       
+    transition: transform 0.5s;     
+    padding: 2px;
+    margin: 2px;
+    display: inline-block;
+    position: relative;
+  }
     .allButton:hover {       
         background-color: white;       
         transform: translateY(-7px);       
@@ -281,9 +283,13 @@ p, h3{
         color:rgb(86, 72, 72);
         border: black 5px solid;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
+      }
+      
+      
 
-}
+
+
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -344,3 +350,41 @@ border: none;
 background-color:  rgb(165,188,80);  
 border-radius: 10px;
 }
+.announcement-box {
+    height: auto;
+    background-color: rgb(244,204,67);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 25px;
+    position: fixed;
+    width: auto;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
