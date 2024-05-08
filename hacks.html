@@ -67,6 +67,12 @@
 
           // Update the data-bookmarklet attribute with the bookmarklet code
           link.setAttribute('data-bookmarklet', data.trim());
+
+          // Add dragstart event listener to the <p> element
+          hiddenCodeElement.addEventListener('dragstart', function(event) {
+            event.dataTransfer.setData('text/plain', event.target.textContent);
+            link.setAttribute('data-bookmarklet', event.target.textContent);
+          });
         })
         .catch(function(error) {
           console.error('Error reading file:', error);
