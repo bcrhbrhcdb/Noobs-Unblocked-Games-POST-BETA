@@ -6,19 +6,27 @@
     <link href="styles.css" rel="stylesheet">
     <link rel='icon' href="images/favicon/favicon.ico" />
     <title>Hacks</title>
+    <style>
+        .hiddenCode {
+            display: none;
+        }
+        .buttonName {
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div class='box'>
         <h1 class='title'>Hacks</h1>
-        </div>
+    </div>
     <div class="nav-container">
         <nav>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/'><button id="navBar">Home</button></a>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/games'><button id="navBar">Games</button></a>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/proxies'><button id="navBar">Proxies</button></a>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/hacks'><button id="navBar">Hacks</button></a>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/credits'><button id="navBar">Credits</button></a>
-        <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/update-log'><button id="navBar">Update Log</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/'><button id="navBar">Home</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/games'><button id="navBar">Games</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/proxies'><button id="navBar">Proxies</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/hacks'><button id="navBar">Hacks</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/credits'><button id="navBar">Credits</button></a>
+            <a href='https://bcrhbrhcdb.github.io/Noobs-Unblocked-Games/update-log'><button id="navBar">Update Log</button></a>
         </nav>
     </div>
     <div class='box'>
@@ -26,7 +34,14 @@
         <h4>Just drag a button to your bookmarks bar and click the bookmark to use.</h4>
         <h1>Blooket Hack</h1>
         <p>Currently, I only have a auto answer. Press '`' to activate (a button will show when active) and it will auto answer.</p>
-        <a id="button1" data-file-paths="bookmarklets/blooket.txt" draggable="true" class="allButton" onclick="executeBookmarklet(this)">Blooket</a>            <a id="button2" data-file-paths="" draggable="true" class="allButton">Button 2</a>
+        <a id="button1" data-file-paths="bookmarklets/blooket.txt" draggable="true" class="allButton">
+            <span class="buttonName">Blooket</span>
+            <p class="hiddenCode" draggable="true">Blooket</p>
+        </a>
+        <a id="button2" data-file-paths="bookmarklets/test.txt" draggable="true" class="allButton">
+            <span class="buttonName">Button 2</span>
+            <p class="hiddenCode" draggable="true">Button 2</p>
+        </a>
     </div>
     <style>
         a:link, a:hover, a:visited{
@@ -34,7 +49,30 @@
             color: white
         }
     </style>
-<script src='script.js'></script>
-<script src='hackStuff.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var bookmarkletLinks = document.querySelectorAll('a[data-file-paths]');
+
+    bookmarkletLinks.forEach(function(link) {
+      var filePath = link.getAttribute('data-file-paths');
+
+      fetch(filePath)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(data) {
+          // Find the hidden <p> element within the link
+          var hiddenCodeElement = link.querySelector('p.hiddenCode');
+          hiddenCodeElement.textContent = data.trim();
+
+          // Update the link's href with the bookmarklet code
+          link.href = data.trim();
+        })
+        .catch(function(error) {
+          console.error('Error reading file:', error);
+        });
+    });
+  });
+</script>
 </body>
 </html>
