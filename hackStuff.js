@@ -1,5 +1,5 @@
 // Get all the buttons and draggable text elements
-const navBarButtons = document.querySelectorAll('.allButton');
+const navBarButtons = document.querySelectorAll('.navBar');
 
 // Object to store the hacks for each button
 const hacks = {};
@@ -34,13 +34,13 @@ navBarButtons.forEach(button => {
           // If all files have been read, update the draggable text and store the hack
           if (i === textFilePaths.length - 1) {
             const correspondingDraggableText = document.querySelector(`#${buttonId} .draggableText`);
-            correspondingDraggableText.textContent = 'Drag me!';
+            correspondingDraggableText.textContent = 'Blooket Auto Answer';
 
             // Store the hack in the hacks object
             hacks[buttonId] = combinedText.trim();
 
-            // Set the data transfer type to a custom format
-            event.dataTransfer.setData('application/x-custom-data', combinedText.trim());
+            // Set the data transfer type to 'text/uri-list' to create a bookmark
+            event.dataTransfer.setData('text/uri-list', window.location.href);
           }
         })
         .catch(error => {
