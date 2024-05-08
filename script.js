@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch the announcement content from the external HTML file
 
 // Fetch the announcement content from the external HTML file
-let announcementContainer;
+/* let announcementContainer;
 
 // Fetch the announcement content from the external HTML file
 fetch('../announcement.html') // Use a relative file path to the announcement.html file
@@ -79,7 +79,7 @@ fetch('../announcement.html') // Use a relative file path to the announcement.ht
     });
   })
   .catch(error => console.error('Error fetching announcement:', error));
-
+*/
 
 
 //clos
