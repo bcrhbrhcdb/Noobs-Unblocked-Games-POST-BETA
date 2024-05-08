@@ -335,3 +335,12 @@ a:link, a:hover, a:visited{
 .buttonName {
     display: inline-block;
 }
+hr{
+display: block;
+margin: 20px;
+height: 10px; 
+width: 92%;
+border: none;
+background-color:  rgb(165,188,80);  
+border-radius: 10px;
+}
