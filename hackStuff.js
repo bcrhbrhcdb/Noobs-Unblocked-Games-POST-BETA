@@ -1,3 +1,8 @@
+const navBarButtons = document.querySelectorAll('.allButton');
+
+// Object to store the hacks for each button
+const hacks = {};
+
 navBarButtons.forEach(button => {
   const buttonId = button.id;
 
@@ -23,7 +28,7 @@ navBarButtons.forEach(button => {
           // If all files have been read, set the data transfer type and text
           if (i === textFilePaths.length - 1) {
             // Set the data transfer type to 'text/uri-list' to create a bookmark
-            event.dataTransfer.setData('text/uri-list', combinedText.trim());
+            event.dataTransfer.setData('text/uri-list', `javascript:${combinedText.trim()}`);
             event.dataTransfer.setData('text/plain', combinedText.trim());
             button.textContent = 'Drag me!';
 
