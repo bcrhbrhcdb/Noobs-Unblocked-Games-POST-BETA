@@ -57,15 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //annoucement
 document.addEventListener('DOMContentLoaded', function() {
-    var announcementBanner = document.getElementById('announcement-banner');
-    var closeButton = announcementBanner.querySelector('.close-button');
-  
-    // Close the announcement banner when the close button is clicked
-    closeButton.addEventListener('click', function() {
-      announcementBanner.style.display = 'none';
-    });
-  });
+  var announcementBanner = document.getElementById('announcement-banner');
+  var closeButton = announcementBanner.querySelector('.close-button');
 
+  // Close the announcement banner when the close button is clicked
+  closeButton.addEventListener('click', function() {
+    announcementBanner.style.display = 'none';
+  });
+});
 
 
 
