@@ -11,6 +11,9 @@ navBarButtons.forEach(button => {
   const filePathsString = button.getAttribute('data-file-paths');
   const textFilePaths = filePathsString.split(',');
 
+  // Add an empty href attribute to the button
+  button.href = '';
+
   // Add a click event listener to the button
   button.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent the default button click behavior
@@ -55,3 +58,4 @@ navBarButtons.forEach(button => {
 
 // Example usage of the hacks object
 console.log(hacks);
+
