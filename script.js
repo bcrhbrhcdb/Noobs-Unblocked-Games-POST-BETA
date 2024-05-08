@@ -57,8 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 //annoucement
 // Fetch the announcement content from the external HTML file
+
 // Fetch the announcement content from the external HTML file
 let announcementContainer;
+
 fetch('announcement.html')
   .then(response => response.text())
   .then(data => {
@@ -69,19 +71,17 @@ fetch('announcement.html')
     // Insert the announcement at the top of the body
     document.body.insertBefore(announcementContainer, document.body.firstChild);
 
-    // Add a close button to the announcement
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Close';
-    closeButton.classList.add('close-button');
-    announcementContainer.appendChild(closeButton);
-
     // Add a click event listener to the close button
+    const closeButton = announcementContainer.querySelector('#close');
     closeButton.addEventListener('click', () => {
       announcementContainer.style.display = 'none';
     });
   })
   .catch(error => console.error('Error fetching announcement:', error));
 
+
+
+//clos
  
 //full screen button
 

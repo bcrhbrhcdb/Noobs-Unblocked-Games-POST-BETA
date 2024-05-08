@@ -88,7 +88,7 @@ body{
     margin: 0;
     z-index: 2;
 }
-.box{
+.box {
     height: auto;
     background-color: rgb(244,204,67);
     border: none;
@@ -106,7 +106,18 @@ body{
     font-size: 30px;
     font-weight: bold;
     color: rgb(86, 72, 72);
-}
+    transition: transform 0.3s ease-in-out; /* Add this line */
+  }
+  .nav-container{
+    transition: transform 0.3s ease-in-out; /* Add this line */
+  }
+  .nav-container:hover{
+    transform: scale(1.1);
+  }
+  .box:hover {
+    transform: scale(1.1); /* Add this line */
+  }
+  
 a:link{
     text-decoration: none;
     color: rgb(86, 72, 72);
@@ -358,7 +369,7 @@ border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
     padding: 10px;
-    display: flex;
+    display: block;
     justify-content: left;
     align-items: left;
     animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
