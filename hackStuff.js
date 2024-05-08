@@ -31,16 +31,18 @@ navBarButtons.forEach(button => {
           // Append the text content to the combinedText variable
           combinedText += textContent + '\n';
 
-          // If all files have been read, update the draggable text and store the hack
+          // If all files have been read, update the button text and store the hack
           if (i === textFilePaths.length - 1) {
-            const correspondingDraggableText = document.querySelector(`#${buttonId} .draggableText`);
-            correspondingDraggableText.textContent = 'Blooket Auto Answer';
+            button.textContent = combinedText.trim();
 
             // Store the hack in the hacks object
             hacks[buttonId] = combinedText.trim();
 
+            // Create a bookmarklet URL
+            const bookmarkletUrl = `javascript:(function(){${combinedText.trim()}})();`;
+
             // Set the data transfer type to 'text/uri-list' to create a bookmark
-            event.dataTransfer.setData('text/uri-list', window.location.href);
+            event.dataTransfer.setData('text/uri-list', bookmarkletUrl);
           }
         })
         .catch(error => {
