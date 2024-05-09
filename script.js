@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
  let announcementContainer;
 
 // Fetch the announcement content from the external HTML file
-fetch('../announcement.html') // Use a relative file path to the announcement.html file
+fetch('/announcement.html') // Use a relative file path to the announcement.html file
   .then(response => response.text())
   .then(data => {
     // Create a new div element to hold the announcement
