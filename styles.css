@@ -343,6 +343,10 @@ p, h3{
 .no-results.fade-out {
     animation: fadeOut 1s forwards;
 }
+a{
+    background-color: #176baa;
+    color: white;
+}
 a:link, a:hover, a:visited{
     text-decoration: none;
     color: white;
