@@ -346,11 +346,14 @@ p, h3{
 a{
     background-color: #176baa;
     color: white;
+    display: none;
 }
+
 a:link, a:hover, a:visited{
     text-decoration: none;
     color: white;
     background-color: rgb(23,107,170);
+    display: none;
 }
 .hiddenCode {
     display: none;
