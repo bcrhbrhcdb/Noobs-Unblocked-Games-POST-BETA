@@ -25,13 +25,13 @@ fetch('announcement.html') // Use a relative file path to the announcement.html 
   .then(data => {
     // Create a new div element to hold the announcement
     container = document.createElement('div');
-    container.innerHTML = data;
+    announcementContainer.innerHTML = data;
 
     // Insert the announcement at the top of the body
     document.body.insertBefore(container, document.body.firstChild);
 
     // Add a click event listener to the close button
-    const closeButton = con.querySelector('#close');
+    const closeButton = announcementContainer.querySelector('#close');
     closeButton.addEventListener('click', () => {
       announcementContainer.style.display = 'none';
     });
