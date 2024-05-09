@@ -343,17 +343,12 @@ p, h3{
 .no-results.fade-out {
     animation: fadeOut 1s forwards;
 }
-a{
-    background-color: #176baa;
-    color: white;
-    display: none;
-}
+
 
 a:link, a:hover, a:visited{
     text-decoration: none;
     color: white;
-    background-color: rgb(23,107,170);
-    display: none;
+
 }
 .hiddenCode {
     display: none;
