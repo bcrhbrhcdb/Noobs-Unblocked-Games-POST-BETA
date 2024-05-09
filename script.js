@@ -90,24 +90,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-const timeElement = document.getElementById('time');
-const dateElement = document.getElementById('date');
-const dayElement = document.getElementById('day'); // Add this line
+window.addEventListener('DOMContentLoaded', function() {
+    const timeElement = document.getElementById('time');
+    const dateElement = document.getElementById('date');
+    const dayElement = document.getElementById('day');
 
-function updateTime() {
-    const now = new Date();
-    const hours = now.getHours().toString().padStart(2, '0');
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const timeString = `${hours}:${minutes}:${seconds}`;
-    timeElement.textContent = timeString;
+    function updateTime() {
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        timeElement.textContent = timeString;
 
-    const dateString = now.toDateString();
-    dateElement.textContent = dateString;
+        const dateString = now.toDateString();
+        dateElement.textContent = dateString;
 
-    const dayString = now.toLocaleString('default', { weekday: 'long' }); // Get day of the week
-    dayElement.textContent = dayString; // Update day element
-}
+        const dayString = now.toLocaleString('default', { weekday: 'long' });
+        dayElement.textContent = dayString;
+    }
 
-updateTime();
-setInterval(updateTime, 1000);
+    updateTime();
+    setInterval(updateTime, 1000);
+});
