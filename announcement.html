@@ -9,10 +9,41 @@
 <body>
   <div class="announcement-box">
     <div class="announcement-content">
-      <p>Announcement Date: 5/9/24</p>
+      <div class="box">
+        <div id="clock">
+            <p>Heres a todays date!</p>
+            <div id="time"></div>
+            <div id="date"></div>
+            <div id="day"></div> <!-- Add this line -->
+        </div>
+    </div>
+    <p>Date of the announcement: 5/9/24</p>
       <p>New update! Check the update log for details: <a href="update-log.html" class="allButton">Update Log</a></p>
       <button class="allButton" id="close">Close this popup</button>
     </div>
   </div>
+  <script>
+    const timeElement = document.getElementById('time');
+const dateElement = document.getElementById('date');
+const dayElement = document.getElementById('day'); // Add this line
+
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    timeElement.textContent = timeString;
+
+    const dateString = now.toDateString();
+    dateElement.textContent = dateString;
+
+    const dayString = now.toLocaleString('default', { weekday: 'long' }); // Get day of the week
+    dayElement.textContent = dayString; // Update day element
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+  </script>
 </body>
 </html>

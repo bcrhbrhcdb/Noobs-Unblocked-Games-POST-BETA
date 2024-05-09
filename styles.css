@@ -405,3 +405,24 @@ border-radius: 10px;
   .noShow{
     display: none;
   }
+  #clock {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    color: rgb(86, 72, 72);
+}
+
+#time {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#date {
+    font-size: 24px;
+    font-weight: bold;
+}
+#day {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(86, 72, 72);
+}
