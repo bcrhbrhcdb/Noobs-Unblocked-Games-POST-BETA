@@ -94,7 +94,7 @@ body{
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -112,10 +112,12 @@ body{
     transition: transform 0.3s ease-in-out; /* Add this line */
   }
   .nav-container:hover, .content:hover{
-    transform: scale(1.1);
+    transform: scale(1.022);
   }
   .box:hover {
-    transform: scale(1.1); /* Add this line */
+    transform: scale(1.022);
+    margin: 10px;
+    /* Add this line */
   }
   
 a:link{
