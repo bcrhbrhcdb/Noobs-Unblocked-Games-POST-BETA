@@ -402,3 +402,6 @@ border-radius: 10px;
   #close{
     cursor: pointer;
   }
+  .noShow{
+    display: none;
+  }
