@@ -345,11 +345,7 @@ p, h3{
 }
 
 
-a:link, a:hover, a:visited{
-    text-decoration: none;
-    color: white;
 
-}
 .hiddenCode {
     display: none;
 }
