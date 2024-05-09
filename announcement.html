@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="styles.css" rel="stylesheet"> 
-</head>
-<body>
+
   <div class="announcement-box">
     <div class="announcement-content">
       <div class="box">
@@ -20,8 +12,30 @@
     <p>Date of the announcement: 5/9/24</p>
       <p>New update! Check the update log for details: <a href="update-log.html" class="allButton">Update Log</a></p>
       <button class="allButton" id="close">Close this popup</button>
+      <script src="script.js"></script>
+      <script>
+        const timeElement = document.getElementById('time');
+const dateElement = document.getElementById('date');
+const dayElement = document.getElementById('day'); // Add this line
+
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const timeString = `${hours}:${minutes}:${seconds}`;
+    timeElement.textContent = timeString;
+
+    const dateString = now.toDateString();
+    dateElement.textContent = dateString;
+
+    const dayString = now.toLocaleString('default', { weekday: 'long' }); // Get day of the week
+    dayElement.textContent = dayString; // Update day element
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+      </script>
     </div>
   </div>
-  <script src="script.js"></script>
-</body>
-</html>
+  
