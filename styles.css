@@ -219,16 +219,16 @@ a:visited{
   }
   
   .content {
-    flex: 0 0 calc(16.66% - 10px); /* Adjust width for 6 items per row */
-    max-width: calc(16.66% - 10px); /* Adjust max-width for 6 items per row */
+    flex: 0 0 calc(16.66% - 20px); /* Adjust width for 6 items per row */
+    max-width: calc(16.66% - 20px); /* Adjust max-width for 6 items per row */
     height: 400px;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 5px;
+    margin: 10px;
     padding: 10px;
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
