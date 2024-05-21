@@ -206,13 +206,27 @@ a:visited{
 .search::-webkit-search-cancel-button {
     -webkit-appearance: none;
 }
-.content {
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .content {
+    flex: 0 0 calc(16.66% - 10px); /* Adjust width for 6 items per row */
+    max-width: calc(16.66% - 10px); /* Adjust max-width for 6 items per row */
     height: 400px;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 5px; /* You can remove this if you're using gap */
+    margin: 5px;
     padding: 10px;
     display: inline-block;
     justify-content: center;
@@ -221,19 +235,6 @@ a:visited{
     font-size: 23px;
     font-weight: bold;
     color: rgb(86, 72, 72);
-    width: 200px;
-  }
-  .items{
-    display: flex;
-    flex-direction: row;
-    flex: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px;
-    padding: 10px;
-    width: 100%;
-    height: 100%;
   }
   
 p, h3{
