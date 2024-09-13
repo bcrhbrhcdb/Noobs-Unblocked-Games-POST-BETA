@@ -1,4 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Generate game elements
+    function generateGameElements() {
+        const gameContainer = document.getElementById('game-container');
+        
+        games.forEach(game => {
+            const gameElement = document.createElement('div');
+            gameElement.className = 'content';
+            gameElement.innerHTML = `
+                <a href="${game.url}">
+                    <h3>${game.title}</h3>
+                    <img src="${game.image}" class='img' />
+                    <p>${game.description}</p>
+                </a>
+            `;
+            gameContainer.appendChild(gameElement);
+        });
+    }
+
+    generateGameElements();
+
     const searchInput = document.getElementById('query');
     const games = document.querySelectorAll('.content');
     const resultsContainer = document.getElementById('search-results');
@@ -55,41 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check to see which games are in view
     checkPosition();
 });
-//annoucement
-// Fetch the announcement content from the external HTML file
 
-// Fetch the announcement content from the external HTML file
- 
-
-
-//clos
- 
-//full screen button
-
+// Fullscreen button functionality
 document.addEventListener('DOMContentLoaded', (event) => {
     const fullscreenButton = document.getElementById('fullscreenButton');
     const iframe = document.getElementById('screen'); // Get the iframe by its ID
 
-    fullscreenButton.addEventListener('click', function() {
-        if (!document.fullscreenElement) {
-            // Request fullscreen for the iframe
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen().catch((err) => {
-                    alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
-                });
+    if (fullscreenButton && iframe) {
+        fullscreenButton.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                // Request fullscreen for the iframe
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen().catch((err) => {
+                        alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
+                    });
+                } else {
+                    alert('Fullscreen API is not supported by your browser.');
+                }
             } else {
-                alert('Fullscreen API is not supported by your browser.');
+                // Exit fullscreen mode
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
             }
-        } else {
-            // Exit fullscreen mode
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-        }
-    });
+        });
+    }
 });
 
-
+// Time and date display
 window.addEventListener('DOMContentLoaded', function() {
     const timeElement = document.getElementById('time');
     const dateElement = document.getElementById('date');
@@ -101,13 +114,13 @@ window.addEventListener('DOMContentLoaded', function() {
         const minutes = now.getMinutes().toString().padStart(2, '0');
         const seconds = now.getSeconds().toString().padStart(2, '0');
         const timeString = `${hours}:${minutes}:${seconds}`;
-        timeElement.textContent = timeString;
+        if (timeElement) timeElement.textContent = timeString;
 
         const dateString = now.toDateString();
-        dateElement.textContent = dateString;
+        if (dateElement) dateElement.textContent = dateString;
 
         const dayString = now.toLocaleString('default', { weekday: 'long' });
-        dayElement.textContent = dayString;
+        if (dayElement) dayElement.textContent = dayString;
     }
 
     updateTime();
