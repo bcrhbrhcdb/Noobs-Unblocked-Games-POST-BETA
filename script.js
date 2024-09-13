@@ -126,3 +126,24 @@ window.addEventListener('DOMContentLoaded', function() {
     updateTime();
     setInterval(updateTime, 1000);
 });
+function generateGameElements() {
+    const gameContainer = document.getElementById('game-container');
+    
+    if (gameContainer) {
+        Object.entries(games).forEach(([id, game]) => {
+            const gameElement = document.createElement('div');
+            gameElement.className = 'content';
+            gameElement.innerHTML = `
+                <a href="game-template.html?id=${id}">
+                    <h3>${game.title}</h3>
+                    <img src="${game.image}" class='img' />
+                    <p>${game.description}</p>
+                </a>
+            `;
+            gameContainer.appendChild(gameElement);
+        });
+    }
+}
+
+// Call this function when the DOM is loaded
+document.addEventListener('DOMContentLoaded', generateGameElements);
