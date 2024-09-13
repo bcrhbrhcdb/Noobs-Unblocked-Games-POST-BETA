@@ -2,12 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     generateGameElements();
     
     const searchInput = document.getElementById('query');
-    const games = document.querySelectorAll('.content');
     const resultsContainer = document.getElementById('search-results');
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        const offset = 400; // Offset in pixels (2px from the edge of the screen)
+        const offset = 400; // Offset in pixels (400px from the edge of the screen)
         return (
             rect.top >= -offset &&
             rect.left >= -offset &&
@@ -17,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkPosition() {
+        const games = document.querySelectorAll('.content');
         for (let game of games) {
             if (isElementInViewport(game)) {
                 game.classList.add('in-view');
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchInput) {
         searchInput.addEventListener('input', () => {
             const searchText = searchInput.value.toLowerCase();
+            const games = document.querySelectorAll('.content');
             let hasResults = false;
             resultsContainer.innerHTML = '';
 
@@ -68,7 +69,7 @@ function generateGameElements() {
             const gameElement = document.createElement('div');
             gameElement.className = 'content';
             gameElement.innerHTML = `
-                <a href="game-template.html?id=${id}">
+                <a href="Games/game-template.html?id=${id}">
                     <h3>${game.title}</h3>
                     <img src="${game.image}" class='img' />
                     <p>${game.description}</p>
