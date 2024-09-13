@@ -94,5 +94,12 @@ const games = {
         url: "Games/intospace2.html",
         image: "images/proxyandgameimages/gameimages/intospace2.png",
         description: "Build and launch your rocket into space!"
+    },
+    test: {
+        title: "fuck",
+        url: "Games/intospace2.html",
+        image: "images/proxyandgameimages/gameimages/intospace2.png",
+        description: "your mom"
+
     }
 };
