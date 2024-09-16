@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (gameId && games[gameId]) {
         const game = games[gameId];
-        document.getElementById('pageTitle').textContent = game.title;
+        document.title = game.title;
         document.getElementById('gameTitle').textContent = game.title;
         document.getElementById('gameFrame').src = game.url;
-        document.getElementById('gameLink').href = game.url;
+        document.getElementById('gameLink').href = game.originalUrl; // Use originalUrl for the link
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found';
