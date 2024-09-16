@@ -78,22 +78,22 @@ const games = {
         description: "Even more Goofy Platformer."
     },
     ovo: {
-        title: "0v0",
-        url: "Games/0v0.html",
-        image: "images/proxyandgameimages/gameimages/0v0.png",
-        description: "Such a Classic!"
-    },
-    evolve: {
-        title: "Evolve",
-        url: "Games/Evolve.html",
-        image: "images/proxyandgameimages/gameimages/Evolve.png",
-        description: "An idle game where you Evolve your own species"
-    },
-    intoSpace2: {
-        title: "Into Space 2",
-        url: "intospace2.html", // Remove the extra "Games/" from the beginning
-        originalUrl: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Finto-space-2.xml&container=ig",
-        image: "../images/proxyandgameimages/gameimages/intospace2.png",
-        description: "Build and launch your rocket into space!"
-    },
+      title:"0v0", 
+      url:"Games/0v0.html", 
+      image:"games/proxyandgameimages/gameimages/0v0.png", 
+      description:"Such a Classic!"
+   },
+   evolve:{
+      title:"Evolve", 
+      url:"Games/Evolve.html", 
+      image:"games/proxyandgameimages/gameimages/Evolve.png", 
+      description:"An idle game where you Evolve your own species"
+   },
+   intoSpace2:{
+       title:"Into Space 2", 
+       url:"intospace2.html", 
+       originalUrl:"https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Finto-space-2.xml", 
+       image:"../images/proxyandgameimages/gameimages/intospace2.png", 
+       description:"Build and launch your rocket into space!"
+   }
 };

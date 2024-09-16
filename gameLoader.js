@@ -42,7 +42,7 @@ if (fullscreenButton && iframe) {
 // Load the CSS from styles.css into the iframe
 iframe.onload = function() {
     const link = document.createElement('link');
-    link.href = '/styles.css'; // Use a root-relative path to access styles.css
+    link.href = '../styles.css'; // Use a relative path to access styles.css
     link.rel = 'stylesheet';
     link.type = 'text/css';
     iframe.contentDocument.head.appendChild(link); // Append the link to the iframe's head
