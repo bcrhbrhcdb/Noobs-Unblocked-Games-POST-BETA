@@ -39,7 +39,16 @@ if (fullscreenButton && iframe) {
     });
 }
 
-// Error handling for iframe loading
+// Load the CSS from styles.css into the iframe
+iframe.onload = function() {
+    const link = document.createElement('link');
+    link.href = '/styles.css'; // Use a root-relative path to access styles.css
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    iframe.contentDocument.head.appendChild(link); // Append the link to the iframe's head
+};
+
+// Optional: Add error handling for iframe loading
 iframe.addEventListener('load', function() {
     this.style.display = 'block'; // Show iframe when loaded successfully
 });
