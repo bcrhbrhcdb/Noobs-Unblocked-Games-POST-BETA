@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('gameLink').href = game.url;
     } else {
         console.error('Game not found');
-        // Optionally, redirect to a 404 page or show an error message
+        document.getElementById('gameTitle').textContent = 'Game Not Found';
+        document.getElementById('gameFrame').style.display = 'none';
+        document.getElementById('gameLink').style.display = 'none';
     }
 });

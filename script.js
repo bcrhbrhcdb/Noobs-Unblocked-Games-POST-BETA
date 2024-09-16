@@ -84,7 +84,7 @@ function generateGameElements() {
 
 // Fullscreen button functionality
 const fullscreenButton = document.getElementById('fullscreenButton');
-const iframe = document.getElementById('screen'); // Get the iframe by its ID
+const iframe = document.getElementById('gameFrame'); // Get the iframe by its ID
 
 if (fullscreenButton && iframe) {
     fullscreenButton.addEventListener('click', function() {
