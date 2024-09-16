@@ -91,9 +91,9 @@ const games = {
     },
     intoSpace2: {
         title: "Into Space 2",
-        url: "Games/intospace2.html",
+        url: "intospace2.html", // Remove the extra "Games/" from the beginning
         originalUrl: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Finto-space-2.xml&container=ig",
-        image: "images/proxyandgameimages/gameimages/intospace2.png",
-        description: "Build and launch your rocket into space!",
+        image: "../images/proxyandgameimages/gameimages/intospace2.png",
+        description: "Build and launch your rocket into space!"
     },
 };
