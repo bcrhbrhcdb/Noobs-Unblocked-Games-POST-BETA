@@ -86,14 +86,14 @@ const games = {
    evolve:{
       title:"Evolve", 
       url:"Games/Evolve.html", 
-      image:"games/proxyandgameimages/gameimages/Evolve.png", 
+      image:"/proxyandgameimages/gameimages/Evolve.png", 
       description:"An idle game where you Evolve your own species"
    },
    intoSpace2:{
        title:"Into Space 2", 
        url:"intospace2.html", 
        originalUrl:"https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Finto-space-2.xml", 
-       image:"../images/proxyandgameimages/gameimages/intospace2.png", 
+       image:"images/proxyandgameimages/gameimages/intospace2.png", 
        description:"Build and launch your rocket into space!"
    }
 };
