@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.title = game.title;
         document.getElementById('gameTitle').textContent = game.title;
         document.getElementById('gameFrame').src = game.url;
-        document.getElementById('gameLink').href = game.originalUrl; // Use originalUrl for the link
+        document.getElementById('gameLink').href = game.originalUrl;
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found';
@@ -37,3 +37,26 @@ if (fullscreenButton && iframe) {
         }
     });
 }
+
+// Optional: Add error handling for iframe loading
+document.getElementById('gameFrame').addEventListener('load', function() {
+    this.style.display = 'block';
+}, false);
+
+document.getElementById('gameFrame').addEventListener('error', function() {
+    console.error('Failed to load game');
+    this.style.display = 'none';
+    document.getElementById('gameTitle').textContent = 'Failed to load game';
+}, false);
+
+// Optional: Add a function to adjust iframe height based on window size
+function adjustIframeHeight() {
+    const iframe = document.getElementById('gameFrame');
+    const windowHeight = window.innerHeight;
+    const offset = 200; // Adjust this value as needed
+    iframe.style.height = (windowHeight - offset) + 'px';
+}
+
+// Call the function on load and resize
+window.addEventListener('load', adjustIframeHeight);
+window.addEventListener('resize', adjustIframeHeight);
