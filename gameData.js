@@ -79,14 +79,14 @@ const games = {
     },
     ovo: {
       title:"0v0", 
-      url:"Games/0v0.html", 
-      image:"games/proxyandgameimages/gameimages/0v0.png", 
+      url:"0v0.html", 
+      image:"images/proxyandgameimages/gameimages/0v0.png", 
       description:"Such a Classic!"
    },
    evolve:{
       title:"Evolve", 
       url: "Evolve.html", 
-      image:"/proxyandgameimages/gameimages/Evolve.png", 
+      image:"images/proxyandgameimages/gameimages/Evolve.png", 
       description:"An idle game where you Evolve your own species"
    },
    intoSpace2:{
