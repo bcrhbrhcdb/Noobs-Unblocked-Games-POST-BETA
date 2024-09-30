@@ -479,11 +479,11 @@ hr {
 @media screen and (max-width: 768px) {
     .announcement-box {
         max-width: 90%;
-        font-size: 14px;
+        font-size: 34px;
     }
 
     #time {
-        font-size: 34px;
+        font-size: 32px;
     }
 
     #date, #day {
