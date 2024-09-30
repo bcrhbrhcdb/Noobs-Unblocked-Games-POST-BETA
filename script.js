@@ -69,7 +69,7 @@ function generateGameElements() {
             const gameElement = document.createElement('div');
             gameElement.className = 'content';
             gameElement.innerHTML = `
-                <a href="Games/game-template.html?id=${id}">
+                <a href="game-template.html?id=${id}">
                     <h3>${game.title}</h3>
                     <img src="${game.image}" class='img' />
                     <p>${game.description}</p>
@@ -80,30 +80,6 @@ function generateGameElements() {
     } else {
         console.error('Game container or games data not found');
     }
-}
-
-// Fullscreen button functionality
-const fullscreenButton = document.getElementById('fullscreenButton');
-const iframe = document.getElementById('gameFrame'); // Get the iframe by its ID
-
-if (fullscreenButton && iframe) {
-    fullscreenButton.addEventListener('click', function() {
-        if (!document.fullscreenElement) {
-            // Request fullscreen for the iframe
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen().catch((err) => {
-                    alert(`Error attempting to enable fullscreen mode for the iframe: ${err.message} (${err.name})`);
-                });
-            } else {
-                alert('Fullscreen API is not supported by your browser.');
-            }
-        } else {
-            // Exit fullscreen mode
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            }
-        }
-    });
 }
 
 // Time and date display
