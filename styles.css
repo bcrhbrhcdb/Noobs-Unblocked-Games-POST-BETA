@@ -424,19 +424,17 @@ hr {
 }
 
 .custom-checkbox {
-    display: none;
+    display: none; /* Hide the default checkbox */
 }
 
 .custom-checkbox + label {
     position: relative;
-    padding-left: 40px;
+    padding-left: 40px; /* Space for the custom checkbox */
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16px; /* Adjust font size as needed */
     font-weight: bold;
     color: rgb(86, 72, 72);
     user-select: none;
-    transition: transform 0.3s;
-    display: inline-block;
 }
 
 .custom-checkbox + label:before {
@@ -445,32 +443,32 @@ hr {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    background-color: #176baa;
-    border-radius: 50px;
-    border: none;
+    width: 30px; /* Width of the custom checkbox */
+    height: 30px; /* Height of the custom checkbox */
+    background-color: #176baa; /* Background color */
+    border-radius: 50px; /* Rounded corners */
+    border: none; /* No border */
 }
 
 .custom-checkbox:checked + label:before {
-    background-color: #176baa;
+    background-color: #176baa; /* Background color when checked */
 }
 
+/* Create a checkmark effect when checked */
 .custom-checkbox:checked + label:after {
     content: '';
     position: absolute;
-    left: 7px;
+    left: 10px; /* Positioning of the checkmark */
     top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    background-image: url('images/checkbox.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    transform: translateY(-50%) rotate(45deg); /* Rotate to make it look like a checkmark */
+    width: 10px; /* Width of the checkmark line */
+    height: 20px; /* Height of the checkmark line */
+    border-left: 4px solid white; /* Left line of the checkmark */
+    border-bottom: 4px solid white; /* Bottom line of the checkmark */
 }
 
 .custom-checkbox + label:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight scale on hover for effect */
 }
 
 .noShow {
