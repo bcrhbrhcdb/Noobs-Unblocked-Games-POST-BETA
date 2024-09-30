@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
-        const offset = 400; // Offset in pixels (400px from the edge of the screen)
+        const offset = 400;
         return (
             rect.top >= -offset &&
             rect.left >= -offset &&
@@ -49,15 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!hasResults) {
                 resultsContainer.innerHTML = '<div class="no-results">No results found</div>';
             } else {
-                resultsContainer.innerHTML = ''; // Clear "No results found" message when there are results
+                resultsContainer.innerHTML = '';
             }
 
-            // Recheck the position after filtering
             checkPosition();
         });
     }
 
-    // Initial check to see which games are in view
     checkPosition();
 });
 
@@ -69,7 +67,7 @@ function generateGameElements() {
             const gameElement = document.createElement('div');
             gameElement.className = 'content';
             gameElement.innerHTML = `
-                <a href="game-template.html?id=${id}">
+                <a href="${game.url}">
                     <h3>${game.title}</h3>
                     <img src="${game.image}" class='img' />
                     <p>${game.description}</p>
@@ -82,7 +80,6 @@ function generateGameElements() {
     }
 }
 
-// Time and date display
 const timeElement = document.getElementById('time');
 const dateElement = document.getElementById('date');
 const dayElement = document.getElementById('day');
