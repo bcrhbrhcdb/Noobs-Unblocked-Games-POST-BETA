@@ -112,7 +112,7 @@ const games = {
         description: "Build and launch your rocket into space!"
     },
     lol: {
-        title: "1v1.lol",
+        title: "Blooket",
         url: "game-template.html?id=blooket",
         originalurl: "https://www.blooket.com/",
         image: "images/proxyandgameimages/gameimages/lol.jpeg",
