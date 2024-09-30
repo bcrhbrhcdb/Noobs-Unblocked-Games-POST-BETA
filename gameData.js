@@ -113,7 +113,7 @@ const games = {
     },
     lol: {
         title:"1v1.lol",
-        url: "game-template.html?id=lol",
+        url: "game-template.html?id=1v1",
         originalurl: "https://tylerpalko.github.io/gamehub/1v1.lol/",
         image: "images/proxyandgameimages/gameimages/lol.jpeg",
         description: "Goofy ah fornite rippoff"
