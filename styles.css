@@ -297,23 +297,23 @@ p, h3 {
     border: none;      
     background-color: #176baa;       
     color: white;       
-    font-size: 16px;      
-    width: auto;       
+    font-size: 34px;      
+    width: 100%;       
     font-weight: bold;       
-    transition: transform 0.3s;     
-    padding: 5px 10px;
-    margin-top: 10px;
+    transition: transform 0.5s;     
+    padding: 2px;
+    margin: 2px;
     display: inline-block;
 }
 
 .allButton:hover {       
     background-color: white;       
-    transform: translateY(-3px);       
-    color: black;
-    border: #176baa 2px solid;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(-7px);       
+    border: #176baa 5px solid;
+    color: rgb(86, 72, 72);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
