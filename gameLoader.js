@@ -26,14 +26,24 @@ if (fullscreenButton && iframe) {
         if (!document.fullscreenElement) {
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen().catch((err) => {
-                    alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+                    console.error(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
                 });
-            } else {
-                alert('Fullscreen API is not supported by your browser.');
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
             }
         } else {
             if (document.exitFullscreen) {
                 document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { // Firefox
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { // IE/Edge
+                document.msExitFullscreen();
             }
         }
     });
