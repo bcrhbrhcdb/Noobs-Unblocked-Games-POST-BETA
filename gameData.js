@@ -9,7 +9,7 @@ const games = {
     cookieClicker: {
         title: "Cookie Clicker",
         url: "game-template.html?id=cookieClicker",
-        originalUrl: "Games/cookie.html",
+        originalUrl: "https://ozh.github.io/cookieclicker/",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub!"
     },
