@@ -427,3 +427,6 @@ border-radius: 10px;
     font-weight: bold;
     color: rgb(86, 72, 72);
 }
+.checkbox-container {
+    margin-top: 10px;
+}

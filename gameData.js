@@ -93,7 +93,7 @@ const games = {
     ovo: {
         title: "0v0",
         url: "game-template.html?id=ovo",
-        originalUrl: "https://23azostore.github.io/s/ovo/",
+        originalUrl: "https://ovoclassic.github.io/file/",
         image: "images/proxyandgameimages/gameimages/0v0.png",
         description: "Such a Classic!"
     },
@@ -113,8 +113,8 @@ const games = {
     },
     lol: {
         title:"1v1.lol",
-        url: "game-template.html?id=lol",
-        originalurl: "https://webglmath.github.io/1v1-lol/",
+        url: "gameptemplate.html?id=lol",
+        originalurl: "https://tylerpalko.github.io/gamehub/1v1.lol/",
         image: "images/proxyandgameimages/gameimages/lol.jpeg",
         description: "Goofy ah fornite rippoff"
 
