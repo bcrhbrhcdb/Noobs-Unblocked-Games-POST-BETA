@@ -79,7 +79,7 @@ const games = {
     bigTower1: {
         title: "Big Tower Tiny Square 1",
         url: "game-template.html?id=bigTower1",
-        originalUrl: "Games/bigtower1.html",
+        originalUrl: "https://ubg98.github.io/BigTowerTinySquare/",
         image: "images/proxyandgameimages/gameimages/bigsquare1.jpeg",
         description: "Goofy Platformer."
     },
@@ -93,14 +93,14 @@ const games = {
     ovo: {
         title: "0v0",
         url: "game-template.html?id=ovo",
-        originalUrl: "Games/0v0.html",
+        originalUrl: "https://ovoclassic.github.io/file/",
         image: "images/proxyandgameimages/gameimages/0v0.png",
         description: "Such a Classic!"
     },
     evolve: {
         title: "Evolve",
         url: "game-template.html?id=evolve",
-        originalUrl: "Games/Evolve.html",
+        originalUrl: "https://pmotschmann.github.io/Evolve/",
         image: "images/proxyandgameimages/gameimages/Evolve.png",
         description: "An idle game where you Evolve your own species"
     },
@@ -110,5 +110,13 @@ const games = {
         originalUrl: "https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Finto-space-2.xml&container=ig",
         image: "images/proxyandgameimages/gameimages/intospace2.png",
         description: "Build and launch your rocket into space!"
+    },
+    lol: {
+        title:"1v1.lol",
+        url: "gameptemplate.html?id=lol",
+        originalurl: "https://webglmath.github.io/1v1-lol/",
+        image: "images/proxyandgameimages/gameimages/lol.jpeg",
+        description: "Goofy ah fornite rippoff"
+
     }
 };
