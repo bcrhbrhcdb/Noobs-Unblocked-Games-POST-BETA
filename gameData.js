@@ -93,7 +93,7 @@ const games = {
     ovo: {
         title: "0v0",
         url: "game-template.html?id=ovo",
-        originalUrl: "https://ovoclassic.github.io/file/",
+        originalUrl: "https://23azostore.github.io/s/ovo/",
         image: "images/proxyandgameimages/gameimages/0v0.png",
         description: "Such a Classic!"
     },
