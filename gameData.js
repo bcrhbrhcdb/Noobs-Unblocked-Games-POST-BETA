@@ -113,7 +113,7 @@ const games = {
     },
     lol: {
         title:"1v1.lol",
-        url: "gameptemplate.html?id=lol",
+        url: "game-template.html?id=lol",
         originalurl: "https://webglmath.github.io/1v1-lol/",
         image: "images/proxyandgameimages/gameimages/lol.jpeg",
         description: "Goofy ah fornite rippoff"
