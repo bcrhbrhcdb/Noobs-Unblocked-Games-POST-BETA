@@ -1,4 +1,6 @@
-Welcome to Noob's Unblocked Games! Why should you use this website over others? Theres no ads!
-Google sites is SUPER slow. And it's not as customizable as github pages.
+Report bugs in issues!
+Share this with people
+Star it.. Heh
 
-It is still in beta, so expect a lot of bugs.
+Noobs Unblocked Games BETA (version 0.1.2)
+RECENT CHANGES:  Reworked how I add games (20x easier for me now), and reworked announcement bannar
