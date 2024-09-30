@@ -297,23 +297,21 @@ p, h3 {
     border: none;      
     background-color: #176baa;       
     color: white;       
-    font-size: 34px;      
-    width: 100%;       
+    font-size: 16px;      
+    width: auto;       
     font-weight: bold;       
-    transition: transform 0.5s;     
-    padding: 2px;
-    margin: 2px;
+    transition: transform 0.3s;     
+    padding: 5px 10px;
+    margin-top: 10px;
     display: inline-block;
-    position: relative;
 }
 
 .allButton:hover {       
     background-color: white;       
-    transform: translateY(-7px);       
-    border: #176baa 5px solid;
-    color: rgb(86, 72, 72);
-    border: black 5px solid;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: translateY(-3px);       
+    color: black;
+    border: #176baa 2px solid;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 @keyframes fadeIn {
@@ -368,35 +366,24 @@ hr {
 
 .announcement-box {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
-    padding: 20px;
-    display: block;
-    justify-content: left;
-    align-items: left;
-    animation: fadeIn 1s ease-in-out;
+    padding: 15px;
+    max-width: 400px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 16px;
     z-index: 1000;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
 }
 
 .announcement-content {
     text-align: left;
-}
-
-#close {
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 #clock {
@@ -407,31 +394,24 @@ hr {
 }
 
 #time {
-    font-size: 48px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 #date, #day {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
-    color: rgb(86, 72, 72);
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
 }
 
 .custom-checkbox {
-    display: none; /* Hide the default checkbox */
+    display: none;
 }
 
 .custom-checkbox + label {
     position: relative;
-    padding-left: 40px; /* Space for the custom checkbox */
+    padding-left: 40px;
     cursor: pointer;
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
     font-weight: bold;
     color: rgb(86, 72, 72);
     user-select: none;
@@ -443,32 +423,30 @@ hr {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 30px; /* Width of the custom checkbox */
-    height: 30px; /* Height of the custom checkbox */
-    background-color: #176baa; /* Background color */
-    border-radius: 50px; /* Rounded corners */
-    border: none; /* No border */
+    width: 20px;
+    height: 20px;
+    background-color: #176baa;
+    border-radius: 50%;
 }
 
 .custom-checkbox:checked + label:before {
-    background-color: #176baa; /* Background color when checked */
+    background-color: #176baa;
 }
 
-/* Create a checkmark effect when checked */
 .custom-checkbox:checked + label:after {
     content: '';
     position: absolute;
-    left: 10px; /* Positioning of the checkmark */
+    left: 5px;
     top: 50%;
-    transform: translateY(-50%) rotate(45deg); /* Rotate to make it look like a checkmark */
-    width: 10px; /* Width of the checkmark line */
-    height: 20px; /* Height of the checkmark line */
-    border-left: 4px solid white; /* Left line of the checkmark */
-    border-bottom: 4px solid white; /* Bottom line of the checkmark */
+    transform: translateY(-50%) rotate(45deg);
+    width: 10px;
+    height: 20px;
+    border-left: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .custom-checkbox + label:hover {
-    transform: scale(1.05); /* Slight scale on hover for effect */
+    transform: scale(1.05);
 }
 
 .noShow {
@@ -492,25 +470,82 @@ hr {
     100% { opacity: 1; }
 }
 
-/* Adjust the allButton class for the close button */
-.allButton {
-    border-radius: 50px;
-    border: none;
-    background-color: #176baa;
-    color: white;
-    font-size: 16px;
-    width: auto;
-    font-weight: bold;
-    transition: transform 0.3s, background-color 0.3s;
-    padding: 10px 20px;
-    margin: 10px 0;
-    display: inline-block;
+#close {
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.allButton:hover {
-    background-color: white;
-    transform: translateY(-3px);
-    color: rgb(86, 72, 72);
-    border: #176baa 2px solid;
-    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .announcement-box {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    #time {
+        font-size: 20px;
+    }
+
+    #date, #day {
+        font-size: 16px;
+    }
+
+    .allButton {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    .custom-checkbox + label {
+        font-size: 14px;
+        padding-left: 30px;
+    }
+
+    .custom-checkbox + label:before {
+        width: 16px;
+        height: 16px;
+    }
+
+    .custom-checkbox:checked + label:after {
+        width: 8px;
+        height: 16px;
+        left: 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .announcement-box {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    #time {
+        font-size: 18px;
+    }
+
+    #date, #day {
+        font-size: 14px;
+    }
+
+    .allButton {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+
+    .custom-checkbox + label {
+        font-size: 12px;
+        padding-left: 25px;
+    }
+
+    .custom-checkbox + label:before {
+        width: 14px;
+        height: 14px;
+    }
+
+    .custom-checkbox:checked + label:after {
+        width: 6px;
+        height: 14px;
+        left: 4px;
+        border-left: 2px solid white;
+        border-bottom: 2px solid white;
+    }
 }
