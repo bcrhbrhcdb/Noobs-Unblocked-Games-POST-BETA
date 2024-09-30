@@ -25,9 +25,7 @@ if (fullscreenButton && iframe) {
     fullscreenButton.addEventListener('click', function() {
         if (!document.fullscreenElement) {
             if (iframe.requestFullscreen) {
-                iframe.requestFullscreen().catch((err) => {
-                    console.error(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
-                });
+                iframe.requestFullscreen();
             } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
             } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
