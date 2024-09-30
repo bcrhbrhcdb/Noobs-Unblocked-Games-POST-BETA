@@ -69,7 +69,7 @@ fetch('announcement.html')
             // Call the updateTime function initially and set an interval
             updateTime();
             setInterval(updateTime, 1000);
-        }
+        }//k
     })
     //j
     .catch(error => console.error('Error fetching announcement:', error));

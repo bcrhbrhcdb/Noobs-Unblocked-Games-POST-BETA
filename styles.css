@@ -483,11 +483,11 @@ hr {
     }
 
     #time {
-        font-size: 20px;
+        font-size: 34px;
     }
 
     #date, #day {
-        font-size: 16px;
+        font-size: 24px;
     }
 
     .allButton {
