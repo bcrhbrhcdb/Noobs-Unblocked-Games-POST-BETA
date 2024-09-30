@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const game = games[gameId];
         document.title = game.title; // Set the document title
         document.getElementById('gameTitle').textContent = game.title; // Set the game title in the HTML
-        document.getElementById('gameFrame').src = game.url; // Set the iframe source to the game's URL
-        document.getElementById('gameLink').href = game.originalUrl || game.url; // Set the link to the original game URL
+        document.getElementById('gameFrame').src = game.originalUrl; // Set the iframe source to the original game URL
+        document.getElementById('gameLink').href = game.originalUrl; // Set the link to the original game URL
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found'; // Display an error message
@@ -23,22 +23,14 @@ const iframe = document.getElementById('gameFrame');
 
 if (fullscreenButton && iframe) {
     fullscreenButton.addEventListener('click', function() {
-        const gameUrl = iframe.src;
-        const newWindow = window.open(gameUrl, '_blank');
-        if (newWindow) {
-            newWindow.addEventListener('load', function() {
-                if (newWindow.document.documentElement.requestFullscreen) {
-                    newWindow.document.documentElement.requestFullscreen();
-                } else if (newWindow.document.documentElement.mozRequestFullScreen) {
-                    newWindow.document.documentElement.mozRequestFullScreen();
-                } else if (newWindow.document.documentElement.webkitRequestFullscreen) {
-                    newWindow.document.documentElement.webkitRequestFullscreen();
-                } else if (newWindow.document.documentElement.msRequestFullscreen) {
-                    newWindow.document.documentElement.msRequestFullscreen();
-                }
-            });
-        } else {
-            alert('Please allow popups for this website');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { // Firefox
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { // IE/Edge
+            iframe.msRequestFullscreen();
         }
     });
 }
@@ -47,7 +39,7 @@ if (fullscreenButton && iframe) {
 iframe.onload = function() {
     try {
         const link = document.createElement('link');
-        link.href = '../styles.css'; // Use a relative path to access styles.css
+        link.href = 'styles.css'; // Use a relative path to access styles.css
         link.rel = 'stylesheet';
         link.type = 'text/css';
         iframe.contentDocument.head.appendChild(link); // Append the link to the iframe's head
