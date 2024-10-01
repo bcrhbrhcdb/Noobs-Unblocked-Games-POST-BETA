@@ -13,7 +13,7 @@ function loadAnnouncement() {
 
             const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
 
-            if (!hideAnnouncements || announcementDate !== lastShownDate) {
+            if (!hideAnnouncements && announcementDate !== lastShownDate) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
 
