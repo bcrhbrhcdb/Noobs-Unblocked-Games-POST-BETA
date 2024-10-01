@@ -28,14 +28,6 @@ function loadAnnouncement() {
                     localStorage.setItem('hideAnnouncements', 'true');
                 });
 
-                const hideCheckbox = announcementContainer.querySelector('#hideAnnouncements');
-                if (hideCheckbox) {
-                    hideCheckbox.checked = hideAnnouncements;
-                    hideCheckbox.addEventListener('change', (e) => {
-                        localStorage.setItem('hideAnnouncements', e.target.checked);
-                    });
-                }
-
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
