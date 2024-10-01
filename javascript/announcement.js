@@ -4,6 +4,7 @@ let lastAnnouncementDate;
 function loadAnnouncement() {
     const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
     const lastShownDate = localStorage.getItem('lastAnnouncementDate');
+    const lastAnnouncementContent = localStorage.getItem('lastAnnouncementContent');
 
     fetch('announcement.html')
         .then(response => response.text())
@@ -12,10 +13,13 @@ function loadAnnouncement() {
             announcementContainer.innerHTML = data;
 
             const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
+            const currentAnnouncementContent = announcementContainer.innerHTML;
 
-            if (!hideAnnouncements && announcementDate !== lastShownDate) {
+            if (!hideAnnouncements || announcementDate !== lastShownDate || currentAnnouncementContent !== lastAnnouncementContent) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
+                localStorage.setItem('lastAnnouncementContent', currentAnnouncementContent);
+                localStorage.setItem('hideAnnouncements', 'false');
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
@@ -24,7 +28,7 @@ function loadAnnouncement() {
 
                 const hideCheckbox = announcementContainer.querySelector('#hideAnnouncements');
                 if (hideCheckbox) {
-                    hideCheckbox.checked = hideAnnouncements;
+                    hideCheckbox.checked = false;
                     hideCheckbox.addEventListener('change', (e) => {
                         localStorage.setItem('hideAnnouncements', e.target.checked);
                         if (e.target.checked) {
@@ -36,7 +40,7 @@ function loadAnnouncement() {
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
-                // Don't show the announcement if it's hidden or not new
+                // Don't show the announcement if it's hidden and not new
                 announcementContainer = null;
             }
         })
