@@ -2,7 +2,7 @@ const games = {
     tetris: {
         title: "Twitch Tetris",
         url: "game-template.html?id=tetris",
-        originalUrl: "Games/tetris.html",
+        originalUrl: "https://emulatoros.github.io/gfile/tetris/index.html",
         image: "images/proxyandgameimages/gameimages/tetris.png",
         description: "You know what this is, a ripoff of Tetris."
     },
@@ -16,63 +16,63 @@ const games = {
     vex9: {
         title: "Vex 9",
         url: "game-template.html?id=vex9",
-        originalUrl: "Games/vex9.html",
+        originalUrl: "Ghttps://tvz2304.github.io/g16/vex-8/",
         image: "images/proxyandgameimages/gameimages/vex9.jpeg",
-        description: "The newest game!"
+        description: "The newest game! (vex 8 as a placeholder, need a link. Submit a link into the footer google form.)"
     },
     vex8: {
         title: "Vex 8",
         url: "game-template.html?id=vex8",
-        originalUrl: "Games/vex8.html",
+        originalUrl: "https://tvz2304.github.io/g16/vex-8/",
         image: "images/proxyandgameimages/gameimages/vex8.jpeg",
         description: "Eighth Game"
     },
     vex7: {
         title: "Vex 7",
         url: "game-template.html?id=vex7",
-        originalUrl: "Games/vex7.html",
+        originalUrl: "https://vex-7.github.io/file/",
         image: "images/proxyandgameimages/gameimages/vex7.jpeg",
         description: "The seventh game"
     },
     vex6: {
         title: "Vex 6",
         url: "game-template.html?id=vex6",
-        originalUrl: "Games/vex6.html",
+        originalUrl: "https://vex-game.github.io/a9/vex-6/",
         image: "images/proxyandgameimages/gameimages/vex6.jpeg",
         description: "The sixth game"
     },
     vex5: {
         title: "Vex 5",
         url: "game-template.html?id=vex5",
-        originalUrl: "Games/vex5.html",
+        originalUrl: "https://vex5online.github.io/file/",
         image: "images/proxyandgameimages/gameimages/vex5.jpeg",
         description: "The fifth game"
     },
     vex4: {
         title: "Vex 4",
         url: "game-template.html?id=vex4",
-        originalUrl: "Games/vex4.html",
+        originalUrl: "https://htmlxm.github.io/h9/vex-4/",
         image: "images/proxyandgameimages/gameimages/vex4.jpeg",
         description: "The fourth game"
     },
     vex3: {
         title: "Vex 3",
         url: "game-template.html?id=vex3",
-        originalUrl: "Games/vex3.html",
+        originalUrl: "https://htmlxm.github.io/h9/vex-3/",
         image: "images/proxyandgameimages/gameimages/vex3.jpeg",
         description: "The third game"
     },
     vex2: {
         title: "Vex 2",
         url: "game-template.html?id=vex2",
-        originalUrl: "Games/vex2.html",
+        originalUrl: "https://vex-7.github.io/file/",
         image: "images/proxyandgameimages/gameimages/vex2.jpeg",
         description: "The second game (can't find a link that works)"
     },
     vex: {
         title: "Vex",
         url: "game-template.html?id=vex",
-        originalUrl: "Games/vex.html",
+        originalUrl: "https://vex-7.github.io/file/",
         image: "images/proxyandgameimages/gameimages/vex.jpeg",
         description: "The original Vex game (can't find a link that works)"
     },
@@ -86,7 +86,7 @@ const games = {
     bigTower2: {
         title: "Big Tower Tiny Square 2",
         url: "game-template.html?id=bigTower2",
-        originalUrl: "Games/bigtower2.html",
+        originalUrl: "https://rebemanae.github.io/big-tower-tiny-square-2/",
         image: "images/proxyandgameimages/gameimages/bigsquare2.jpeg",
         description: "Even more Goofy Platformer."
     },
@@ -114,7 +114,7 @@ const games = {
     lol: {
         title: "Blooket",
         url: "game-template.html?id=blooket",
-        originalurl: "https://www.blooket.com/",
+        originalurl: "https://blooket.com",
         image: "images/proxyandgameimages/gameimages/lol.jpeg",
         description: "Goofy ah fornite rippoff"
 
