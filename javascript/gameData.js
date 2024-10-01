@@ -101,7 +101,7 @@ const games = {
         title: "Universal Paperclips",
         url: "game-template.html?id=paperclips",
         originalurl: "https://memalign.github.io/m/universal-paperclips/index2.html",
-        image: "images/proxyandgameimages/gameimages/lol.jpeg",
+        image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "Paperclips..."
 
     }
