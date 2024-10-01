@@ -27,6 +27,9 @@ function loadAnnouncement() {
                     hideCheckbox.checked = hideAnnouncements;
                     hideCheckbox.addEventListener('change', (e) => {
                         localStorage.setItem('hideAnnouncements', e.target.checked);
+                        if (e.target.checked) {
+                            announcementContainer.style.display = 'none';
+                        }
                     });
                 }
 
