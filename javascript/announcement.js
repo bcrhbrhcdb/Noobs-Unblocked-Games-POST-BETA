@@ -1,9 +1,11 @@
 let announcementContainer;
 let lastAnnouncementDate;
+let lastAnnouncementContent;
 
 function loadAnnouncement() {
     const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
     const lastShownDate = localStorage.getItem('lastAnnouncementDate');
+    lastAnnouncementContent = localStorage.getItem('lastAnnouncementContent');
 
     fetch('announcement.html')
         .then(response => response.text())
@@ -12,14 +14,16 @@ function loadAnnouncement() {
             announcementContainer.innerHTML = data;
 
             const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
-            const currentAnnouncementContent = announcementContainer.innerHTML;
+            const currentAnnouncementContent = announcementContainer.querySelectorAll('p:not(:first-child)');
+            const currentContentString = Array.from(currentAnnouncementContent).map(p => p.textContent).join('');
 
             const isNewAnnouncement = announcementDate !== lastShownDate;
+            const isContentChanged = currentContentString !== lastAnnouncementContent;
 
-            if (!hideAnnouncements || isNewAnnouncement) {
+            if (!hideAnnouncements || isNewAnnouncement || isContentChanged) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
-                localStorage.setItem('lastAnnouncementContent', currentAnnouncementContent);
+                localStorage.setItem('lastAnnouncementContent', currentContentString);
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
@@ -37,8 +41,8 @@ function loadAnnouncement() {
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
-                // Don't show the announcement if it's hidden and not new
-                announcementContainer = null;
+                // Don't show the announcement if it's hidden and not new or changed
+                announcementContainer.style.display = 'none';
             }
         })
         .catch(error => console.error('Error fetching announcement:', error));
