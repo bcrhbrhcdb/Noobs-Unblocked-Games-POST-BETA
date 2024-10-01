@@ -1,10 +1,8 @@
 let announcementContainer;
-let lastAnnouncementDate;
 let lastAnnouncementContent;
 
 function loadAnnouncement() {
     const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
-    const lastShownDate = localStorage.getItem('lastAnnouncementDate');
     lastAnnouncementContent = localStorage.getItem('lastAnnouncementContent');
 
     fetch('announcement.html')
@@ -17,9 +15,9 @@ function loadAnnouncement() {
             const currentAnnouncementContent = announcementContainer.querySelectorAll('p:not(:first-child)');
             const currentContentString = Array.from(currentAnnouncementContent).map(p => p.textContent).join('');
 
-            const isNewAnnouncement = announcementDate !== lastShownDate;
+            const isContentChanged = currentContentString !== lastAnnouncementContent;
 
-            if (!hideAnnouncements || isNewAnnouncement) {
+            if (!hideAnnouncements && isContentChanged) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
                 localStorage.setItem('lastAnnouncementContent', currentContentString);
@@ -41,7 +39,7 @@ function loadAnnouncement() {
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
-                // Don't show the announcement if it's hidden and not new
+                // Don't show the announcement if it's hidden or the content hasn't changed
                 announcementContainer.style.display = 'none';
             }
         })
