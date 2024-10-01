@@ -1,45 +1,48 @@
 let announcementContainer;
+let lastAnnouncementDate;
 
-// Fetch the announcement content from the external HTML file
-fetch('announcement.html')
-  .then(response => response.text())
-  .then(data => {
-    // Create a new div element to hold the announcement
-    announcementContainer = document.createElement('div');
-    announcementContainer.innerHTML = data;
+function loadAnnouncement() {
+    fetch('announcement.html')
+        .then(response => response.text())
+        .then(data => {
+            announcementContainer = document.createElement('div');
+            announcementContainer.innerHTML = data;
 
-    // Insert the announcement at the top of the body
-    document.body.insertBefore(announcementContainer, document.body.firstChild);
+            const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
+            const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
+            const lastShownDate = localStorage.getItem('lastAnnouncementDate');
 
-    // Add a click event listener to the close button
-    const closeButton = announcementContainer.querySelector('#close');
-    closeButton.addEventListener('click', () => {
-      announcementContainer.style.display = 'none';
-    });
+            if (!hideAnnouncements || announcementDate !== lastShownDate) {
+                document.body.insertBefore(announcementContainer, document.body.firstChild);
+                localStorage.setItem('lastAnnouncementDate', announcementDate);
 
-    // Get the clock elements
+                const closeButton = announcementContainer.querySelector('#close');
+                closeButton.addEventListener('click', () => {
+                    announcementContainer.style.display = 'none';
+                });
+
+                const hideCheckbox = announcementContainer.querySelector('#hideAnnouncements');
+                hideCheckbox.checked = hideAnnouncements;
+                hideCheckbox.addEventListener('change', (e) => {
+                    localStorage.setItem('hideAnnouncements', e.target.checked);
+                });
+
+                updateClock();
+                setInterval(updateClock, 1000);
+            }
+        })
+        .catch(error => console.error('Error fetching announcement:', error));
+}
+
+function updateClock() {
+    const now = new Date();
     const timeElement = announcementContainer.querySelector('#time');
     const dateElement = announcementContainer.querySelector('#date');
     const dayElement = announcementContainer.querySelector('#day');
 
-    // Update the clock function
-    function updateTime() {
-      const now = new Date();
-      const hours = now.getHours().toString().padStart(2, '0');
-      const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
-      const timeString = `${hours}:${minutes}:${seconds}`;
-      timeElement.textContent = timeString;
+    timeElement.textContent = now.toLocaleTimeString();
+    dateElement.textContent = now.toDateString();
+    dayElement.textContent = now.toLocaleString('default', { weekday: 'long' });
+}
 
-      const dateString = now.toDateString();
-      dateElement.textContent = dateString;
-
-      const dayString = now.toLocaleString('default', { weekday: 'long' });
-      dayElement.textContent = dayString;
-    }
-
-    // Call the updateTime function initially and set an interval
-    updateTime();
-    setInterval(updateTime, 1000);
-  })
-  .catch(error => console.error('Error fetching announcement:', error));
+loadAnnouncement();
