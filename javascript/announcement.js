@@ -4,7 +4,6 @@ let lastAnnouncementDate;
 function loadAnnouncement() {
     const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
     const lastShownDate = localStorage.getItem('lastAnnouncementDate');
-    const lastAnnouncementContent = localStorage.getItem('lastAnnouncementContent');
 
     fetch('announcement.html')
         .then(response => response.text())
@@ -15,31 +14,23 @@ function loadAnnouncement() {
             const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
             const currentAnnouncementContent = announcementContainer.innerHTML;
 
-            const isNewAnnouncement = announcementDate !== lastShownDate || currentAnnouncementContent !== lastAnnouncementContent;
+            const isNewAnnouncement = announcementDate !== lastShownDate;
 
             if (!hideAnnouncements || isNewAnnouncement) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
                 localStorage.setItem('lastAnnouncementContent', currentAnnouncementContent);
 
-                if (isNewAnnouncement) {
-                    localStorage.setItem('hideAnnouncements', 'false');
-                }
-
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
                     announcementContainer.style.display = 'none';
-                    localStorage.setItem('hideAnnouncements', 'true');
                 });
 
                 const hideCheckbox = announcementContainer.querySelector('#hideAnnouncements');
                 if (hideCheckbox) {
-                    hideCheckbox.checked = hideAnnouncements && !isNewAnnouncement;
+                    hideCheckbox.checked = hideAnnouncements;
                     hideCheckbox.addEventListener('change', (e) => {
                         localStorage.setItem('hideAnnouncements', e.target.checked);
-                        if (e.target.checked) {
-                            announcementContainer.style.display = 'none';
-                        }
                     });
                 }
 
@@ -68,4 +59,5 @@ function updateClock() {
     }
 }
 
-loadAnnouncement();
+// Call loadAnnouncement when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', loadAnnouncement);
