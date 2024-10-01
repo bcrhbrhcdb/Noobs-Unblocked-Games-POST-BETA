@@ -368,15 +368,15 @@ border-radius: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: auto;
-    padding: 5px;
+    margin: 3px
+    padding: 10px;
     display: block;
     justify-content: center;
     align-items: center;
     animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     position: fixed;
     z-index: 1;
     text-align: center;
