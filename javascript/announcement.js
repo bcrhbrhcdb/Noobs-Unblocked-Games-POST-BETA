@@ -15,20 +15,26 @@ function loadAnnouncement() {
             const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
             const currentAnnouncementContent = announcementContainer.innerHTML;
 
-            if (!hideAnnouncements || announcementDate !== lastShownDate || currentAnnouncementContent !== lastAnnouncementContent) {
+            const isNewAnnouncement = announcementDate !== lastShownDate || currentAnnouncementContent !== lastAnnouncementContent;
+
+            if (!hideAnnouncements || isNewAnnouncement) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', announcementDate);
                 localStorage.setItem('lastAnnouncementContent', currentAnnouncementContent);
-                localStorage.setItem('hideAnnouncements', 'false');
+
+                if (isNewAnnouncement) {
+                    localStorage.setItem('hideAnnouncements', 'false');
+                }
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
                     announcementContainer.style.display = 'none';
+                    localStorage.setItem('hideAnnouncements', 'true');
                 });
 
                 const hideCheckbox = announcementContainer.querySelector('#hideAnnouncements');
                 if (hideCheckbox) {
-                    hideCheckbox.checked = false;
+                    hideCheckbox.checked = hideAnnouncements && !isNewAnnouncement;
                     hideCheckbox.addEventListener('change', (e) => {
                         localStorage.setItem('hideAnnouncements', e.target.checked);
                         if (e.target.checked) {
