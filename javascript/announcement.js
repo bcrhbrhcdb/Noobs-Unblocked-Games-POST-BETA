@@ -1,9 +1,9 @@
 let announcementContainer;
-let lastAnnouncementContent;
+let lastAnnouncementDate;
 
 function loadAnnouncement() {
     const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
-    lastAnnouncementContent = localStorage.getItem('lastAnnouncementContent');
+    lastAnnouncementDate = localStorage.getItem('lastAnnouncementDate');
 
     fetch('announcement.html')
         .then(response => response.text())
@@ -11,16 +11,15 @@ function loadAnnouncement() {
             announcementContainer = document.createElement('div');
             announcementContainer.innerHTML = data;
 
-            const announcementDate = announcementContainer.querySelector('p:nth-of-type(1)').textContent.split(': ')[1];
-            const currentAnnouncementContent = announcementContainer.querySelectorAll('p:not(:first-child)');
-            const currentContentString = Array.from(currentAnnouncementContent).map(p => p.textContent).join('');
+            const announcementDateElement = announcementContainer.querySelector('#announcementDate');
+            const currentAnnouncementDate = announcementDateElement.textContent.split(': ')[1];
 
-            const isContentChanged = currentContentString !== lastAnnouncementContent;
+            const isDateChanged = currentAnnouncementDate !== lastAnnouncementDate;
 
-            if (!hideAnnouncements && isContentChanged) {
+            if (!hideAnnouncements || isDateChanged) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
-                localStorage.setItem('lastAnnouncementDate', announcementDate);
-                localStorage.setItem('lastAnnouncementContent', currentContentString);
+                localStorage.setItem('lastAnnouncementDate', currentAnnouncementDate);
+                localStorage.setItem('hideAnnouncements', 'false');
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
@@ -31,7 +30,7 @@ function loadAnnouncement() {
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
-                // Don't show the announcement if it's hidden or the content hasn't changed
+                // Don't show the announcement if it's hidden and the date hasn't changed
                 announcementContainer.style.display = 'none';
             }
         })
