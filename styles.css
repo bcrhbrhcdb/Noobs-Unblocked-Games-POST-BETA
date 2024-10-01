@@ -368,17 +368,18 @@ border-radius: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 3px
+    margin: 3px;
     padding: 10px;
     display: block;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 20px;
     position: fixed;
     z-index: 1;
+    width: 90%;
     text-align: center;
   }
   
@@ -425,64 +426,4 @@ border-radius: 10px;
     font-size: 24px;
     font-weight: bold;
     color: rgb(86, 72, 72);
-}
-.checkbox-container {
-    display: block;
-    position: relative;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 20px;
-    user-select: none;
-    height: auto;
-    width: auto;
-}
-
-.checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #176baa;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-}
-
-.checkbox-container:hover input ~ .checkmark {
-    background-color: white;
-    border: 2px solid #176baa;
-}
-
-.checkbox-container input:checked ~ .checkmark {
-    background-color: white;
-    border: 2px solid #176baa;
-}
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.checkbox-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-.checkbox-container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid #176baa;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
 }
