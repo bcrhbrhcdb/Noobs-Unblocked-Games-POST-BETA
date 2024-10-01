@@ -431,10 +431,12 @@ border-radius: 10px;
     display: block;
     position: relative;
     padding: 5px;
-    margin: 12px;
+    margin: 5px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
     user-select: none;
+    height: auto;
+    width: auto;
 }
 
 .checkbox-container input {
