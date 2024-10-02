@@ -14,25 +14,16 @@ jobs:
         run: |
           echo "Repository root contents:"
           ls -la
-          echo "Contents of potential subdirectories:"
-          for dir in css CSS javascript JavaScript images Images; do
-            if [ -d "$dir" ]; then
-              echo "Contents of $dir:"
-              ls -la "$dir"
-            fi
-          done
 
       - name: Prepare build directory
         run: |
           mkdir -p build
           echo "Copying HTML files:"
           cp -v *.html build/ || echo "No HTML files found"
-          echo "Copying CSS directory:"
-          cp -rv css build/ || cp -rv CSS build/ || echo "No CSS directory found"
-          echo "Copying JavaScript directory:"
-          cp -rv javascript build/ || cp -rv JavaScript build/ || echo "No JavaScript directory found"
-          echo "Copying Images directory:"
-          cp -rv images build/ || cp -rv Images build/ || echo "No Images directory found"
+          echo "Copying javascript directory:"
+          cp -rv javascript build/ || echo "No javascript directory found"
+          echo "Copying images directory:"
+          cp -rv images build/ || echo "No images directory found"
           echo "Build directory contents:"
           ls -R build/
 
