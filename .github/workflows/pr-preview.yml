@@ -32,9 +32,16 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.name,
-              issue_number: context.issue.number,
-              body: `✅ PR preview deployed to https://${context.repo.owner}.github.io/${context.repo.name}/pr-preview/${context.payload.pull_request.number}/`
-            })
+            const owner = context.repo.owner;
+            const repo = 'Noobs-Unblocked-Games-Beta-FINAL';
+            const issue_number = context.issue.number;
+            const pr_number = context.payload.pull_request.number;
+            
+            console.log(`Owner: ${owner}, Repo: ${repo}, Issue Number: ${issue_number}, PR Number: ${pr_number}`);
+            
+            await github.rest.issues.createComment({
+              owner: owner,
+              repo: repo,
+              issue_number: issue_number,
+              body: `✅ PR preview deployed to https://${owner}.github.io/${repo}/pr-preview/${pr_number}/`
+            });
