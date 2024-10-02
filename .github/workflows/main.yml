@@ -7,14 +7,22 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Prepare deployment directory
         run: |
           mkdir deploy
           cp -r *.html css JavaScript images deploy/
-      
+          
+      - name: List deploy directory contents
+        run: ls -R deploy
+
       - name: Deploy Preview
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: ./deploy
+          preview_branch: gh-pages
+
+      - name: Output Preview URL
+        run: echo ${{ steps.deploy.outputs.preview_url }}
