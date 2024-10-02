@@ -15,16 +15,15 @@ jobs:
 
       - name: Prepare build directory
         run: |
-          mkdir -p build
-          cp -r *.html javascript images build/
+          mkdir -p build/pr-preview/${{ github.event.pull_request.number }}
+          cp -r *.html javascript images build/pr-preview/${{ github.event.pull_request.number }}/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          destination_dir: pr-preview/${{ github.event.pull_request.number }}
-          force_orphan: true
+          keep_files: true
 
       - name: Comment PR
         uses: actions/github-script@v6
@@ -33,7 +32,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
-            const repo = 'Noobs-Unblocked-Games-Beta-FINAL';
+            const repo = context.repo.name;
             const issue_number = context.issue.number;
             const pr_number = context.payload.pull_request.number;
             
