@@ -37,7 +37,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
-            const repo = context.repo.name;
+            const repo = 'Noobs-Unblocked-Games-1.1';
             const pr_number = context.payload.pull_request.number;
             
             console.log(`Owner: ${owner}, Repo: ${repo}, PR Number: ${pr_number}`);
@@ -52,4 +52,4 @@ jobs:
       - name: Check deployment
         run: |
           echo "Checking deployment..."
-          curl -sS "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/${{ github.event.pull_request.number }}/" || echo "Deployment not accessible yet"
+          curl -sS "https://${{ github.repository_owner }}.github.io/Noobs-Unblocked-Games-1.1/pr-preview/${{ github.event.pull_request.number }}/" || echo "Deployment not accessible yet"
