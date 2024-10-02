@@ -36,7 +36,7 @@ if (fullscreenButton && iframe) {
 iframe.onload = function() {
     try {
         const link = document.createElement('link');
-        link.href = 'styles.css';
+        link.href = 'css/styles.css';
         link.rel = 'stylesheet';
         link.type = 'text/css';
         iframe.contentDocument.head.appendChild(link);

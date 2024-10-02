@@ -13,7 +13,7 @@ jobs:
       - name: Prepare build directory
         run: |
           mkdir -p build
-          cp -r *.html css JavaScript images build/
+          cp -r *.html css javaScript images build/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
