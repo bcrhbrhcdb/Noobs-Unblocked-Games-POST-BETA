@@ -13,13 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Build PR preview
+        run: |
+          mkdir -p pr-preview/${{ github.event.pull_request.number }}
+          cp -R * pr-preview/${{ github.event.pull_request.number }}/ || true
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
-          destination_dir: pr-preview/${{ github.event.pull_request.number }}
           publish_branch: pr-previews
+          force_orphan: false
 
       - name: Comment PR
         uses: actions/github-script@v6
