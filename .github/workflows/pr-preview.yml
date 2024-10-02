@@ -47,7 +47,7 @@ jobs:
           script: |
             github.rest.issues.createComment({
               owner: context.repo.owner,
-              repo: context.repo.name,
+              repo: 'Noobs-Unblocked-Games-Beta-FINAL',
               issue_number: context.issue.number,
-              body: `✅ PR preview deployed to https://${context.repo.owner}.github.io/${context.repo.name}/pr-preview/${context.payload.pull_request.number}/`
+              body: `✅ PR preview deployed to https://${context.repo.owner}.github.io/Noobs-Unblocked-Games-Beta-FINAL/pr-preview/${context.payload.pull_request.number}/`
             })
