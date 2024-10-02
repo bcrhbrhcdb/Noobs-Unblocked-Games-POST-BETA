@@ -7,22 +7,16 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Prepare deployment directory
+      - uses: actions/checkout@v4
+      
+      - name: Prepare build directory
         run: |
-          mkdir deploy
-          cp -r *.html css JavaScript images deploy/
-          
-      - name: List deploy directory contents
-        run: ls -R deploy
-
-      - name: Deploy Preview
-        uses: rossjrw/pr-preview-action@v1
+          mkdir build
+          cp -r *.html css JavaScript images build/
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          source-dir: ./deploy
-          preview_branch: gh-pages
-
-      - name: Output Preview URL
-        run: echo ${{ steps.deploy.outputs.preview_url }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: pr-preview/${{ github.event.pull_request.number }}
