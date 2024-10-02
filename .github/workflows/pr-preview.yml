@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -42,11 +43,11 @@ jobs:
         uses: actions/github-script@v6
         if: success()
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.issues.createComment({
-              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.name,
-              body: '✅ PR preview deployed to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/${{ github.event.pull_request.number }}/'
+              issue_number: context.issue.number,
+              body: `✅ PR preview deployed to https://${context.repo.owner}.github.io/${context.repo.name}/pr-preview/${context.payload.pull_request.number}/`
             })
