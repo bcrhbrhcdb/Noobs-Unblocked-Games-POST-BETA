@@ -22,8 +22,6 @@ jobs:
           cp -v *.html build/ || echo "No HTML files found"
           echo "Copying javascript directory:"
           cp -rv javascript build/ || echo "No javascript directory found"
-          echo "Copying JavaScript directory:"
-          cp -rv JavaScript build/ || echo "No JavaScript directory found"
           echo "Copying images directory:"
           cp -rv images build/ || echo "No images directory found"
           echo "Build directory contents:"
