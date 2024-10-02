@@ -6,6 +6,7 @@ const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let currentUser = null;
 let currentPoll = null;
 let chart = null;
+const ADMIN_EMAIL = 'apet2804@mpsedu.org'; // Replace with your email
 
 // Authentication functions
 async function login() {
@@ -38,6 +39,13 @@ async function createPoll(question, options, deadline) {
         alert('Please login to create a poll');
         return;
     }
+    
+    // Check if the user is an admin
+    if (currentUser.email !== ADMIN_EMAIL) {
+        alert('You do not have permission to create a poll.');
+        return;
+    }
+
     const { data, error } = await supabase
         .from('polls')
         .insert([{
@@ -175,34 +183,40 @@ function updateAnalytics() {
     const totalVotes = Object.values(currentPoll.votes).reduce((a, b) => a + b, 0);
     document.getElementById('totalVotes').textContent = `Total votes: ${totalVotes}`;
 
-    const mostPopular = Object.entries(currentPoll.votes).reduce((a, b) => a[1] > b[1] ? a : b);
-    document.getElementById('mostPopularOption').textContent = `Most popular option: ${mostPopular[0]} (${mostPopular[1]} votes)`;
+    const mostPopularOptionEntry = Object.entries(currentPoll.votes).reduce((a, b) => a[1] > b[1] ? a : b);
+    
+      // Handle case where no votes have been cast yet.
+      if (!mostPopularOptionEntry || totalVotes === 0){
+          document.getElementById("mostPopularOption").textContent="No votes yet.";
+          return; 
+      }
+    
+      document.getElementById("mostPopularOption").textContent=`Most popular option: ${mostPopularOptionEntry[0]} (${mostPopularOptionEntry[1]} votes)`; 
 }
 
 async function loadPolls() {
-    const polls = await getPolls();
-    const pollContentEl = document.getElementById('pollContent');
-    pollContentEl.innerHTML = '<h3>Available Polls</h3>';
-    polls.forEach(poll => {
-        const button = document.createElement('button');
-        button.textContent = poll.question;
-        button.className = 'allButton';
-        button.onclick = () => displayPoll(poll);
-        pollContentEl.appendChild(button);
-    });
+     // Get all polls from Supabase and display them.
+     const polls=await getPolls(); 
+     const pollContentEl=document.getElementById("pollContent"); 
+     pollContentEl.innerHTML="<h3>Available Polls</h3>"; 
+     polls.forEach(poll=>{ 
+         const button=document.createElement("button"); 
+         button.textContent=poll.question; 
+         button.className="allButton"; 
+         button.onclick=()=>displayPoll(poll); 
+         pollContentEl.appendChild(button); 
+     }); 
 }
 
-// Event listeners
-document.getElementById('loginButton').addEventListener('click', login);
-document.getElementById('logoutButton').addEventListener('click', logout);
-document.getElementById('createPollButton').addEventListener('click', () => {
-    const question = document.getElementById('newPollQuestion').value;
-    const options = document.getElementById('newPollOptions').value.split(',').map(opt => opt.trim());
-    const deadline = document.getElementById('newPollDeadline').value;
-    createPoll(question, options, deadline);
+// Event listeners and initialization
+document.getElementById("loginButton").addEventListener("click", login); 
+document.getElementById("logoutButton").addEventListener("click", logout); 
+document.getElementById("createPollButton").addEventListener("click", () => { 
+     const question=document.getElementById("newPollQuestion").value; 
+     const options=document.getElementById("newPollOptions").value.split(",").map(opt=>opt.trim()); 
+     const deadline=document.getElementById("newPollDeadline").value; 
+     createPoll(question, options, deadline); 
 });
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    loadPolls();
-});
+// Initialize on DOM content loaded
+document.addEventListener("DOMContentLoaded", () => { loadPolls(); });
