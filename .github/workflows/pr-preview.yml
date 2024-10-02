@@ -28,7 +28,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
-            const repo = context.repo.name;
+            const repo = 'Noobs-Unblocked-Games-Beta-Test';
             const pr_number = context.payload.pull_request.number;
             
             console.log(`Owner: ${owner}, Repo: ${repo}, PR Number: ${pr_number}`);
