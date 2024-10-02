@@ -4,23 +4,17 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  build-and-deploy:
+  deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build
-        run: npm run build  # Replace with your actual build command
+      - name: Prepare deployment directory
+        run: |
+          mkdir deploy
+          cp -r *.html css JavaScript images deploy/
       
       - name: Deploy Preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./build  # Make sure this matches your actual build output directory
+          source-dir: ./deploy
