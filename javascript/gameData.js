@@ -102,7 +102,13 @@ const games = {
         url: "game-template.html?id=paperclips",
         originalurl: "https://memalign.github.io/m/universal-paperclips/index2.html",
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
-        description: "Paperclips... Amazing"
-
+        description: "Paperclips... Amazing",
+    },
+    idlegamedev: {
+        title: "Idle Idle Game Dev",
+        url: "game-template.html?id=idlegamedev",
+        originalUrl: "https://luts91.github.io/idle-idle-gamedev/index.html",
+        image: "images/proxyandgameimages/gameimages/idlegamedev.jpeg",
+        description: "A idle game revolved around making idle games. Weird."
     }
 };
