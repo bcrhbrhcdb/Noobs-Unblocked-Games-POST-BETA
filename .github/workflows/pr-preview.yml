@@ -13,18 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Prepare build directory
-        run: |
-          mkdir -p build
-          cp -r *.html *.css javascript images build/
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: .
           destination_dir: pr-preview/${{ github.event.pull_request.number }}
-          force_orphan: true
+          publish_branch: pr-previews
 
       - name: Comment PR
         uses: actions/github-script@v6
@@ -33,15 +28,14 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const owner = context.repo.owner;
-            const repo = 'Noobs-Unblocked-Games-Beta-FINAL';
-            const issue_number = context.issue.number;
+            const repo = context.repo.name;
             const pr_number = context.payload.pull_request.number;
             
-            console.log(`Owner: ${owner}, Repo: ${repo}, Issue Number: ${issue_number}, PR Number: ${pr_number}`);
+            console.log(`Owner: ${owner}, Repo: ${repo}, PR Number: ${pr_number}`);
             
             await github.rest.issues.createComment({
               owner: owner,
               repo: repo,
-              issue_number: issue_number,
+              issue_number: context.issue.number,
               body: `✅ PR preview deployed to https://${owner}.github.io/${repo}/pr-preview/${pr_number}/`
             });
