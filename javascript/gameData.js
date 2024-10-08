@@ -137,7 +137,7 @@ const games = {
         url: "game-template.html?id=bottle",
         originalUrl: "https://edug309.github.io/g69/bottle-flip/",
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
-        description: "2017.".
+        description: "2017."
     },
     tetris2: {
         title: "Twitch Tetris",
