@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <link rel='icon' href="images/favicon/favicon.ico" />
+    <title>Games</title>
+</head>
+<body>
+    <div class='box'>
+        <h1 class='title'>Games (only the best!)</h1>
+    </div>
+    <div class="nav-container">
+        <nav>
+            <a href='index.html'><button id="navBar">Home</button></a>
+            <a href='games.html'><button id="navBar">Games</button></a>
+            <a href='proxies.html'><button id="navBar">Proxies</button></a>
+            <a href='hacks.html'><button id="navBar">Hacks</button></a>
+            <a href='credits.html'><button id="navBar">Credits</button></a>
+            <a href='update-log.html'><button id="navBar">Updates</button></a>
+        </nav>
+    </div>
+    <div class='box'>
+        <p>Just search up a game below! (Or just find it)</p> 
+        <input type="search" id="query" name="q" placeholder="Search for game!" class="search">
+        <ul id="search-results"></ul>
+    </div>
+    <div id="game-container" class="items">
+        <!-- Games will be dynamically inserted here -->
+    </div>
+    <script src="javascript/gameData.js"></script>
+    <script src="javascript/script.js"></script>
+    <script src='javascript/announcement.js'></script>
+</body>
+</html>
