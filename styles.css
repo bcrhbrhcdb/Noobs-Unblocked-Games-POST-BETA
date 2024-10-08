@@ -368,9 +368,9 @@ border-radius: 10px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    margin: 3px;
+    padding: 10px;
+    display: block;
     justify-content: center;
     align-items: center;
     animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
@@ -378,16 +378,10 @@ border-radius: 10px;
     font-weight: bold;
     font-size: 20px;
     position: fixed;
-    z-index: 1000;
+    z-index: 1;
     width: 90%;
-    max-width: 600px; /* Adjust this value as needed */
     text-align: center;
-    
-    /* Center the box */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+  }
   
   @keyframes zoom {
     0% {
