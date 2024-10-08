@@ -16,7 +16,7 @@ const games = {
     vex9: {
         title: "Vex 9",
         url: "game-template.html?id=vex9",
-        originalUrl: "Ghttps://tvz2304.github.io/g16/vex-8/",
+        originalUrl: "https://tvz2304.github.io/g16/vex-8/",
         image: "images/proxyandgameimages/gameimages/vex9.jpeg",
         description: "The newest game! (vex 8 as a placeholder, need a link.)"
     },
@@ -102,7 +102,7 @@ const games = {
         url: "game-template.html?id=paperclips",
         originalUrl: "https://memalign.github.io/m/universal-paperclips/index2.html",
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
-        description: "Paperclips... Amazing",
+        description: "Paperclips... Amazing"
     },
     idlegamedev: {
         title: "Idle Idle Game Dev",
@@ -137,7 +137,7 @@ const games = {
         url: "game-template.html?id=bottle",
         originalUrl: "https://edug309.github.io/g69/bottle-flip/",
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
-        description: "2017."
+        description: "2017"
     },
     tetris2: {
         title: "Twitch Tetris",
@@ -145,6 +145,5 @@ const games = {
         originalUrl: "google.com",
         image: "images/proxyandgameimages/gameimages/tetris.png",
         description: "You know what this is, a ripoff of Tetris."
-    },
-
+    }
 };
