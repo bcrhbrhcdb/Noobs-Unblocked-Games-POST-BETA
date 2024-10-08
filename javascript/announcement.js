@@ -8,31 +8,33 @@ function loadAnnouncement() {
     fetch('announcement.html')
         .then(response => response.text())
         .then(data => {
-            announcementContainer = document.createElement('div');
-            announcementContainer.innerHTML = data;
+            const tempContainer = document.createElement('div');
+            tempContainer.innerHTML = data;
 
-            const announcementDateElement = announcementContainer.querySelector('#announcementDate');
+            const announcementDateElement = tempContainer.querySelector('#announcementDate');
             const currentAnnouncementDate = announcementDateElement.textContent.split(': ')[1];
 
             const isDateChanged = currentAnnouncementDate !== lastAnnouncementDate;
 
             if (isDateChanged || !isAnnouncementClosed) {
+                announcementContainer = document.createElement('div');
+                announcementContainer.className = 'announcement-box';
+                announcementContainer.innerHTML = data;
+
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', currentAnnouncementDate);
                 localStorage.setItem('isAnnouncementClosed', 'false');
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
-                    announcementContainer.style.display = 'none';
+                    announcementContainer.remove();
                     localStorage.setItem('isAnnouncementClosed', 'true');
                 });
 
                 updateClock();
                 setInterval(updateClock, 1000);
-            } else {
-                // Don't show the announcement if it's closed and the date hasn't changed
-                announcementContainer.style.display = 'none';
             }
+            // If the announcement shouldn't be shown, we don't create it at all
         })
         .catch(error => console.error('Error fetching announcement:', error));
 }
