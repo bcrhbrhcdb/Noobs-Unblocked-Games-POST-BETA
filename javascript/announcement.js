@@ -9,7 +9,6 @@ function loadAnnouncement() {
         .then(response => response.text())
         .then(data => {
             announcementContainer = document.createElement('div');
-            announcementContainer.className = 'announcement-box';
             announcementContainer.innerHTML = data;
 
             const announcementDateElement = announcementContainer.querySelector('#announcementDate');
@@ -18,7 +17,7 @@ function loadAnnouncement() {
             const isDateChanged = currentAnnouncementDate !== lastAnnouncementDate;
 
             if (isDateChanged || !isAnnouncementClosed) {
-                document.body.appendChild(announcementContainer);
+                document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', currentAnnouncementDate);
                 localStorage.setItem('isAnnouncementClosed', 'false');
 
