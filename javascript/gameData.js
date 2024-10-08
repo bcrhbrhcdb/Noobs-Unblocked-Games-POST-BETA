@@ -139,6 +139,12 @@ const games = {
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
         description: "2017."
     },
-
+    tetris2: {
+        title: "Twitch Tetris",
+        url: "game-template.html?id=tetris2",
+        originalUrl: "https://emulatoros.github.io/gfile/tetris/index.html",
+        image: "images/proxyandgameimages/gameimages/tetris.png",
+        description: "You know what this is, a ripoff of Tetris."
+    },
 
 };
