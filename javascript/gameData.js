@@ -137,12 +137,12 @@ const games = {
         url: "game-template.html?id=bottle",
         originalUrl: "https://edug309.github.io/g69/bottle-flip/",
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
-        description: "2017."
+        description: "2017.".
     },
     tetris2: {
         title: "Twitch Tetris",
         url: "game-template.html?id=tetris2",
-        originalUrl: "https://emulatoros.github.io/gfile/tetris/index.html",
+        originalUrl: "google.com",
         image: "images/proxyandgameimages/gameimages/tetris.png",
         description: "You know what this is, a ripoff of Tetris."
     },
