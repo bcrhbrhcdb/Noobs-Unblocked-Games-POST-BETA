@@ -127,7 +127,7 @@ const games = {
     },
     dash: {
         title: "Geometry Dash",
-        url: "game-template.html?id=space-idle",
+        url: "game-template.html?id=spaceidle",
         orginialUrl: "https://edug309.github.io/g8/geometry-dash/",
         image: "images/proxyandgameimages/gameimages/geometry-dash.png",
         description: "Scratch Rippoff"
