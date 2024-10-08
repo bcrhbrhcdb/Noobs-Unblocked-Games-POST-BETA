@@ -110,5 +110,35 @@ const games = {
         originalUrl: "https://luts91.github.io/idle-idle-gamedev/index.html",
         image: "images/proxyandgameimages/gameimages/idlegamedev.jpeg",
         description: "A idle game revolved around making idle games. Weird."
-    }
+    },
+    idledice: {
+        title: "Idle Dice",
+        url: "game-template.html?id=idle-dice",
+        originalUrl: "https://luts91.github.io/idle-dices/index.html",
+        image: "images/proxyandgameimages/gameimages/idledice.jpeg",
+        description: "A idle game revolved around gambli- I mean rolling dice!"
+    },
+    spiceIdle: {
+        title: "Spice Idle",
+        url: "game-template.html?id=space-idle",
+        orginialUrl: "https://zakuro98.github.io/Spice-Idle/",
+        image: "images/proxyandgameimages/gameimages/spiceidle.jpeg",
+        description: "Mhm. Powder."
+    },
+    dash: {
+        title: "Geometry Dash",
+        url: "game-template.html?id=space-idle",
+        orginialUrl: "https://edug309.github.io/g8/geometry-dash/",
+        image: "images/proxyandgameimages/gameimages/geometry-dash.png",
+        description: "Scratch Rippoff"
+    },
+    bottleFlip: {
+        title: "Bottle Flip",
+        url: "game-template.html?id=bottle",
+        orginialUrl: "https://edug309.github.io/g69/bottle-flip/",
+        image: "images/proxyandgameimages/gameimages/bottle-flip.png",
+        description: "2017."
+    },
+
+
 };
