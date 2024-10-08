@@ -4,64 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
-    <link href="poll/poll.css" rel="stylesheet">
     <title>Noobs Unblocked Games</title>
     <link rel='icon' href="images/favicon/favicon.ico" />
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class='box'>
-        <h1 class='title'>Noobs Unblocked Games BETA (Version 0.0.43)</h1>
-    </div>
+        <h1 class='title'>Noobs Unblocked Games BETA (Version 0.0.32)</h1>
+        </div>
     <div class="nav-container">
         <nav>
-            <a href='index.html'><button id="navBar">Home</button></a>
-            <a href='games.html'><button id="navBar">Games</button></a>
-            <a href='proxies.html'><button id="navBar">Proxies</button></a>
-            <a href='hacks.html'><button id="navBar">Hacks</button></a>
-            <a href='credits.html'><button id="navBar">Credits</button></a>
-            <a href='update-log.html'><button id="navBar">Updates</button></a>
-        </nav>
+        <a href='index.html'><button id="navBar">Home</button></a>
+        <a href='games.html'><button id="navBar">Games</button></a>
+        <a href='proxies.html'><button id="navBar">Proxies</button></a>
+        <a href='hacks.html'><button id="navBar">Hacks</button></a>
+        <a href='credits.html'><button id="navBar">Credits</button></a>
+        <a href='update-log.html'><button id="navBar">Updates</button></a>
+    </nav>
     </div>
     <div class='box'>
         <p>Welcome to Noobs Unblocked Games! If you couldn't tell, this is base off of noobs.<hr>There will be a lot of idle games! <hr>I will also have a lot of proxies, all of them being great!</p>
+        <p>Total Vistors!!!</p>
+        <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=69&s=2' border='0' alt='Free Website Hit Counter'></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></a></small></div>
     </div>
     <div class="box">
-        <div id="clock">
-            <p>Here's today's date!</p>
+        <div id="clock"alt="jim">
+            <p>Heres a todays date!</p>
             <div id="time"></div>
             <div id="date"></div>
-            <div id="day"></div>
+            <div id="day"></div> <!-- Add this line -->
         </div>
     </div>
-    <div class="box" id="pollContainer">
-        <h2>Poll</h2>
-        <div id="authContainer">
-            <button id="loginButton" class="allButton">Login</button>
-            <button id="logoutButton" class="allButton" style="display:none;">Logout</button>
-        </div>
-        <div id="pollContent">
-            <div id="pollQuestion"></div>
-            <div id="pollOptions"></div>
-            <canvas id="resultsChart" style="display:none;"></canvas>
-            <div id="analyticsContainer" style="display:none;">
-                <h3>Analytics</h3>
-                <p id="totalVotes"></p>
-                <p id="mostPopularOption"></p>
-            </div>
-        </div>
-        <div id="createPollContainer">
-            <h3>Create New Poll</h3>
-            <input type="text" id="newPollQuestion" placeholder="Enter poll question">
-            <input type="text" id="newPollOptions" placeholder="Enter options (comma-separated)">
-            <input type="datetime-local" id="newPollDeadline" placeholder="Set deadline (optional)">
-            <button id="createPollButton" class="allButton">Create Poll</button>
-        </div>
+    <div class="box">
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['QP'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//scripts.poll-maker.com/3012/pollembed.js', 'qp');
+        </script>
+            <a href='https://www.poll-maker.com' data-poll='5292689x75844942-159' style='width:100%; display:block; text-align:right;'>Poll Maker</a>
     </div>
+
     <script src="javascript/gameData.js"></script>
     <script src='javascript/script.js'></script>
     <script src='javascript/announcement.js'></script>
-    <script src='poll/poll.js'></script>
 </body>
 </html>
