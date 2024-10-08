@@ -153,4 +153,4 @@ const games = {
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "... Amazing"
     },
-};
+}
