@@ -145,5 +145,11 @@ const games = {
         originalUrl: "google.com",
         image: "images/proxyandgameimages/gameimages/tetris.png",
         description: "You know what this is, a ripoff of Tetris."
-    }
+    },
+    exp: {
+        title: "EXP Simulator",
+        url: "game-template.html?id=expsimulator",
+        originalUrl: "https://zakuro98.github.io/EXP-Simulator/",
+        image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
+        description: "... Amazing"
 };
