@@ -152,4 +152,5 @@ const games = {
         originalUrl: "https://zakuro98.github.io/EXP-Simulator/",
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "... Amazing"
+    }
 };
