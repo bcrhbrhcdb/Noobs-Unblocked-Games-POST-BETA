@@ -113,7 +113,7 @@ const games = {
     },
     idledice: {
         title: "Idle Dice",
-        url: "game-template.html?id=idle-dice",
+        url: "game-template.html?id=dice",
         originalUrl: "https://luts91.github.io/idle-dices/index.html",
         image: "images/proxyandgameimages/gameimages/idledice.jpeg",
         description: "A idle game revolved around gambli- I mean rolling dice!"
