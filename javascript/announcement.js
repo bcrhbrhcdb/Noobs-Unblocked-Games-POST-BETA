@@ -2,8 +2,8 @@ let announcementContainer;
 let lastAnnouncementDate;
 
 function loadAnnouncement() {
-    const hideAnnouncements = localStorage.getItem('hideAnnouncements') === 'true';
     lastAnnouncementDate = localStorage.getItem('lastAnnouncementDate');
+    const isAnnouncementClosed = localStorage.getItem('isAnnouncementClosed') === 'true';
 
     fetch('announcement.html')
         .then(response => response.text())
@@ -16,21 +16,21 @@ function loadAnnouncement() {
 
             const isDateChanged = currentAnnouncementDate !== lastAnnouncementDate;
 
-            if (!hideAnnouncements || isDateChanged) {
+            if (isDateChanged || !isAnnouncementClosed) {
                 document.body.insertBefore(announcementContainer, document.body.firstChild);
                 localStorage.setItem('lastAnnouncementDate', currentAnnouncementDate);
-                localStorage.setItem('hideAnnouncements', 'false');
+                localStorage.setItem('isAnnouncementClosed', 'false');
 
                 const closeButton = announcementContainer.querySelector('#close');
                 closeButton.addEventListener('click', () => {
                     announcementContainer.style.display = 'none';
-                    localStorage.setItem('hideAnnouncements', 'true');
+                    localStorage.setItem('isAnnouncementClosed', 'true');
                 });
 
                 updateClock();
                 setInterval(updateClock, 1000);
             } else {
-                // Don't show the announcement if it's hidden and the date hasn't changed
+                // Don't show the announcement if it's closed and the date hasn't changed
                 announcementContainer.style.display = 'none';
             }
         })
