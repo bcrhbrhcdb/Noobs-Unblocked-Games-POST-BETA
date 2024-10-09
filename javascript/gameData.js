@@ -166,5 +166,19 @@ const games = {
         originalUrl: "https://edug309.github.io/g/slope/",
         image: "images/proxyandgameimages/gameimages/slope.png",
         description: "A platform game based off slope. Or is it?"
+    },
+    raftWars1:{
+        title: "Raft Wars 1",
+        url: "game-template.html?id=raftWars1",
+        originalUrl: "https://abinbins.github.io/a/raft-wars/",
+        image: "images/proxyandgameimages/gameimages/raftWars1.png",
+        description: "Hmm."
+    },
+    raftWars2: {
+        title: "Raft Wars 2",
+        url: "game-template.html?id=raftWars2",
+        originalUrl: "https://tag-2.github.io/a6/raft-wars-2/",
+        image: "images/proxyandgameimages/gameimages/raftWars2.png",
+        description: "Hmm."
     }
 }
