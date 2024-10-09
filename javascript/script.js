@@ -4,7 +4,7 @@ function generateFooter() {
     footer.innerHTML = `
         <footer>
             <h4>Vistors!</h4>
-            <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=69&s=2' border='0' alt='Free Website Hit Counter'></a><br/><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></small></div>
+            <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=69&s=2' border='0' alt='Free Website Hit Counter'></a><br/><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></small></div></a>
             <h4>Want to suggest an idea? Fill out the Google form!</h4>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjkzAiUEbMh634MSOc8yfWsP5_ZHVnF1EDE73dpTDw0Vz7SA/viewform?embedded=true" class='frame'>Loading…</iframe>   
 
