@@ -113,7 +113,7 @@ const games = {
     },
     idledice: {
         title: "Idle Dice",
-        url: "game-template.html?id=dice",
+        url: "game-template.html?id=idledice",
         originalUrl: "https://luts91.github.io/idle-dices/index.html",
         image: "images/proxyandgameimages/gameimages/idledice.jpeg",
         description: "A idle game revolved around gambli- I mean rolling dice!"
@@ -139,12 +139,12 @@ const games = {
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
         description: "2017"
     },
-    tetris2: {
+    connect4: {
         title: "Twitch Tetris",
-        url: "game-template.html?id=tetris2",
-        originalUrl: "google.com",
-        image: "images/proxyandgameimages/gameimages/tetris.png",
-        description: "You know what this is, a ripoff of Tetris."
+        url: "game-template.html?id=connect4",
+        originalUrl: "https://www.cbc.ca/kidscbc2/content/games/connect_four/index.html",
+        image: "images/proxyandgameimages/gameimages/connect4.jpeg",
+        description: "Connect 4. Pretty simple."
     },
     expsim: {
         title: "EXP Simulator",
