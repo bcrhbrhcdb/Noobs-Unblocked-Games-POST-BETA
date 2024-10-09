@@ -153,4 +153,18 @@ const games = {
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "... Amazing"
     },
+    bitlife: {
+        title: "Bitlife",
+        url:"game-template.html?id=bitlife",
+        originalUrl: "https://bitlifeonline.github.io/class/index.html",
+        image: "images/proxyandgameimages/gameimages/bitlife.png",
+        description: "Not realistic life simulator. 2019 version o/bitlife"
+    },
+    slope: {
+        title: "Slope",
+        url: "game-template.html?id=slope",
+        originalUrl: "https://edug309.github.io/g/slope/",
+        image: "images/proxyandgameimages/gameimages/slope.png",
+        description: "A platform game based off slope. Or is it?"
+    }
 }
