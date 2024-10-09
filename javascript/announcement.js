@@ -12,7 +12,7 @@ function loadAnnouncement() {
             tempContainer.innerHTML = data;
 
             const announcementDateElement = tempContainer.querySelector('#announcementDate');
-            const currentAnnouncementDate = announcementDateElement.textContent.split(': ')[1];
+            const currentAnnouncementDate = announcementDateElement.textContent.split('\n')[0]; // Get the date part
 
             const isDateChanged = currentAnnouncementDate !== lastAnnouncementDate;
 
@@ -34,7 +34,6 @@ function loadAnnouncement() {
                 updateClock();
                 setInterval(updateClock, 1000);
             }
-            // If the announcement shouldn't be shown, we don't create it at all
         })
         .catch(error => console.error('Error fetching announcement:', error));
 }
@@ -48,7 +47,7 @@ function updateClock() {
 
         if (timeElement && dateElement && dayElement) {
             timeElement.textContent = now.toLocaleTimeString();
-            dateElement.textContent = now.toDateString();
+            dateElement.textContent = now.toLocaleDateString();
             dayElement.textContent = now.toLocaleString('default', { weekday: 'long' });
         }
     }
