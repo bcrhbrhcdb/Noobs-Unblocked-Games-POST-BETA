@@ -120,21 +120,21 @@ const games = {
     },
     spiceIdle: {
         title: "Spice Idle",
-        url: "game-template.html?id=space-idle",
+        url: "game-template.html?id=spiceIdle",
         originalUrl: "https://zakuro98.github.io/Spice-Idle/",
         image: "images/proxyandgameimages/gameimages/spiceidle.jpeg",
         description: "Mhm. Powder."
     },
     dash: {
         title: "Geometry Dash",
-        url: "game-template.html?id=spaceidle",
+        url: "game-template.html?id=dash",
         originalUrl: "https://edug309.github.io/g8/geometry-dash/",
         image: "images/proxyandgameimages/gameimages/geometry-dash.png",
         description: "Scratch Rippoff"
     },
     bottleFlip: {
         title: "Bottle Flip",
-        url: "game-template.html?id=bottle",
+        url: "game-template.html?id=bottleFlip",
         originalUrl: "https://edug309.github.io/g69/bottle-flip/",
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
         description: "2017"
@@ -146,9 +146,9 @@ const games = {
         image: "images/proxyandgameimages/gameimages/tetris.png",
         description: "You know what this is, a ripoff of Tetris."
     },
-    exp: {
+    expsim: {
         title: "EXP Simulator",
-        url: "game-template.html?id=expsimulator",
+        url: "game-template.html?id=expsim",
         originalUrl: "https://zakuro98.github.io/EXP-Simulator/",
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "... Amazing"
