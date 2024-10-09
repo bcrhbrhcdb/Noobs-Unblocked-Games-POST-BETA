@@ -211,7 +211,7 @@ const games = {
     },
     papasCheese: {
         title: "Papas Cheeseria",
-        url: "game-template.html?id=papaCheese",
+        url: "game-template.html?id=papasCheese",
         image: "images/proxyandgameimages/gameimages/papas-cheeseria.png",
         originalUrl: "https://edug309.github.io/g50/papas-cheeseria/",
         description:"One of the papas pizzaria games."
