@@ -180,5 +180,40 @@ const games = {
         originalUrl: "https://tag-2.github.io/a6/raft-wars-2/",
         image: "images/proxyandgameimages/gameimages/raftWars2.png",
         description: "Hmm."
+    },
+    poolBall: {
+        title: "Pool",
+        url: "game-template.html?id=poolBall",
+        image: "images/proxyandgameimages/gameimages/poolball.jpeg",
+        originalUrl: "https://edug309.github.io/g8/8-ball-pool/",
+        description: "Ripoff CoolMathGames Pool"
+    },
+    redBall4: {
+        title: "Red Ball 4",
+        url: "game-template.html?id=redBall4",
+        image: "images/proxyandgameimages/gameimages/redball4.webp",
+        originalUrl: "https://edug309.github.io/g177/red-ball-4/",
+        description:"A red ball thats trying to find its way."
+    },
+    superMario: {
+        title: "Super Mario",
+        url: "game-template.html?id=superMario",
+        image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
+        originalUrl: "https://edug309.github.io/g9/super-mario-bros/",
+        description:"You know this game."
+    },
+    slope2: {
+        title: "Slope 2",
+        url: "game-template.html?id=slope2",
+        image: "images/proxyandgameimages/gameimages/slope2.jpeg",
+        originalUrl: "https://edug309.github.io/g6/slope-2/",
+        description:"Slope Sequal!"
+    },
+    papasCheese: {
+        title: "Papas Cheeseria",
+        url: "game-template.html?id=papaCheese",
+        image: "images/proxyandgameimages/gameimages/papas-cheeseria.png",
+        originalUrl: "https://edug309.github.io/g50/papas-cheeseria/",
+        description:"One of the papas pizzaria games."
     }
 }
