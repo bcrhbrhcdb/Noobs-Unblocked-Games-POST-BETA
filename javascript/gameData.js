@@ -140,9 +140,9 @@ const games = {
         description: "2017"
     },
     connect4: {
-        title: "Twitch Tetris",
+        title: "Connect 4",
         url: "game-template.html?id=connect4",
-        originalUrl: "https://www.cbc.ca/kidscbc2/content/games/connect_four/index.html",
+        originalUrl: "https://www.calculators.org/games/connect-4/game.php",
         image: "images/proxyandgameimages/gameimages/connect4.jpeg",
         description: "Connect 4. Pretty simple."
     },
