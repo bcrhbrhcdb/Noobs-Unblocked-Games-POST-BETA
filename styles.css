@@ -121,7 +121,7 @@ body{
   
 a:link{
     text-decoration: none;
-    color: rgb(86, 72, 72);
+    color: white;
 }
 a:visited{
     text-decoration: none;
@@ -426,6 +426,12 @@ border-radius: 10px;
     font-size: 24px;
     font-weight: bold;
     color: rgb(86, 72, 72);
+}
+a:visited{
+    color: white;
+}
+a.vist\:a:visited {
+    color: white;
 }
 a:visited{
     color: white;
