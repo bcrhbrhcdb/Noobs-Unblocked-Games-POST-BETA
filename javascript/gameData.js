@@ -235,20 +235,20 @@ const games = {
         url: "game-template.html?id=papasPizzaria",
         image: "images/proxyandgameimages/gameimages/papasPizza.jpeg",
         originalUrl: "https://yalogames.github.io/papaspizzaria/",
-        description: "The orginal game."
+        description: "Papa's Pizzaria Franchise"
     },
     papasBurger:{
         title: "Papas Burgeria",
         url: "game-template.html?id=papasBurger",
         image: "images/proxyandgameimages/gameimages/papasBurger.jpeg",
         originalUrl: "https://yalogames.github.io/papasburgeria/",
-        description: "The orginal game."
+        description: "Papa's Pizzaria Franchise"
     },
     paperIo:{
         title: "Paper.io",
         url: "game-template.html?id=paperIo",
         image: "images/proxyandgameimages/gameimages/paperIo.jpeg",
         originalUrl: "https://yalogames.github.io/paperio2/",
-        description: "The orginal game."
+        description: "The second paper.io"
     }
 }
