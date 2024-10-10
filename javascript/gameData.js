@@ -215,5 +215,40 @@ const games = {
         image: "images/proxyandgameimages/gameimages/papas-cheeseria.png",
         originalUrl: "https://edug309.github.io/g50/papas-cheeseria/",
         description:"One of the papas pizzaria games."
+    },
+    dodgeMiner:{
+        title: "Dodge Miner",
+        url: "game-template.html?id=dodgeMiner",
+        image: "images/proxyandgameimages/gameimages/dodgeMiner.jpeg",
+        originalUrl: "https://yalogames.github.io/DogeMiner/",
+        description: "One of the OG idle games..."
+    },
+    dodgeMiner2:{
+        title: "Dodge Miner 2",
+        url: "game-template.html?id=dodgeMiner2",
+        image: "images/proxyandgameimages/gameimages/dodgeMiner2.jpeg",
+        originalUrl: "https://gnhustgames.github.io/dgmn2/",
+        description: "The Sequal"
+    },
+    papasPizzaria:{
+        title: "Papas Pizzaria",
+        url: "game-template.html?id=papasPizzaria",
+        image: "images/proxyandgameimages/gameimages/papasPizza.jpeg",
+        originalUrl: "https://yalogames.github.io/papaspizzaria/",
+        description: "The orginal game."
+    },
+    papasBurger:{
+        title: "Papas Burgeria",
+        url: "game-template.html?id=papasBurger",
+        image: "images/proxyandgameimages/gameimages/papasBurger.jpeg",
+        originalUrl: "https://yalogames.github.io/papasburgeria/",
+        description: "The orginal game."
+    },
+    paperIo:{
+        title: "Paper.io",
+        url: "game-template.html?id=paperIo",
+        image: "images/proxyandgameimages/gameimages/paperIo.jpeg",
+        originalUrl: "https://yalogames.github.io/paperio2/",
+        description: "The orginal game."
     }
 }
