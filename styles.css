@@ -430,3 +430,6 @@ border-radius: 10px;
 a:visited{
     color: white;
 }
+a.vist\:a:visited {
+    color: white;
+}
