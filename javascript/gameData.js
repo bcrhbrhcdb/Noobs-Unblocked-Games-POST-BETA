@@ -250,5 +250,12 @@ const games = {
         image: "images/proxyandgameimages/gameimages/paperIo.jpeg",
         originalUrl: "https://yalogames.github.io/paperio2/",
         description: "The second paper.io"
-    }
+    },
+    click: {
+        title:"Click. (my game)",
+        url: "game-template.html?id=click",
+        image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
+        originalUrl: "https://bcrhbrhcdb.github.io/click/",
+        description: "my gaem :)"
+    },
 }
