@@ -258,4 +258,18 @@ const games = {
         originalUrl: "https://bcrhbrhcdb.github.io/click/",
         description: "my gaem :)"
     },
+    crossyRoads: {
+        title:"Crossy Roads",
+        url: "game-template.html?id=crossyRoads",
+        image: "images/proxyandgameimages/gameimages/crossyRoads.jpeg",
+        originalUrl: "https://lnahtml.github.io/a/crossy-road/",
+        description: "A game where a chicken tries to survive crossing a highway.."
+    },
+    picross: {
+        title: "Picross",
+        url: "game-template.html?id=picross",
+        image: "images/proxyandgameimages/gameimages/picross.jpeg",
+        originalUrl: "https://liouh.com/picross/",
+        description: "Math."
+    }
 }
