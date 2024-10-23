@@ -4,7 +4,7 @@
   "description": "The noob themed game website.",
   "main": "script.js",
   "scripts": {
-    "start": "node custom-server.js",
+    "start": "live-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
