@@ -271,5 +271,12 @@ const games = {
         image: "images/proxyandgameimages/gameimages/picross.jpeg",
         originalUrl: "https://liouh.com/picross/",
         description: "Math."
+    },
+    slope3: {
+        title:"Slope 3",
+        url: "game-template.html?id=tetris",
+        image: "images/proxyandgameimages/gameimages/slope3.jpeg",
+        originalUrl: "https://ubg44.github.io/Slope3/",
+        description: "Slope 3, better graphics, smoother",
     }
 }
