@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setNameBtn.addEventListener("click", () => {
         const newUserName = nameInput.value.trim();
-        
+        alert("Name was set / changed");
         if (newUserName) {
             // Notify users about the name change in chat
             if (userName) {
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     name: "System", 
                     message: `${userName} changed their name to ${newUserName}`, 
                     timestamp: new Date().toLocaleTimeString() 
+
                 });
             }
             
