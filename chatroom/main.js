@@ -16,17 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const channel = pusher.subscribe('chat');
 
-    channel.bind('message', function(data) {
+    channel.bind('client-message', function(data) {
         displayMessage(data);
         if (data.name !== userName) {
             pingSound.play();
         }
     });
 
+    // Display welcome message if username exists
     if (userName) {
         displayWelcomeMessage(userName);
         setNameBtn.textContent = "Change Name";
         nameInput.classList.add('block');
+        
+        // Send a message indicating the user has joined
+        sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
     }
 
     setNameBtn.addEventListener("click", () => {
