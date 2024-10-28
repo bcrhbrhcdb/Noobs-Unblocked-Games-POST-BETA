@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadMessages();
         displayWelcomeMessage(userName);
         setNameBtn.textContent = "Change Name"; // Change button text after first set
-        nameInput.classList.add('hidden'); // Hide input after setting name
+        nameInput.classList.add('block'); // Hide input after setting name
     }
 
     setNameBtn.addEventListener("click", () => {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const messages = JSON.parse(localStorage.getItem(`chatMessages_${gameId}`)) || [];
         
         // Limit storage duration (e.g., keep only last X messages)
-        if (messages.length >= 100) { // Adjust limit as needed
+        if (messages.length >= 1000) { // Adjust limit as needed
             messages.shift(); // Remove the oldest message
         }
         
