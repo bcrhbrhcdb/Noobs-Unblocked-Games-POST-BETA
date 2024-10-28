@@ -6,11 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const setNameBtn = document.getElementById("setNameBtn");
     const pingSound = document.getElementById("pingSound");
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameId = urlParams.get('id');
-    
     // Retrieve user name from local storage
-    let userName = localStorage.getItem(`userName_${gameId}`) || "";
+    let userName = localStorage.getItem(`userName`) || "";
 
     // If a user name exists, load messages
     if (userName) {
@@ -35,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             
             userName = newUserName;
-            localStorage.setItem(`userName_${gameId}`, userName);
+            localStorage.setItem(`userName`, userName);
             loadMessages(); // Reload messages to show welcome message
             displayWelcomeMessage(userName);
         } else {
@@ -100,19 +97,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function loadMessages() {
-        const messages = JSON.parse(localStorage.getItem(`chatMessages_${gameId}`)) || [];
+        const messages = JSON.parse(localStorage.getItem(`chatMessages`)) || [];
         messages.forEach(displayMessage);
     }
 
     function saveMessage(messageObject) {
-        const messages = JSON.parse(localStorage.getItem(`chatMessages_${gameId}`)) || [];
+        const messages = JSON.parse(localStorage.getItem(`chatMessages`)) || [];
         
         // Limit storage duration (e.g., keep only last X messages)
-        if (messages.length >= 1000) { // Adjust limit as needed
+        if (messages.length >= 100) { // Adjust limit as needed
             messages.shift(); // Remove the oldest message
         }
         
         messages.push(messageObject);
-        localStorage.setItem(`chatMessages_${gameId}`, JSON.stringify(messages));
+        localStorage.setItem(`chatMessages`, JSON.stringify(messages));
      }
 });
