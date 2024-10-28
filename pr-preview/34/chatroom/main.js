@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         loadMessages();
         displayWelcomeMessage(userName);
         setNameBtn.textContent = "Change Name"; // Change button text after first set
+        nameInput.classList.add('hidden'); // Hide input after setting name
     }
 
     setNameBtn.addEventListener("click", () => {
