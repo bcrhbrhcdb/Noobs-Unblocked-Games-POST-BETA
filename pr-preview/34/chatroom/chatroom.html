@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="../styles.css">
     <title>Chatroom</title>
 </head>
+<body>
+    <div class="box" id="chatroomBox">
+        <h1>Chatroom</h1>
+        <h3>When you hear a ding or something, that means someone pinged you.</h3>
+        <div id="messagesContainer" class="messagesCo"></div>
+        <input type="text" id="nameInput" placeholder="Enter your name" class="search" style="display: block;"/>
+        <button id="setNameBtn" class="allButton">Set Name</button>
+        <input type="text" id="messageInput" placeholder="Type a message..." class="search" />
+        <button id="sendMessageBtn" class="allButton">Send</button>
+        <audio id="pingSound" src="ping.mp3"></audio> <!-- Add your ping sound file here -->
+    </div>
 
-        <div class="box" id="chatroomBox">
-            <h1>Chatroom</h1>
-            <h3>When you hear a ding or somthin that means someone pinged you</h3>
-            <div id="messagesContainer" class="messagesCo"></div>
-            <input type="text" id="nameInput" placeholder="Enter your name" class="search"  style="display: block;"/>
-            <button id="setNameBtn" class="allButton">Set Name</button> <!-- Always visible -->
-            <input type="text" id="messageInput" placeholder="Type a message..." class="search" />
-            <button id="sendMessageBtn" class="allButton">Send</button>
-            <audio id="pingSound" src="ping.mp3"></audio> <!-- Add your ping sound file here -->
-        </div>
-    
-    <script src="storage.js"></script>
+    <!-- Include Pusher JavaScript library -->
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script src="main.js"></script>
-
+</body>
 </html>

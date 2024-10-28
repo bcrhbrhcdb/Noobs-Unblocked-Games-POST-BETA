@@ -6,23 +6,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const setNameBtn = document.getElementById("setNameBtn");
     const pingSound = document.getElementById("pingSound");
 
-    // Retrieve user name from local storage
     let userName = localStorage.getItem(`userName`) || "";
 
-    // If a user name exists, load messages
+    // Initialize Pusher
+    const pusher = new Pusher('0b026fc2c65a65e40b1a', {
+        cluster: 'us2',
+        encrypted: true
+    });
+
+    const channel = pusher.subscribe('chat');
+
+    channel.bind('message', function(data) {
+        displayMessage(data);
+        if (data.name !== userName) {
+            pingSound.play();
+        }
+    });
+
     if (userName) {
-        loadMessages();
         displayWelcomeMessage(userName);
-        setNameBtn.textContent = "Change Name"; // Change button text after first set
-        nameInput.classList.add('block'); // Hide input after setting name
+        setNameBtn.textContent = "Change Name";
+        nameInput.classList.add('block');
     }
 
     setNameBtn.addEventListener("click", () => {
         const newUserName = nameInput.value.trim();
         
-        // Check for valid username (no spaces or special characters)
-        if (/^[a-zA-Z0-9]+$/.test(newUserName)) {
-            // Notify users about the name change in chat
+        if (/^[a-zA-Z0-9]+$/.test(newUserName) && newUserName !== "") {
             if (userName) {
                 displayMessage({ 
                     name: "System", 
@@ -33,16 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
             
             userName = newUserName;
             localStorage.setItem(`userName`, userName);
-            loadMessages(); // Reload messages to show welcome message
             displayWelcomeMessage(userName);
+            sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
         } else {
-            alert("Username must not contain spaces or special characters.");
+            alert("Username must not contain spaces or special characters and cannot be empty.");
         }
     });
 
     sendMessageBtn.addEventListener("click", sendMessage);
     
-    // Add event listener for Enter key
     messageInput.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             sendMessage();
@@ -51,33 +60,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function sendMessage() {
         const message = messageInput.value.trim();
+        
         if (message) {
-            // Use the stored userName or default to "Anonymous"
             const displayName = userName || "Anonymous";
             const timestamp = new Date().toLocaleTimeString();
             const messageObject = { name: displayName, message, timestamp };
 
-            // Check for pinging users
-            const mentionedUserMatch = message.match(/@(\w+)/); // Regex to match @username
-            if (mentionedUserMatch) {
-                const mentionedUser = mentionedUserMatch[1]; // Get the username after '@'
-                pingSound.play(); // Play the ping sound
-
-                // Highlight the pinged username in the message
-                messageObject.message = message.replace(`@${mentionedUser}`, `<span style='color: red;'>@${mentionedUser}</span>`);
-                displayMessage({ 
-                    name: "System", 
-                    message: `${displayName} pinged ${mentionedUser}!`, 
-                    timestamp 
-                });
-            }
-
-            saveMessage(messageObject);
-            displayMessage(messageObject);
-            messageInput.value = ''; // Clear input after sending
+            // Send message to Pusher
+            sendPusherMessage(messageObject);
+            messageInput.value = '';
         } else {
             alert("Please enter a message.");
         }
+    }
+
+    function sendPusherMessage(messageObject) {
+        // Trigger the Pusher event with 'client-' prefix
+        channel.trigger('client-message', messageObject);
     }
 
     function displayWelcomeMessage(name) {
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         welcomeMessage.classList.add("message");
         welcomeMessage.innerHTML = `<span>${name}</span> has joined the chat!`;
         messagesContainer.appendChild(welcomeMessage);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     function displayMessage({ name, message, timestamp }) {
@@ -93,23 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.classList.add("message");
         messageDiv.innerHTML = `<span>${name}</span>: ${message} <time>${timestamp}</time>`;
         messagesContainer.appendChild(messageDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight; // Scroll to the bottom
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
-
-    function loadMessages() {
-        const messages = JSON.parse(localStorage.getItem(`chatMessages`)) || [];
-        messages.forEach(displayMessage);
-    }
-
-    function saveMessage(messageObject) {
-        const messages = JSON.parse(localStorage.getItem(`chatMessages`)) || [];
-        
-        // Limit storage duration (e.g., keep only last X messages)
-        if (messages.length >= 100) { // Adjust limit as needed
-            messages.shift(); // Remove the oldest message
-        }
-        
-        messages.push(messageObject);
-        localStorage.setItem(`chatMessages`, JSON.stringify(messages));
-     }
 });
