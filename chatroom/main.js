@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendMessageBtn = document.getElementById("sendMessageBtn");
     const setNameBtn = document.getElementById("setNameBtn");
     const pingSound = document.getElementById("pingSound");
+    const totalMessagesDisplay = document.getElementById("totalMessages");
 
     let userName = localStorage.getItem(`userName`) || "";
+    let totalMessagesToday = JSON.parse(localStorage.getItem('totalMessagesToday')) || 0;
 
     // Initialize Pusher
     const pusher = new Pusher('0b026fc2c65a65e40b1a', {
@@ -32,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Send a message indicating the user has joined
         sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
     }
+
+    // Update the total messages display
+    updateTotalMessagesDisplay();
 
     setNameBtn.addEventListener("click", () => {
         const newUserName = nameInput.value.trim();
@@ -72,6 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Send message to Pusher
             sendPusherMessage(messageObject);
+
+            // Store message in local storage
+            storeMessageInLocalStorage(messageObject);
+            
             messageInput.value = '';
         } else {
             alert("Please enter a message.");
@@ -96,6 +105,29 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.classList.add("message");
         messageDiv.innerHTML = `<span>${name}</span>: ${message} <time>${timestamp}</time>`;
         messagesContainer.appendChild(messageDiv);
+        
+        // Increment today's total messages count
+        totalMessagesToday++;
+        
+        // Update local storage
+        localStorage.setItem('totalMessagesToday', JSON.stringify(totalMessagesToday));
+        
+        // Update the display
+        updateTotalMessagesDisplay();
+
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function updateTotalMessagesDisplay() {
+        totalMessagesDisplay.textContent = `Total messages sent today: ${totalMessagesToday}`;
+    }
+
+    function storeMessageInLocalStorage(messageObject) {
+        // Store the message in local storage if needed for future reference
+        let storedMessages = JSON.parse(localStorage.getItem('messages')) || [];
+        
+        storedMessages.push(messageObject);
+        
+        localStorage.setItem('messages', JSON.stringify(storedMessages));
     }
 });
