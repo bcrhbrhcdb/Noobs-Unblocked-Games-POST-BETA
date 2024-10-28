@@ -20,4 +20,5 @@ Noob's Unblocked Game's is no loner in beta!
 +A lot more hacks...
 +AND MORE!
 (Im working on getting paper.io image to show don't worry!)
-+ UPDATES WILL BE EVERYDAY!
++ UPDATES WILL BE IN PROJECTS!
++ (check the projects tab
