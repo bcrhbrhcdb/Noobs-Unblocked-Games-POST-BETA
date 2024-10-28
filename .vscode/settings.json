@@ -1,6 +1,0 @@
-{
-    "livePreview.defaultPreviewPath": "/update-log.html",
-    "githubPullRequests.ignoredPullRequestBranches": [
-        "master"
-    ]
-}
