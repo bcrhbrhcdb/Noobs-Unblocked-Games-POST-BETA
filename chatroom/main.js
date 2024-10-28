@@ -21,15 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setNameBtn.addEventListener("click", () => {
         const newUserName = nameInput.value.trim();
-        alert("Name was set / changed");
-        if (newUserName) {
+        
+        // Check for valid username (no spaces or special characters)
+        if (/^[a-zA-Z0-9]+$/.test(newUserName)) {
             // Notify users about the name change in chat
             if (userName) {
                 displayMessage({ 
                     name: "System", 
                     message: `${userName} changed their name to ${newUserName}`, 
                     timestamp: new Date().toLocaleTimeString() 
-
                 });
             }
             
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loadMessages(); // Reload messages to show welcome message
             displayWelcomeMessage(userName);
         } else {
-            alert("Please enter a valid username.");
+            alert("Username must not contain spaces or special characters.");
         }
     });
 
