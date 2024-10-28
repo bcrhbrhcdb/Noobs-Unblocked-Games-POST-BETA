@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="chatroom.css">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Chatroom</title>
+</head>
+
+    <main id="chatroom">
+        <div class="box" id="chatroomBox">
+            <h1>Chatroom</h1>
+            <div id="messagesContainer" class="messagesCo"></div>
+            <input type="text" id="nameInput" placeholder="Enter your name" class="search" />
+            <button id="setNameBtn" class="allButton">Set Name</button> <!-- Always visible -->
+            <input type="text" id="messageInput" placeholder="Type a message..." class="search" />
+            <button id="sendMessageBtn" class="allButton">Send</button>
+        </div>
+    </main>
+    <audio id="pingSound" src="ping.mp3"></audio> <!-- Add your ping sound file here -->
+    <script src="storage.js"></script>
+    <script src="main.js"></script>
+
+</html>
