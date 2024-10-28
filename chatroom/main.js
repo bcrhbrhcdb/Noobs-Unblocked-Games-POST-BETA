@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         encrypted: true
     });
 
-    const channel = pusher.subscribe('chat');
+    const channel = pusher.subscribe('private-chat'); // Use a private channel
 
     // Bind to receive messages
     channel.bind('client-message', function(data) {
@@ -88,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function sendPusherMessage(messageObject) {
-        // Trigger the Pusher event with 'client-' prefix
         channel.trigger('client-message', messageObject);
     }
 
@@ -106,13 +105,10 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.innerHTML = `<span>${name}</span>: ${message} <time>${timestamp}</time>`;
         messagesContainer.appendChild(messageDiv);
         
-        // Increment today's total messages count
         totalMessagesToday++;
         
-        // Update local storage
         localStorage.setItem('totalMessagesToday', JSON.stringify(totalMessagesToday));
         
-        // Update the display
         updateTotalMessagesDisplay();
 
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -123,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function storeMessageInLocalStorage(messageObject) {
-        // Store the message in local storage if needed for future reference
         let storedMessages = JSON.parse(localStorage.getItem('messages')) || [];
         
         storedMessages.push(messageObject);
