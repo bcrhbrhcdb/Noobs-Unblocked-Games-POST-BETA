@@ -273,10 +273,10 @@ const games = {
         description: "Math."
     },
     slope3: {
-        title:"Slope 3",
+        title: "Slope 3",
         url: "game-template.html?id=slope3",
         image: "images/proxyandgameimages/gameimages/slope3.jpeg",
         originalUrl: "https://ubg44.github.io/Slope3/",
-        description: "Slope 3, better graphics, smoother",
+        description: "Third Game"
     }
 }
