@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const channel = pusher.subscribe('chat');
 
+    // Bind to receive messages
     channel.bind('client-message', function(data) {
         displayMessage(data);
         if (data.name !== userName) {
@@ -27,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (userName) {
         displayWelcomeMessage(userName);
         setNameBtn.textContent = "Change Name";
-        nameInput.classList.add('block');
         
         // Send a message indicating the user has joined
         sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
