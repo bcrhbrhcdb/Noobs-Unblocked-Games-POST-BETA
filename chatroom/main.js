@@ -13,7 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Pusher
     const pusher = new Pusher('0b026fc2c65a65e40b1a', {
         cluster: 'us2',
-        encrypted: true
+        encrypted: true,
+        authEndpoint: 'YOUR_AUTH_ENDPOINT', // Set your auth endpoint here
+        auth: {
+            headers: {
+                // Add any headers if needed, e.g., for authentication tokens
+            }
+        }
     });
 
     // Subscribe to a private channel
@@ -27,17 +33,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Handle subscription success
+    channel.bind('pusher:subscription_succeeded', () => {
+        console.log('Successfully subscribed to private-chat');
+        
+        // Send a message indicating the user has joined
+        if (userName) {
+            sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
+        }
+        
+        // Update the total messages display
+        updateTotalMessagesDisplay();
+    });
+
+    // Handle subscription errors
+    channel.bind('pusher:subscription_error', (status) => {
+        console.error(`Subscription error: ${status}`);
+        alert('Failed to subscribe to the chat. Please try again later.');
+    });
+
     // Display welcome message if username exists
     if (userName) {
         displayWelcomeMessage(userName);
         setNameBtn.textContent = "Change Name";
-        
-        // Send a message indicating the user has joined
-        sendPusherMessage({ name: "System", message: `${userName} has joined the chat` });
     }
-
-    // Update the total messages display
-    updateTotalMessagesDisplay();
 
     setNameBtn.addEventListener("click", () => {
         const newUserName = nameInput.value.trim();
@@ -76,20 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const timestamp = new Date().toLocaleTimeString();
             const messageObject = { name: displayName, message, timestamp };
 
-            // Send message to Pusher
-            sendPusherMessage(messageObject);
-
-            // Store message in local storage
-            storeMessageInLocalStorage(messageObject);
-            
-            messageInput.value = '';
+            // Send message to Pusher only if subscribed successfully
+            if (channel.subscribed) {
+                sendPusherMessage(messageObject);
+                storeMessageInLocalStorage(messageObject);
+                messageInput.value = '';
+            } else {
+                alert("You are not subscribed to the chat. Please try again later.");
+            }
         } else {
             alert("Please enter a message.");
         }
     }
 
     function sendPusherMessage(messageObject) {
-        // Trigger the Pusher event with 'client-' prefix
         channel.trigger('client-message', messageObject);
     }
 
@@ -107,13 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.innerHTML = `<span>${name}</span>: ${message} <time>${timestamp}</time>`;
         messagesContainer.appendChild(messageDiv);
         
-        // Increment today's total messages count
         totalMessagesToday++;
         
-        // Update local storage
         localStorage.setItem('totalMessagesToday', JSON.stringify(totalMessagesToday));
         
-        // Update the display
         updateTotalMessagesDisplay();
 
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
