@@ -14,26 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const pusher = new Pusher('0b026fc2c65a65e40b1a', {
         cluster: 'us2',
         encrypted: true,
-        channelAuthorization: {
-            endpoint: "/pusher/auth",
-            transport: "ajax"
-        }
+        authEndpoint: '/pusher/auth' // Make sure this endpoint is correct and accessible
     });
+
+    console.log("Auth Endpoint:", pusher.config.authEndpoint);
 
     // Subscribe to a private channel
     const channel = pusher.subscribe('private-chat');
 
-    // Bind to receive messages
-    channel.bind('client-message', function(data) {
-        displayMessage(data);
-        if (data.name !== userName) {
-            pingSound.play();
-        }
-    });
+    console.log("Attempting to subscribe to private-chat");
 
-    // Handle connection success
-    pusher.connection.bind('connected', () => {
-        console.log('Successfully connected to Pusher');
+    // Handle subscription success
+    channel.bind('pusher:subscription_succeeded', () => {
+        console.log('Successfully subscribed to private-chat');
         
         // Send a message indicating the user has joined
         if (userName) {
@@ -42,6 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Update the total messages display
         updateTotalMessagesDisplay();
+    });
+
+    // Handle subscription error
+    channel.bind('pusher:subscription_error', (status) => {
+        console.error('Error subscribing to private-chat:', status);
+        alert('Failed to join the chat. Please try again later.');
+    });
+
+    // Bind to receive messages
+    channel.bind('client-message', function(data) {
+        console.log('Received message:', data);
+        displayMessage(data);
+        if (data.name !== userName) {
+            pingSound.play();
+        }
     });
 
     // Display welcome message if username exists
@@ -96,7 +104,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function sendPusherMessage(messageObject) {
-        channel.trigger('client-message', messageObject);
+        console.log('Attempting to send message:', messageObject);
+        if (channel.subscribed) {
+            channel.trigger('client-message', messageObject);
+            console.log('Message sent successfully');
+        } else {
+            console.error('Cannot send message: Not subscribed to the channel');
+            alert('Cannot send message at this time. Please try again later.');
+        }
     }
 
     function displayWelcomeMessage(name) {
