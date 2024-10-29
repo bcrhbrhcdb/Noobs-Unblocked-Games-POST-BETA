@@ -14,11 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const pusher = new Pusher('0b026fc2c65a65e40b1a', {
         cluster: 'us2',
         encrypted: true,
-        authEndpoint: 'YOUR_AUTH_ENDPOINT', // Set your auth endpoint here
-        auth: {
-            headers: {
-                // Add any headers if needed, e.g., for authentication tokens
-            }
+        channelAuthorization: {
+            endpoint: "/pusher/auth",
+            transport: "ajax"
         }
     });
 
@@ -33,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Handle subscription success
-    channel.bind('pusher:subscription_succeeded', () => {
-        console.log('Successfully subscribed to private-chat');
+    // Handle connection success
+    pusher.connection.bind('connected', () => {
+        console.log('Successfully connected to Pusher');
         
         // Send a message indicating the user has joined
         if (userName) {
@@ -44,12 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Update the total messages display
         updateTotalMessagesDisplay();
-    });
-
-    // Handle subscription errors
-    channel.bind('pusher:subscription_error', (status) => {
-        console.error(`Subscription error: ${status}`);
-        alert('Failed to subscribe to the chat. Please try again later.');
     });
 
     // Display welcome message if username exists
@@ -63,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         if (/^[a-zA-Z0-9]+$/.test(newUserName) && newUserName !== "") {
             if (userName) {
-                displayMessage({ 
+                sendPusherMessage({ 
                     name: "System", 
                     message: `${userName} changed their name to ${newUserName}`, 
                     timestamp: new Date().toLocaleTimeString() 
@@ -95,14 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const timestamp = new Date().toLocaleTimeString();
             const messageObject = { name: displayName, message, timestamp };
 
-            // Send message to Pusher only if subscribed successfully
-            if (channel.subscribed) {
-                sendPusherMessage(messageObject);
-                storeMessageInLocalStorage(messageObject);
-                messageInput.value = '';
-            } else {
-                alert("You are not subscribed to the chat. Please try again later.");
-            }
+            sendPusherMessage(messageObject);
+            storeMessageInLocalStorage(messageObject);
+            messageInput.value = '';
         } else {
             alert("Please enter a message.");
         }
