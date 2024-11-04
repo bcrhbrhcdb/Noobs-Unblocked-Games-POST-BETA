@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='icon' href="images/favicon/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Game Title</title>
+    <link type='text/css' href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class='box'>
+        <h1 class='title' id="gameTitle">Game Title</h1>
+    </div>
+    <div class="nav-container">
+        <nav>
+            <a href='index.html'><button id="navBar">Home</button></a>
+            <a href='games.html'><button id="navBar">Games</button></a>
+            <a href='proxies.html'><button id="navBar">Proxies</button></a>
+            <a href='hacks.html'><button id="navBar">Hacks</button></a>
+            <a href='credits.html'><button id="navBar">Credits</button></a>
+            <a href='update-log.html'><button id="navBar">Updates</button></a>
+            <a href='privateBrowser.html'><button id="navBar">Private Browser</button></a>
+        </nav>
+    </div>
+    <div class='box'>
+        <iframe class='frame' src="" id="gameFrame" title="Game Frame" allowfullscreen></iframe>
+        <button class="allButton" id="fullscreenButton">Play in Fullscreen!</button>
+        <a id="gameLink" href=""><button class='allButton'>Link to the game</button></a>
+        <iframe class="frame" src="chatroom/index.html" name="chatroom"></iframe>
+    </div>
+    <script src='javascript/gameData.js'></script>
+    <script src='javascript/gameLoader.js'></script>
+</body>
+</html>
