@@ -1,3 +1,4 @@
+// ratingSystem.js
 document.addEventListener('DOMContentLoaded', () => {
     const gameId = new URLSearchParams(window.location.search).get('id');
     const stars = document.querySelectorAll('.star');
