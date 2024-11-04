@@ -9,11 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('gameTitle').textContent = game.title;
         document.getElementById('gameFrame').src = game.originalUrl;
         document.getElementById('gameLink').href = game.originalUrl;
+
+        // Load and display game ratings
+        const gameData = JSON.parse(localStorage.getItem(gameId)) || {
+            ratings: [],
+            likes: 0,
+            dislikes: 0
+        };
+        document.getElementById('averageRating').textContent = 
+            gameData.ratings.length ? 
+            (gameData.ratings.reduce((a, b) => a + b, 0) / gameData.ratings.length).toFixed(1) : 0;
+        document.getElementById('likeCount').textContent = gameData.likes;
+        document.getElementById('dislikeCount').textContent = gameData.dislikes;
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found';
         document.getElementById('gameFrame').style.display = 'none';
         document.getElementById('gameLink').style.display = 'none';
+        document.getElementById('ratingSystem').style.display = 'none';
     }
 
     const fullscreenButton = document.getElementById('fullscreenButton');

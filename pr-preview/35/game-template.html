@@ -26,9 +26,25 @@
         <iframe class='frame' src="" id="gameFrame" title="Game Frame" allowfullscreen></iframe>
         <button class="allButton" id="fullscreenButton">Play in Fullscreen!</button>
         <a id="gameLink" href=""><button class='allButton'>Link to the game</button></a>
+        <hr>
+        <div id="ratingSystem" class="rating-system">
+            <h3>Rate this game:</h3>
+            <div class="star-rating">
+                <span class="star" data-rating="1">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="5">&#9733;</span>
+            </div>
+            <p>Average Rating: <span id="averageRating">0</span></p>
+            <button id="likeButton" class="allButton">Like</button>
+            <button id="dislikeButton" class="allButton">Dislike</button>
+            <p>Likes: <span id="likeCount">0</span> | Dislikes: <span id="dislikeCount">0</span></p>
+        </div>
         <iframe class="frame" src="chatroom/index.html" name="chatroom"></iframe>
     </div>
     <script src='javascript/gameData.js'></script>
     <script src='javascript/gameLoader.js'></script>
+    <script src='javascript/ratingSystem.js'></script>
 </body>
 </html>
