@@ -3,7 +3,8 @@ function generateFooter() {
     footer.className = 'box';
     footer.innerHTML = `
         <footer>
-           
+        <h3>Vistors (again)</h3>
+            <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=1109&s=2' border='0' alt=''></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></a></small></div>
             <h4>Want to suggest an idea? Fill out the Google form!</h4>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjkzAiUEbMh634MSOc8yfWsP5_ZHVnF1EDE73dpTDw0Vz7SA/viewform?embedded=true" class='frame'>Loading…</iframe>   
 
