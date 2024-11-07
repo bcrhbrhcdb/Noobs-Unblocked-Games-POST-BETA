@@ -436,3 +436,29 @@ a.vist\:a:visited {
 a:visited{
     color: white;
 }
+
+.rating-system {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.star-rating {
+    font-size: 24px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.star {
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.star:hover,
+.star.active {
+    color: #176baa;
+}
+
+#likeButton, #dislikeButton {
+    margin: 10px;
+    padding: 10px 20px;
+}
