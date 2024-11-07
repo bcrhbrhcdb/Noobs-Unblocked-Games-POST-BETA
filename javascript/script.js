@@ -3,10 +3,7 @@ function generateFooter() {
     footer.className = 'box';
     footer.innerHTML = `
         <footer>
-            <!-- 100% privacy-first analytics -->
-            <h1>vistor test</h1>
-            <script async defer src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
-            <noscript><img src="https://queue.simpleanalyticscdn.com/noscript.gif" alt="" referrerpolicy="no-referrer-when-downgrade" /></noscript>
+           
             <h4>Want to suggest an idea? Fill out the Google form!</h4>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjkzAiUEbMh634MSOc8yfWsP5_ZHVnF1EDE73dpTDw0Vz7SA/viewform?embedded=true" class='frame'>Loading…</iframe>   
 
