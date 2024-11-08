@@ -398,5 +398,15 @@ const games = {
         ratings: [],
         likes: 0,
         dislikes: 0,
+    },
+    snake: {
+        title: "Snake",
+        url: "game-template.html?id=snake",
+        image: "images/proxyandgameimages/gameimages/spiceidle.jpeg",
+        originalUrl: "../Games/htm5-games/snake/index.html",
+        description: "html game testing",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
     }
 }
