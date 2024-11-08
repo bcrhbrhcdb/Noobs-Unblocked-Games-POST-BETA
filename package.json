@@ -1,5 +1,5 @@
 {
-  "name": "noobs-unblocked-games",
+  "name": "nooby",
   "version": "0.6.15",
   "description": "The noob themed game website.",
   "main": "script.js",
@@ -8,19 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bcrhbrhcdb/Noobs-Unblocked-Games-POST-BETA.git"
+    "url": "git+https://github.com/bcrhbrhcdb/Nooby.git"
   },
   "keywords": [
     "games",
     "unblocked",
+    "nooby",
+    "noobs",
     "noob"
   ],
   "author": "alex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bcrhbrhcdb/Noobs-Unblocked-Games-POST-BETA/issues"
+    "url": "https://github.com/bcrhbrhcdb/Nooby/issues"
   },
-  "homepage": "https://github.com/bcrhbrhcdb/Noobs-Unblocked-Games-POST-BETA#readme",
+  "homepage": "https://github.com/bcrhbrhcdb/Nooby#readme",
   "dependencies": {
     "servor": "^4.0.2"
   }
