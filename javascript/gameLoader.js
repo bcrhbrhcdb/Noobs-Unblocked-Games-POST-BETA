@@ -6,28 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const game = games[gameId];
         document.title = game.title;
         document.getElementById('gameTitle').textContent = game.title;
-        
-        const iframe = document.getElementById('gameFrame');
-        const loadingScreen = document.getElementById('loadingScreen');
-        
-        if (game.type === 'folder') {
-            loadingScreen.style.display = 'block';
-            setTimeout(() => {
-                loadingScreen.style.opacity = '0';
-                setTimeout(() => {
-                    loadingScreen.style.display = 'none';
-                    iframe.style.display = 'block';
-                }, 500);
-            }, 5000);
-        }
-
-        iframe.src = game.originalUrl;
         document.getElementById('gameLink').href = game.originalUrl;
 
+        const iframe = document.getElementById('gameFrame');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        loadingScreen.style.display = 'block';
+        
+        const minLoadTime = 3500; // 3.5 seconds in milliseconds
+        const loadStartTime = Date.now();
+
+        iframe.src = game.originalUrl;
+
         iframe.onload = function() {
-            if (game.type !== 'folder') {
-                this.style.display = 'block';
+            const loadEndTime = Date.now();
+            const loadDuration = loadEndTime - loadStartTime;
+
+            if (loadDuration < minLoadTime) {
+                setTimeout(() => {
+                    fadeOutLoadingScreen();
+                }, minLoadTime - loadDuration);
+            } else {
+                fadeOutLoadingScreen();
             }
+
             try {
                 const link = document.createElement('link');
                 link.href = 'styles.css';
@@ -37,43 +39,56 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (e) {
                 console.error('Error loading CSS into iframe:', e);
             }
+            this.style.display = 'block';
         };
+
+        function fadeOutLoadingScreen() {
+            let opacity = 1;
+            const fadeEffect = setInterval(() => {
+                if (opacity > 0) {
+                    opacity -= 0.1;
+                    loadingScreen.style.opacity = opacity;
+                } else {
+                    clearInterval(fadeEffect);
+                    loadingScreen.style.display = 'none';
+                }
+            }, 50);
+        }
+
+        const fullscreenButton = document.getElementById('fullscreenButton');
+        if (fullscreenButton && iframe) {
+            fullscreenButton.addEventListener('click', function() {
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.mozRequestFullScreen) {
+                    iframe.mozRequestFullScreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) {
+                    iframe.msRequestFullscreen();
+                }
+            });
+        }
 
         iframe.addEventListener('error', function() {
             console.error('Failed to load game');
             this.style.display = 'none';
             document.getElementById('gameTitle').textContent = 'Failed to load game';
+            loadingScreen.style.display = 'none';
         });
+
+        function adjustIframeHeight() {
+            const windowHeight = window.innerHeight;
+            const offset = 200;
+            iframe.style.height = (windowHeight - offset) + 'px';
+        }
+
+        adjustIframeHeight();
+        window.addEventListener('resize', adjustIframeHeight);
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found';
         document.getElementById('gameFrame').style.display = 'none';
         document.getElementById('gameLink').style.display = 'none';
     }
-
-    const fullscreenButton = document.getElementById('fullscreenButton');
-    const iframe = document.getElementById('gameFrame');
-
-    if (fullscreenButton && iframe) {
-        fullscreenButton.addEventListener('click', function() {
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) {
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) {
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) {
-                iframe.msRequestFullscreen();
-            }
-        });
-    }
-
-    function adjustIframeHeight() {
-        const windowHeight = window.innerHeight;
-        const offset = 200;
-        iframe.style.height = (windowHeight - offset) + 'px';
-    }
-
-    adjustIframeHeight();
-    window.addEventListener('resize', adjustIframeHeight);
 });
