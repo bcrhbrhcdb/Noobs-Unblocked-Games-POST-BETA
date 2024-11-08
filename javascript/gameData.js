@@ -405,6 +405,7 @@ const games = {
         image: "images/proxyandgameimages/gameimages/spiceidle.jpeg",
         originalUrl: "Games/html5-games/snake/index.html",
         description: "html game testing",
+        type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,

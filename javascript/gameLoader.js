@@ -1,4 +1,3 @@
-// gameLoader.js
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const gameId = urlParams.get('id');
@@ -7,16 +6,49 @@ document.addEventListener('DOMContentLoaded', () => {
         const game = games[gameId];
         document.title = game.title;
         document.getElementById('gameTitle').textContent = game.title;
-        document.getElementById('gameFrame').src = game.originalUrl;
+        
+        const iframe = document.getElementById('gameFrame');
+        const loadingScreen = document.getElementById('loadingScreen');
+        
+        if (game.type === 'folder') {
+            loadingScreen.style.display = 'block';
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    iframe.style.display = 'block';
+                }, 500);
+            }, 5000);
+        }
+
+        iframe.src = game.originalUrl;
         document.getElementById('gameLink').href = game.originalUrl;
 
-        // Removed the code related to game ratings
+        iframe.onload = function() {
+            if (game.type !== 'folder') {
+                this.style.display = 'block';
+            }
+            try {
+                const link = document.createElement('link');
+                link.href = 'styles.css';
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                iframe.contentDocument.head.appendChild(link);
+            } catch (e) {
+                console.error('Error loading CSS into iframe:', e);
+            }
+        };
+
+        iframe.addEventListener('error', function() {
+            console.error('Failed to load game');
+            this.style.display = 'none';
+            document.getElementById('gameTitle').textContent = 'Failed to load game';
+        });
     } else {
         console.error('Game not found');
         document.getElementById('gameTitle').textContent = 'Game Not Found';
         document.getElementById('gameFrame').style.display = 'none';
         document.getElementById('gameLink').style.display = 'none';
-        // Removed the rating system display
     }
 
     const fullscreenButton = document.getElementById('fullscreenButton');
@@ -35,28 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    iframe.onload = function() {
-        try {
-            const link = document.createElement('link');
-            link.href = 'styles.css';
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            iframe.contentDocument.head.appendChild(link);
-        } catch (e) {
-            console.error('Error loading CSS into iframe:', e);
-        }
-    };
-
-    iframe.addEventListener('load', function() {
-        this.style.display = 'block';
-    });
-
-    iframe.addEventListener('error', function() {
-        console.error('Failed to load game');
-        this.style.display = 'none';
-        document.getElementById('gameTitle').textContent = 'Failed to load game';
-    });
 
     function adjustIframeHeight() {
         const windowHeight = window.innerHeight;
