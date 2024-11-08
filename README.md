@@ -7,3 +7,5 @@
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bcrhbrhcdb/Nooby&type=Date)](https://star-history.com/#bcrhbrhcdb/Nooby&Date)
+
+star if fork and actually star no matter what i dont care about grammar right now go uh do school work!!!
