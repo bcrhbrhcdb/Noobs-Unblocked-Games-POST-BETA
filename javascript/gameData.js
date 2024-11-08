@@ -403,7 +403,7 @@ const games = {
         title: "Snake",
         url: "game-template.html?id=snake",
         image: "images/proxyandgameimages/gameimages/spiceidle.jpeg",
-        originalUrl: "Nooby/Games/html5-games/snake/index.html",
+        originalUrl: "Games/html5-games/snake/index.html",
         description: "html game testing",
         ratings: [],
         likes: 0,
