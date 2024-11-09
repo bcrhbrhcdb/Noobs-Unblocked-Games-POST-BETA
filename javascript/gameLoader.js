@@ -16,6 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const minLoadTime = 3500; // 3.5 seconds in milliseconds
         const loadStartTime = Date.now();
 
+        // Create a wrapper for the iframe and loading screen
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.width = '100%';
+        wrapper.style.height = '100%';
+
+        // Move the iframe and loading screen into the wrapper
+        iframe.parentNode.insertBefore(wrapper, iframe);
+        wrapper.appendChild(iframe);
+        wrapper.appendChild(loadingScreen);
+
         iframe.src = game.originalUrl;
 
         iframe.onload = function() {
@@ -56,16 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const fullscreenButton = document.getElementById('fullscreenButton');
-        if (fullscreenButton && iframe) {
+        if (fullscreenButton && wrapper) {
             fullscreenButton.addEventListener('click', function() {
-                if (iframe.requestFullscreen) {
-                    iframe.requestFullscreen();
-                } else if (iframe.mozRequestFullScreen) {
-                    iframe.mozRequestFullScreen();
-                } else if (iframe.webkitRequestFullscreen) {
-                    iframe.webkitRequestFullscreen();
-                } else if (iframe.msRequestFullscreen) {
-                    iframe.msRequestFullscreen();
+                if (wrapper.requestFullscreen) {
+                    wrapper.requestFullscreen();
+                } else if (wrapper.mozRequestFullScreen) {
+                    wrapper.mozRequestFullScreen();
+                } else if (wrapper.webkitRequestFullscreen) {
+                    wrapper.webkitRequestFullscreen();
+                } else if (wrapper.msRequestFullscreen) {
+                    wrapper.msRequestFullscreen();
                 }
             });
         }
@@ -80,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function adjustIframeHeight() {
             const windowHeight = window.innerHeight;
             const offset = 200;
-            iframe.style.height = (windowHeight - offset) + 'px';
+            wrapper.style.height = (windowHeight - offset) + 'px';
         }
 
         adjustIframeHeight();
