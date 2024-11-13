@@ -238,7 +238,7 @@ a:visited{
   }
   
 p, h3{
-    color:rgb(86, 72, 72)
+    color:rgb(86, 72, 72);
 }
 .img{
     border-radius: 50px;
@@ -362,26 +362,27 @@ border: none;
 background-color:  rgb(165,188,80);  
 border-radius: 10px;
 }
-.announcement-box {
-    height: auto;
+.announcement-content{
+    max-height: 100%;
     background-color: rgb(244,204,67);
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 3px;
+    margin: 10px;
     padding: 10px;
     display: block;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     animation: fadeIn 1s ease-in-out, zoom 0.5s ease-in-out infinite;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 20px;
     position: fixed;
     z-index: 1;
-    width: 90%;
+    width: 95%;
     text-align: center;
-  }
+}   
+
   
   @keyframes zoom {
     0% {
