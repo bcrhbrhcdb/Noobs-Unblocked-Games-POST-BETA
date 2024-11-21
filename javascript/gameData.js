@@ -22,7 +22,7 @@ const games = {
     cookieClickerLocal: {
         title: "Cookie Clicker LOCAL",
         url: "game-template.html?id=cookieClickerLocal",
-        originalUrl: "Games/html5-games/cookieclicker/index.html",
+        originalUrl: "https://bcrhbrhcdb.github.io/Nooby/Games/html5-games/cookieclicker/index.html",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub! (this you need to go to the website) i will fix this later",
         ratings: [],
