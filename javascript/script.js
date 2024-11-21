@@ -8,6 +8,7 @@ function generateFooter() {
             <h4>Want to suggest an idea? Fill out the Google form!</h4>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfjkzAiUEbMh634MSOc8yfWsP5_ZHVnF1EDE73dpTDw0Vz7SA/viewform?embedded=true" class='frame'>Loading…</iframe>   
             <a href="https://github.com/bcrhbrhcdb/Nooby" target="_blank"><button id="navBar">The Github</button></a>
+            
         </footer>
     `;
     document.body.appendChild(footer);

@@ -476,16 +476,27 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    eaglercraft: {
-        title: "Eaglercraft (version 1.5.2)",
-        url: "game-template.html?id=eaglercraft",
-        image: "images/proxyandgameimages/gameimages/eaglercraft.jpeg",
-        originalUrl: "Games/html5-games/eaglercraft.v.1.5.2/eaglercraft.1.5.2.html",
-        description: "Minecraft in web browser.",
+    papasScooperia:{
+        title: "Papas Scooperia",
+        url: "game-template.html?id=papasScooperia",
+        image: "images/proxyandgameimages/gameimages/papasScoop.jpeg",
+        originalUrl: "Games/html5-games/papas-scoop/index.html",
+        description: "Another papas pizzaeria game...",
         type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,
     },
+    vex2:{
+        title: "Vex 2",
+        url: "game-template.html?id=vex2",
+        image: "images/proxyandgameimages/gameimages/vex3.jpeg",
+        originalUrl: "Games/html5-games/vex2/vex2.html",
+        description: "Another papas pizzaeria game...",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    }
     
 }
