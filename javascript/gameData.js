@@ -476,6 +476,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    
+    papasScooperia:{
+        title: "Papa's Scooperia",
+        url: "game-template.html?id=papasScooperia",
+        image: "images/proxyandgameimages/gameimages/papasScoop.jpeg",
+        originalUrl: "Games/html5-games/papas-scoop/index.html",
+        description: "Another papas pizzaeria game...",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    }
     
 }
