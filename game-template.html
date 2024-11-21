@@ -44,31 +44,42 @@
     <div class='box'>
         <div class="game-container">
             <div id="loadingScreen"></div>
-            <!-- Single iframe pointing to redirect.html -->
-            <iframe class='frame' src="redirect.html" id="gameFrame" title="Game Frame" allowfullscreen></iframe>
+            <iframe class='frame' src="" id="gameFrame" title="Game Frame" allowfullscreen>
+                <div id="loadingScreen"></div>
+                <div class="game-container">
+    <iframe class='frame' src="" id="gameFrame" title="Game Frame" allowfullscreen>
+        <div id="loadingScreen"></div>
+    </iframe>
+    <hr>
+    <button class="allButton" id="fullscreenButton">Play in Fullscreen!</button>
+    <hr>
+    <a id="gameLink" href=""><button class='allButton'>Link to the game</button></a>
+</div>
+        </iframe>
         </div>
         <hr>
         <div class="box">
-            <iframe class="frame" src="https://bcrhbrhcdb.github.io/chat-room-using-ably/" name="chatroom"></iframe>
+        <iframe class="frame" src="https://bcrhbrhcdb.github.io/chat-room-using-ably/" name="chatroom"></iframe>
         </div>
     </div>
-
-    <!-- Stat counter stuff -->
+    <!--stat counter stuff
+    11/21/24
+    --> 
     <script type="text/javascript">
         var sc_project=13058758; 
         var sc_invisible=1; 
         var sc_security="7ddedbc6"; 
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js"
-    async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/"
-    target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/13058758/0/7ddedbc6/1/"
-    alt="Web Analytics Made Easy - Statcounter"
-    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-
-    <!-- End of Statcounter Code -->
+        </script>
+        <script type="text/javascript"
+        src="https://www.statcounter.com/counter/counter.js"
+        async></script>
+        <noscript><div class="statcounter"><a title="Web Analytics
+        Made Easy - Statcounter" href="https://statcounter.com/"
+        target="_blank"><img class="statcounter"
+        src="https://c.statcounter.com/13058758/0/7ddedbc6/1/"
+        alt="Web Analytics Made Easy - Statcounter"
+        referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+        <!-- End of Statcounter Code -->
     <script src='javascript/gameData.js'></script>
     <script src='javascript/gameLoader.js'></script>
     <script src='javascript/ratingSystem.js'></script>
