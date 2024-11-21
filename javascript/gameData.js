@@ -242,9 +242,10 @@ const games = {
     slope: {
         title: "Slope",
         url: "game-template.html?id=slope",
-        originalUrl: "https://edug309.github.io/g/slope/",
+        originalUrl: "Games/html5-games/slope/index.html",
         image: "images/proxyandgameimages/gameimages/slope.png",
         description: "A platform game based off slope. Or is it?",
+        type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,
