@@ -490,7 +490,7 @@ const games = {
     vex2:{
         title: "Vex 2",
         url: "game-template.html?id=vex2",
-        image: "images/proxyandgameimages/gameimages/vex3.jpeg",
+        image: "images/proxyandgameimages/gameimages/vex2.jpeg",
         originalUrl: "Games/html5-games/vex2/vex2.html",
         description: "Another papas pizzaeria game...",
         type: "folder",
