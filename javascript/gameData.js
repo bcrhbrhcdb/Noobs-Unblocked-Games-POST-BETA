@@ -476,6 +476,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    
+    eaglercraft: {
+        title: "Eaglercraft",
+        url: "game-template.html?id=eaglercraft",
+        image: "images/proxyandgameimages/gameimages/eaglercraft.jpeg",
+        originalUrl: "Games/eaglercraft.1.5.2.html",
+        description: "Minecraft in web browser.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     
 }
