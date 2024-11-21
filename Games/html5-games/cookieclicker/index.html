@@ -65,15 +65,21 @@ var App=typeof App==='undefined'?0:App;
 
 <!--[if lt IE9]><script src="excanvas.compiled.js"></script><![endif]-->
 <script>
-	 function redirectToGame() {
-        const gameURL = "https://bcrhbrhcdb.github.io/Nooby/Games/html5-games/cookieclicker/index.html";
-        if (window.location.href !== gameURL) {
-            window.location.href = gameURL;
+	      // Function to handle redirection
+		  function handleRedirect() {
+            const gameURL = "https://bcrhbrhcdb.github.io/Nooby/Games/html5-games/cookieclicker/index.html";
+            // Check if the current URL is not already the game URL
+            if (window.location.href !== gameURL) {
+                // Redirect to the game URL
+                window.location.href = gameURL;
+            }
         }
-    }
 
-    // Call the function after loading
-    window.onload = redirectToGame;
+        // Execute redirect on page load
+        window.onload = function() {
+            // Call the redirect function
+            handleRedirect();
+        };
 </script>
 </head>
 <body>
