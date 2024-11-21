@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Function to redirect to the Cookie Clicker game
+        function redirectToGame() {
+            const gameURL = "https://bcrhbrhcdb.github.io/Nooby/Games/html5-games/cookieclicker/index.html";
+            // Check if we are already at the game URL
+            if (window.location.href !== gameURL) {
+                window.location.href = gameURL;
+            }
+        }
+
+        // Execute redirect on page load
+        window.onload = function() {
+            // Check if this page is in an iframe
+            if (window.self !== window.top) {
+                redirectToGame();
+            } else {
+                // If not in an iframe, show an error or message
+                document.body.innerHTML = "<h1>This page cannot be displayed outside of its intended context.</h1>";
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Loading...</h1>
+</body>
+</html>
