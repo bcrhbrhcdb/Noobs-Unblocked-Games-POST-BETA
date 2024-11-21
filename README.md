@@ -2,7 +2,7 @@
 <p>Nooby is a unblocked games site and also has proxies, hacks, and some of my other projects. It has a very low quality chatroom (at least it works)</p>
 
 Major contributor!!
-<a href="https://github.com/ekoerp1">ekoerp1</a>
+<a href="https://github.com/ekoerp1" target="_blank" >ekoerp1</a>
 thank you!!
 ## Star History
 
