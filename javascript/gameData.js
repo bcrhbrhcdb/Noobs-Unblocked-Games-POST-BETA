@@ -671,6 +671,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    fnaf:{
+        title: "Five nights at freddies",
+        url: "game-template.html?id=fnaf",
+        image: "images/proxyandgameimages/gameimages/fnaf.png",
+        originalUrl: "Games/html5-games/fnaf/index.html",
+        description: "Haur haur haur haur haur!",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     run3:{
         title: "Run 3",
         url: "game-template.html?id=run3",
