@@ -146,7 +146,17 @@ const games = {
         url: "game-template.html?id=evolve",
         originalUrl: "https://pmotschmann.github.io/Evolve/",
         image: "images/proxyandgameimages/gameimages/Evolve.png",
-        description: "An idle game where you Evolve your own species",
+        description: "An idle game where you Evolve your own species. My number one idle game in fact!!",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    incremancer: {
+        title: "Incremancer",
+        url: "game-template.html?id=incremancer",
+        originalUrl: "https://bcrhbrhcdb.github.io/incremancer/",
+        image: "images/proxyandgameimages/gameimages/incremancer.png",
+        description: "A zombie themed idle game. One of my top five!",
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -275,7 +285,7 @@ const games = {
     raftWars2: {
         title: "Raft Wars 2",
         url: "game-template.html?id=raftWars2",
-        originalUrl: "https://tag-2.github.io/a6/raft-wars-2/",
+        originalUrl: "Games/html5-games/raftwars-2/index.html",
         image: "images/proxyandgameimages/gameimages/raftWars2.png",
         description: "Hmm.",
         ratings: [],
@@ -296,7 +306,7 @@ const games = {
         title: "Red Ball 4",
         url: "game-template.html?id=redBall4",
         image: "images/proxyandgameimages/gameimages/redball4.webp",
-        originalUrl: "https://edug309.github.io/g177/red-ball-4/",
+        originalUrl: "Games/html5-games/redball4/index.html",
         description:"A red ball thats trying to find its way.",
         ratings: [],
         likes: 0,
@@ -316,7 +326,7 @@ const games = {
         title: "Slope 2",
         url: "game-template.html?id=slope2",
         image: "images/proxyandgameimages/gameimages/slope2.jpeg",
-        originalUrl: "https://edug309.github.io/g6/slope-2/",
+        originalUrl: "https://slope2.bitbucket.io/file/index.html",
         description:"Slope Sequal!",
         ratings: [],
         likes: 0,
@@ -382,6 +392,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    technomancy:{
+        title: "Technomancy",
+        url: "game-template.html?id=technomancy",
+        image: "images/proxyandgameimages/gameimages/squid.jpeg",
+        originalUrl: "https://fuzzything44.github.io/Incremental/Technomancy/",
+        description: "Don't get killed by the giant space squid.",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     click: {
         title:"Click. (my game)",
         url: "game-template.html?id=click",
@@ -440,11 +460,39 @@ const games = {
         originalUrl: "Games/html5-games/2048/index.html",
         description: "Merge two of the same number until you get to 2048. Easy.",
         type: "folder",
-
         ratings: [],
         likes: 0,
         dislikes: 0,
     },
+    doomHH: {
+        title: "Doom Heretic & Hexen",
+        url: "game-template.html?id=doomHH",
+        image: "images/proxyandgameimages/gameimages/doom.png",
+        originalUrl: "Games/html5-games/doom/index.html",
+        description: "A FPS from a while ago. This version has no music (womp womp)",
+        type: "folder",
+        controls: `
+        <ul>
+        <li>W, A, S, D - movement</li>
+        <li>Click screen + drag or LEFT/RIGHT ARROWS - turn</li>
+        <li>SPACE - fire</li>
+        <li>R - use door/switch</li>
+        <li>SHIFT - run</li>
+        <li>ESCAPE - menu</li>
+        <li>TAB - map</li>
+        <li>NUMBER KEYS - change weapon</li>
+        <li>[ and ] - cycle through inventory (Heretic/Hexen only)</li>
+        <li>ENTER - use inventory item (Heretic/Hexen only)</li>
+        <li>Q - Jump (Heretic/Hexen only)</li>
+        <li>No music (wompity womp)</li>
+        <li>Very laggy tbh</li>
+        </ul>
+        `,
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    
     ticTacToe: {
         title: "Tic-Tac-Toe",
         url: "game-template.html?id=ticTacToe",
