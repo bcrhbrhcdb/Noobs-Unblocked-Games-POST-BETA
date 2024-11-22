@@ -461,6 +461,11 @@ const games = {
         <li>ESCAPE - menu</li>
         <li>TAB - map</li>
         <li>NUMBER KEYS - change weapon</li>
+        <li>[ and ] - cycle through inventory (Heretic/Hexen only)</li>
+        <li>ENTER - use inventory item (Heretic/Hexen only)</li>
+        <li>Q - Jump (Heretic/Hexen only)</li>
+        <li>No music (wompity womp)</li>
+        <li>Very laggy tbh</li>
         </ul>
         `,
         ratings: [],
