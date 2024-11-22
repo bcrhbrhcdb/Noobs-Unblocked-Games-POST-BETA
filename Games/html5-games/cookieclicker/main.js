@@ -1227,37 +1227,23 @@ var Game={};
 	//check out the "UNLOCKING STUFF" section to see how unlocking achievs and upgrades is done
 })();
 
-Game.version = VERSION;
-Game.loadedFromVersion = VERSION;
-Game.beta = BETA;
-
-if (!App && window.location.href.indexOf('/beta') > -1) {
-    Game.beta = 1;
-} else if (App && new URL(window.location.href).searchParams.get('beta')) {
-    Game.beta = 1;
+Game.version=VERSION;
+Game.loadedFromVersion=VERSION;
+Game.beta=BETA;
+if (!App && window.location.href.indexOf('/beta')>-1) Game.beta=1;
+else if (App && new URL(window.location.href).searchParams.get('beta')) Game.beta=1;
+Game.https=!App?((location.protocol!='https:')?false:true):true;
+Game.SaveTo='CookieClickerGame';
+if (Game.beta) Game.SaveTo='CookieClickerGameBeta';
+if (App && new URL(window.location.href).searchParams.get('modless')) Game.modless=1;
+Game.local=(!location.hostname || location.hostname==='localhost' || location.hostname==='127.0.0.1');
+if (App) Game.local=true;
+Game.resPath='';
+if (!App && !Game.local && window.location.href.indexOf('orteil.dashnet.org')!=-1)
+{
+	Game.resPath=('//'+location.host+location.pathname).replace('orteil.dashnet.org','cdn.dashnet.org');
+	if (Game.resPath.substr(-1)!='/') Game.resPath+='/';
 }
-
-Game.https = !App ? (location.protocol != 'https:' ? false : true) : true;
-Game.SaveTo = 'CookieClickerGame';
-if (Game.beta) Game.SaveTo = 'CookieClickerGameBeta';
-if (App && new URL(window.location.href).searchParams.get('modless')) Game.modless = 1;
-
-// Allow local access for development
-Game.local = (!location.hostname || location.hostname === 'localhost' || location.hostname === '127.0.0.1');
-
-if (App) Game.local = true;
-
-Game.resPath = '';
-if (!App && !Game.local && window.location.href.indexOf('orteil.dashnet.org') != -1) {
-    // This line is modified to remove the restriction on the domain
-    Game.resPath = ('//' + location.host + location.pathname).replace('orteil.dashnet.org', 'cdn.dashnet.org');
-    if (Game.resPath.substr(-1) != '/') Game.resPath += '/';
-}
-
-// Comment out or remove the domain check to allow access from any URL
-// if (window.location.href.indexOf('orteil.dashnet.org') == -1) {
-//     alert("Oops! wrong address!");
-// }
 
 
 Game.Launch=function()
