@@ -444,9 +444,9 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    doom: {
-        title: "Doom",
-        url: "game-template.html?id=doom",
+    doomHH: {
+        title: "Doom Heretic & Hexen",
+        url: "game-template.html?id=doomHH",
         image: "images/proxyandgameimages/gameimages/doom.png",
         originalUrl: "Games/html5-games/doom/index.html",
         description: "A FPS from a while ago. This version has no music (womp womp)",
@@ -472,6 +472,7 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    
     ticTacToe: {
         title: "Tic-Tac-Toe",
         url: "game-template.html?id=ticTacToe",
