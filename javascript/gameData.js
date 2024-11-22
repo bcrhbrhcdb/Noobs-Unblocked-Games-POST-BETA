@@ -564,7 +564,7 @@ const games = {
     },
     eaglercraft:{
         title: "Eaglercraft 1.5.2",
-        url: "game-template.html?id=Eaglercraft",
+        url: "game-template.html?id=Eaglercraft-1.5.2",
         image: "images/proxyandgameimages/gameimages/eaglercraft.png",
         originalUrl: "https://eaglercraft.com/mc/1.5.2/",
         description: "Eaglercraft is just older versions of mimecraft.",
@@ -574,8 +574,8 @@ const games = {
     },
     eaglercraft1:{
         title: "Eaglercraft 1.8.8",
-        url: "game-template.html?id=Eaglercraft",
-        image: "images/proxyandgameimages/gameimages/eaglercraft.png",
+        url: "game-template.html?id=Eaglercraft-1.8.8",
+        image: "images/proxyandgameimages/gameimages/eaglercraft1.png",
         originalUrl: "https://eaglercraft.com/mc/1.8.8/",
         description: "Eaglercraft is just older versions of mimecraft.",
         ratings: [],
