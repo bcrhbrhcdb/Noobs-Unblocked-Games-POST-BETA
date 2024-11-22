@@ -10,21 +10,21 @@ const games = {
         dislikes: 0,
     },
     cookieClicker: {
-        title: "Cookie Clicker",
+        title: "Cookie Clicker (first method)",
         url: "game-template.html?id=cookieClicker",
         originalUrl: "https://ozh.github.io/cookieclicker/",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
-        description: "Won't be blocked if it's on GitHub! (this you need to go to the website)",
+        description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
         ratings: [],
         likes: 0,
         dislikes: 0,
     },
     cookieClickerLocal: {
-        title: "Cookie Clicker LOCAL",
+        title: "Cookie Clicker (second method)",
         url: "game-template.html?id=cookieClickerLocal",
         originalUrl: "Games/html5-games/cookieclicker/index.html",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
-        description: "Won't be blocked if it's on GitHub! (this you need to go to the website) i will fix this later",
+        description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -510,6 +510,4 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    
-    
 }
