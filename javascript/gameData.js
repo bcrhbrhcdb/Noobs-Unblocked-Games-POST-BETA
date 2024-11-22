@@ -29,16 +29,6 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    vex9: {
-        title: "Vex 9",
-        url: "game-template.html?id=vex9",
-        originalUrl: "https://tvz2304.github.io/g16/vex-8/",
-        image: "images/proxyandgameimages/gameimages/vex9.jpeg",
-        description: "The newest game! (vex 8 as a placeholder, need a link.)",
-        ratings: [],
-        likes: 0,
-        dislikes: 0,
-    },
     vex8: {
         title: "Vex 8",
         url: "game-template.html?id=vex8",
@@ -95,6 +85,28 @@ const games = {
         originalUrl: "https://ubg98.github.io/Vex3/",
         image: "images/proxyandgameimages/gameimages/vex3.jpeg",
         description: "The third game",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    vex2:{
+        title: "Vex 2",
+        url: "game-template.html?id=vex2",
+        image: "images/proxyandgameimages/gameimages/vex2.jpeg",
+        originalUrl: "Games/html5-games/vex2/vex2.html",
+        description: "The second vex",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    vex:{
+        title: "Vex",
+        url: "game-template.html?id=vex",
+        image: "images/proxyandgameimages/gameimages/vex.png",
+        originalUrl: "Games/html5-games/vex/index.html",
+        description: "The orginal vex, in one piece.",
+        type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -498,16 +510,6 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    vex2:{
-        title: "Vex 2",
-        url: "game-template.html?id=vex2",
-        image: "images/proxyandgameimages/gameimages/vex2.jpeg",
-        originalUrl: "Games/html5-games/vex2/vex2.html",
-        description: "Another papas pizzaeria game...",
-        type: "folder",
-        ratings: [],
-        likes: 0,
-        dislikes: 0,
-    }
+    
     
 }
