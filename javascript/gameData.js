@@ -214,7 +214,7 @@ const games = {
     dash: {
         title: "Geometry Dash",
         url: "game-template.html?id=dash",
-        originalUrl: "https://edug309.github.io/g8/geometry-dash/",
+        originalUrl: "https://lnageo.github.io/a77/geometry-dash/",
         image: "images/proxyandgameimages/gameimages/geometry-dash.png",
         description: "Scratch Rippoff",
         ratings: [],
@@ -224,7 +224,7 @@ const games = {
     bottleFlip: {
         title: "Bottle Flip",
         url: "game-template.html?id=bottleFlip",
-        originalUrl: "https://edug309.github.io/g69/bottle-flip/",
+        originalUrl: "https://ubg44.github.io/BottleFlip3D/",
         image: "images/proxyandgameimages/gameimages/bottle-flip.png",
         description: "2017",
         ratings: [],
@@ -715,4 +715,5 @@ const games = {
         likes: 0,
         dislikes: 0,
     }, 
+
 }
