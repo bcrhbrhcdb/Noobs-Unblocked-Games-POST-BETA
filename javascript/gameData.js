@@ -440,7 +440,29 @@ const games = {
         originalUrl: "Games/html5-games/2048/index.html",
         description: "Merge two of the same number until you get to 2048. Easy.",
         type: "folder",
-
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    doom: {
+        title: "Doom",
+        url: "game-template.html?id=doom",
+        image: "images/proxyandgameimages/gameimages/doom.png",
+        originalUrl: "Games/html5-games/doom/index.html",
+        description: "A FPS from a while ago. This version has no music (womp womp)",
+        type: "folder",
+        controls: `
+        <ul>
+        <li>W, A, S, D - movement</li>
+        <li>Click screen + drag or LEFT/RIGHT ARROWS - turn</li>
+        <li>SPACE - fire</li>
+        <li>R - use door/switch</li>
+        <li>SHIFT - run</li>
+        <li>ESCAPE - menu</li>
+        <li>TAB - map</li>
+        <li>NUMBER KEYS - change weapon</li>
+        </ul>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
