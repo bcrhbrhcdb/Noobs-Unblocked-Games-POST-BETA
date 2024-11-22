@@ -440,6 +440,7 @@ const games = {
         originalUrl: "Games/html5-games/2048/index.html",
         description: "Merge two of the same number until you get to 2048. Easy.",
         type: "folder",
+
         ratings: [],
         likes: 0,
         dislikes: 0,
