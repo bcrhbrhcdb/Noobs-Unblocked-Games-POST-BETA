@@ -2,9 +2,7 @@ function generateFooter() {
     const footer = document.createElement('div');
     footer.className = 'box';
     footer.innerHTML = `
-        
         <footer>
-        
         <h3>Vistors (again)</h3>
             <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/zc.php?d=9&id=1109&s=2' border='0' alt=''></a><br /><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></a></small></div>
             <h4>Want to suggest an idea? Fill out the Google form!</h4>
@@ -14,6 +12,7 @@ function generateFooter() {
     `;
     document.body.appendChild(footer);
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     generateGameElements();
     generateFooter();
@@ -79,7 +78,25 @@ function generateGameElements() {
     const gameContainer = document.getElementById('game-container');
     
     if (gameContainer && typeof games !== 'undefined') {
-        Object.entries(games).forEach(([id, game]) => {
+        // Sort games array
+        const sortedGames = Object.entries(games).sort((a, b) => {
+            const titleA = a[1].title.toLowerCase();
+            const titleB = b[1].title.toLowerCase();
+            
+            // Extract the name and number parts
+            const [nameA, numA] = titleA.split(/\s+/);
+            const [nameB, numB] = titleB.split(/\s+/);
+            
+            // If the names are the same and both have numbers, sort numerically
+            if (nameA === nameB && numA && numB) {
+                return parseInt(numA) - parseInt(numB);
+            }
+            
+            // Otherwise, sort alphabetically
+            return titleA.localeCompare(titleB);
+        });
+
+        sortedGames.forEach(([id, game]) => {
             const gameElement = document.createElement('div');
             gameElement.className = 'content';
             gameElement.innerHTML = `
