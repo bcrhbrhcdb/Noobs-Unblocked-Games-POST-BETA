@@ -16,17 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const minLoadTime = 3500; // 3.5 seconds in milliseconds
         const loadStartTime = Date.now();
 
-        // Create a wrapper for the iframe and loading screen
-        const wrapper = document.createElement('div');
-        wrapper.style.position = 'relative';
-        wrapper.style.width = '100%';
-        wrapper.style.height = '100%';
-
-        // Move the iframe and loading screen into the wrapper
-        iframe.parentNode.insertBefore(wrapper, iframe);
-        wrapper.appendChild(iframe);
-        wrapper.appendChild(loadingScreen);
-
         iframe.src = game.originalUrl;
 
         iframe.onload = function() {
@@ -67,18 +56,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const fullscreenButton = document.getElementById('fullscreenButton');
-        if (fullscreenButton && wrapper) {
+        if (fullscreenButton) {
             fullscreenButton.addEventListener('click', function() {
-                if (wrapper.requestFullscreen) {
-                    wrapper.requestFullscreen();
-                } else if (wrapper.mozRequestFullScreen) {
-                    wrapper.mozRequestFullScreen();
-                } else if (wrapper.webkitRequestFullscreen) {
-                    wrapper.webkitRequestFullscreen();
-                } else if (wrapper.msRequestFullscreen) {
-                    wrapper.msRequestFullscreen();
+                if (iframe.requestFullscreen) {
+                    iframe.requestFullscreen();
+                } else if (iframe.mozRequestFullScreen) {
+                    iframe.mozRequestFullScreen();
+                } else if (iframe.webkitRequestFullscreen) {
+                    iframe.webkitRequestFullscreen();
+                } else if (iframe.msRequestFullscreen) {
+                    iframe.msRequestFullscreen();
                 }
             });
+        }
+
+        // Add controls and credits information to the gameInfo div
+        const gameInfoContainer = document.getElementById('gameInfo');
+        let gameInfoHTML = '';
+
+        if (game.controls) {
+            gameInfoHTML += `<div class="controls"><h3>Controls:</h3>${game.controls}</div>`;
+        }
+
+        if (game.credits) {
+            gameInfoHTML += `<div class="credits"><h3>Credits:</h3>${game.credits}</div>`;
+        }
+
+        if (gameInfoHTML) {
+            gameInfoContainer.innerHTML = gameInfoHTML;
+        } else {
+            gameInfoContainer.style.display = 'none';
         }
 
         iframe.addEventListener('error', function() {
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function adjustIframeHeight() {
             const windowHeight = window.innerHeight;
             const offset = 200;
-            wrapper.style.height = (windowHeight - offset) + 'px';
+            iframe.style.height = (windowHeight - offset) + 'px';
         }
 
         adjustIframeHeight();
