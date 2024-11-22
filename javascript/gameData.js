@@ -254,9 +254,10 @@ const games = {
     bitlife: {
         title: "Bitlife",
         url:"game-template.html?id=bitlife",
-        originalUrl: "https://bitlifeonline.github.io/class/index.html",
+        originalUrl: "Games/html5-games/bitlife/index.html",
         image: "images/proxyandgameimages/gameimages/bitlife.png",
-        description: "Not realistic life simulator. 2019 version o/bitlife",
+        description: "Not realistic life simulator.",
+        type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,
