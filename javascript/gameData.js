@@ -357,7 +357,7 @@ const games = {
         title: "Super Mario",
         url: "game-template.html?id=superMario",
         image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
-        originalUrl: "Games/html5-games/super-mario/index.html",
+        originalUrl: "https://ekoerp1.github.io/lbannana-remake.github.io/lbannana-assets/retro/mariobros.html",
         description:"You know this game.",
         ratings: [],
         likes: 0,
