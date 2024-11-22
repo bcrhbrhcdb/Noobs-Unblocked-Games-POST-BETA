@@ -317,7 +317,7 @@ const games = {
         title: "Super Mario",
         url: "game-template.html?id=superMario",
         image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
-        originalUrl: "https://edug309.github.io/g9/super-mario-bros/",
+        originalUrl: "Games/html5-games/super-mario/index.html",
         description:"You know this game.",
         ratings: [],
         likes: 0,
