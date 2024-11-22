@@ -682,5 +682,15 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    
+    bloonsTD5:{
+        title: "Bloons Tower Defense Five",
+        url: "game-template.html?id=bloonsTD5",
+        image: "images/proxyandgameimages/gameimages/bloons-td-5.jpeg",
+        originalUrl: "Games/html5-games/bloons-td/index5.html",
+        description: "The tower defense game that started it all!",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    }, 
 }
