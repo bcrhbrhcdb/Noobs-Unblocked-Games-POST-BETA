@@ -285,7 +285,7 @@ const games = {
     raftWars2: {
         title: "Raft Wars 2",
         url: "game-template.html?id=raftWars2",
-        originalUrl: "Games/html5-games/raftwars-2/index.html",
+        originalUrl: "Games/html5-games/raftwars2/index.html",
         image: "images/proxyandgameimages/gameimages/raftWars2.png",
         description: "Hmm.",
         ratings: [],
