@@ -699,7 +699,7 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
-    1v1lol:{
+    "1v1lol": {
         title: "1v1.lol",
         url: "game-template.html?id=1v1lol",
         image: "images/proxyandgameimages/gameimages/1v1lol.png",
