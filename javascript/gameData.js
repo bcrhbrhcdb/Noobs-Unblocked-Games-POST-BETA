@@ -699,6 +699,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    1v1lol:{
+        title: "1v1.lol",
+        url: "game-template.html?id=1v1lol",
+        image: "images/proxyandgameimages/gameimages/1v1lol.png",
+        originalUrl: "Games/html5-games/1v1.lol/index.html",
+        description: "1v1 eachother lol.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     learnToFly2:{
         title: "Learn to Fly 2",
         url: "game-template.html?id=learnToFly2",
