@@ -361,19 +361,11 @@ const games = {
         description:"You know this game.",
         controls: `
         <ul>
-        <li>W, A, S, D - movement</li>
-        <li>Click screen + drag or LEFT/RIGHT ARROWS - turn</li>
-        <li>SPACE - fire</li>
-        <li>R - use door/switch</li>
-        <li>SHIFT - run</li>
-        <li>ESCAPE - menu</li>
-        <li>TAB - map</li>
-        <li>NUMBER KEYS - change weapon</li>
-        <li>[ and ] - cycle through inventory (Heretic/Hexen only)</li>
-        <li>ENTER - use inventory item (Heretic/Hexen only)</li>
-        <li>Q - Jump (Heretic/Hexen only)</li>
-        <li>No music (wompity womp)</li>
-        <li>Very laggy tbh</li>
+        <li>Up Arrow, Down Arrow, Left Arrow, Right Arrow - movement</li>
+        <li>A (QWERTY) / Q (AZERTY) - Button A</li>
+        <li>S (QWERTY/AZERTY) or O (Dvorak) - Button B</li>
+        <li>Tab - button select</li>
+        <li>Enter - Start/Pause</li>
         </ul>
         `,
         ratings: [],
