@@ -754,6 +754,28 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    superMario64: {
+        title: "Super Mario 64",
+        url: "game-template.html?id=superMario64",
+        image: "images/proxyandgameimages/gameimages/sm64.png",
+        originalUrl: "Games/html5-games/sm64/index.html",
+        description:"You know this game.",
+        type: "folder",
+        controls: `
+        <ul>
+        <li>Arrow Keys - movement</li>
+        <li>X- Button A</li>
+        <li>C- Button B</li>
+        <li>Q- Button L</li>
+        <li>Space - Button Z (crouch)</li>
+        <li>Enter - Start/pause</li>
+        <li>W,A,S,D - C stick (camera movement)</li>
+        </ul>
+        `,
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     bloonsTD5:{
         title: "Bloons Tower Defense Five",
         url: "game-template.html?id=bloonsTD5",
