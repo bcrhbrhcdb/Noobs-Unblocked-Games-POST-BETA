@@ -763,11 +763,13 @@ const games = {
         type: "folder",
         controls: `
         <ul>
-        <li>Up Arrow, Down Arrow, Left Arrow, Right Arrow - movement</li>
-        <li>A (QWERTY) / Q (AZERTY) - Button A</li>
-        <li>S (QWERTY/AZERTY) or O (Dvorak) - Button B</li>
-        <li>Tab - button select</li>
-        <li>Enter - Start/Pause</li>
+        <li>Arrow Keys - movement</li>
+        <li>X- Button A</li>
+        <li>C- Button B</li>
+        <li>Q- Button L</li>
+        <li>Space - Button Z (crouch)</li>
+        <li>Enter - Start/pause</li>
+        <li>W,A,S,D - C stick (camera movement)</li>
         </ul>
         `,
         ratings: [],
