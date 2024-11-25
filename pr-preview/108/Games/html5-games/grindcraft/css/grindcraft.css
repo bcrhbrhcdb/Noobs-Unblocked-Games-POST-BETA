@@ -1,0 +1,525 @@
+/* Main CSS */
+
+@font-face {
+    font-family: Minecraft;
+    src: url(Minecraft.ttf);
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-family: Minecraft;
+}
+
+h3 {
+    font-weight: 50;
+}
+
+a {
+    color: rgb(0, 66, 120);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.top-div {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: grid;
+    grid-template-columns: 270px 1fr 200px;
+    background-color: black;
+    box-shadow: 0 3px 3px black;
+    z-index: 2;
+}
+
+.top-div > h1 {
+    margin: 10px 0 0 20px;
+    font-weight: 1;
+}
+
+.left-div > h1 {
+    font-weight: 1;
+    margin: 0 0 10px 0;
+}
+
+.main-div {
+    padding: 40px 20px 20px 20px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: calc(100% - 60px);
+    grid-gap: 20px;
+}
+
+.right-div {
+    background-color: #b4b4b4;
+    padding: 20px 0 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    overflow-x: hidden;
+    height: calc(100vh - 80px);
+}
+
+.left-top-div {
+    padding-top: 10px;
+    overflow-x: hidden;
+    height: calc(100vh - 215px);
+    max-height: 440px;
+}
+
+.left-bottom-div {
+    overflow-x: hidden;
+}
+
+/* Grinds */
+
+.grind-div { /* 250 px x 100 px */
+    height: 100px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.grind-div2 {
+    background: linear-gradient(to right, transparent, #b4b4b4);
+    height: 100%;
+    box-sizing: border-box;
+    width: 75%;
+    margin-left: 25%;
+    padding: 5px 10px 5px 87.5px;
+}
+
+.grind-text {
+    position: absolute;
+    margin: 0;
+    top: 10px;
+    left: 10px;
+}
+
+.grind-tool-image {
+    position: absolute;
+    display: none;
+    height: 50px;
+    width: 50px;
+    left: 95px;
+    top: 25px;
+}
+
+.grind-image-div {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: solid 3px #252525;
+    background-color: black;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.grind-image {
+    height: 60px;
+    width: 60px;
+}
+
+.grind-progressbar-div {
+    display: none;
+    width: 78px;
+    height: 6px;
+    background-color: red;
+    position: absolute;
+    bottom: 5px;
+    left: 3px;
+}
+
+.grind-progressbar {
+    display: block;
+    width: 0;
+    height: 6px;
+    background-color: #13a613;
+}
+
+/* Crafts */
+
+.craft-div {
+    display: flex;
+    box-sizing: border-box;
+    height: 60px;
+    width: 60px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    background-color: #5a5a5a;
+    border-top: solid 4px #454545;
+    border-left: solid 4px #454545;
+    border-right: solid 4px #6a6a6a;
+    border-bottom: solid 4px #6a6a6a;
+}
+
+.craft-div-afford {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px #000000;
+    border-radius: 3px;
+    height: 60px;
+    width: 60px;
+    margin-right: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    background-color: #a8a8a8;
+    border-top: solid 3px #c4c4c4;
+    border-left: solid 3px #c4c4c4;
+    border-right: solid 3px #555555;
+    border-bottom: solid 3px #555555;
+    cursor: pointer;
+}
+
+.craft-image {
+    height: 50px;
+    width: 50px;
+}
+
+.craft-text {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 4px;
+    margin: 0;
+    text-align: right;
+}
+
+/* Areas */
+
+.area-div {
+    height: 45px;
+    width: 250px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.area-div:hover {
+    filter: brightness(80%);
+}
+
+.area-div > h3 {
+    padding: 12.5px;
+    margin: 0;
+}
+
+/* Recipe */
+
+.recipe-div {
+    background-color: #c9c9c9;
+    z-index: 1;
+    position: absolute;
+    display: none;
+    box-shadow: 5px 5px 5px black;
+    max-width: 300px;
+}
+
+.recipe-name {
+    margin: 10px 10px 0 10px;
+}
+
+.recipe-cost-div {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0 10px 12px;
+}
+
+.recipe-desc {
+    text-shadow: none;
+    color: #2c2c2c;
+    margin: 0 10px 10px 10px;
+}
+
+/* Grind Resources */
+
+.grind-resource-div {
+    background-color: #c9c9c9;
+    z-index: 1;
+    position: absolute;
+    display: none;
+    box-shadow: 5px 5px 5px black;
+    width: 156px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.grind-resource-sub-div {
+    display: grid;
+    grid-template-columns: 40px 66px 40px;
+}
+
+.grind-resource-image-div {
+    display: flex;
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    background-color: #5a5a5a;
+    border-top: solid 2px #454545;
+    border-left: solid 2px #454545;
+    border-right: solid 2px #6a6a6a;
+    border-bottom: solid 2px #6a6a6a;
+}
+
+.grind-resource-image {
+    display: block;
+    height: 36px;
+    width: 36px;
+}
+
+.grind-resource-arrow {
+    display: block;
+    height: 40px;
+    width: 66px;
+}
+
+/* Messages */
+
+.message-div {
+    display: none;
+    position: absolute;
+    width: 300px;
+    left: calc(50% - 150px);
+    background-color: #ababab;
+    border: 5px solid #4d4d4d;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+}
+
+.message-text {
+    margin: 60px 0;
+    padding: 0;
+    text-align: center;
+}
+
+.message-button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 2px 25px 0 25px;
+    border: 2px solid #4d4d4d;
+    font-family: Minecraft;
+    cursor: pointer;
+    border-radius: 4px;
+    background: linear-gradient(#c6c6c6, #989898);
+}
+
+.message-button:hover {
+    background: linear-gradient(#b6b6b6, #888888);
+}
+
+/* More Top Elements: */
+
+.top-sub-div {
+    position: relative;
+}
+
+.settings-top-button {
+    box-sizing: border-box;
+    height: 31px;
+    width: 31px;
+    padding: 1px 1px 0 1px;
+    background-color: #b4b4b4;
+    position: absolute;
+    right: 40px;
+    top: 9px;
+    cursor: pointer;
+}
+
+.settings-top-button > img {
+    height: 25px;
+    width: 25px;
+}
+
+.settings-top-button:hover {
+    background-color: #eeeeee;
+}
+
+.tps-text {
+    margin: 15px 0 0 20px;
+    font-weight: 1;
+}
+
+/* Settings: */
+
+.settings-div {
+    display: none;
+    position: absolute;
+    color: black;
+    text-shadow: none;
+    width: 400px;
+    left: calc(50% - 200px);
+    background-color: #ababab;
+    border: 5px solid #4d4d4d;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+}
+
+.setting-header {
+    text-align: center;
+    font-weight: 1;
+}
+
+.settings-button {
+    display: block;
+    margin: 30px auto 20px auto;
+    padding: 10px 40px 5px 40px;
+    border: 2px solid #4d4d4d;
+    font-family: Minecraft;
+    border-radius: 4px;
+    cursor: pointer;
+    background: linear-gradient(#c6c6c6, #989898);
+}
+
+.settings-button:hover {
+    background: linear-gradient(#b6b6b6, #888888);
+}
+
+.setting {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin-bottom: 15px;
+}
+
+.setting button {
+    display: block;
+    border: 2px solid #4d4d4d;
+    font-size: 14px;
+    font-family: Minecraft;
+    border-radius: 4px;
+    padding-top: 2px;
+    height: 24px;
+    cursor: pointer;
+    background: linear-gradient(#c6c6c6, #989898);
+}
+
+#importSaveButton {
+    margin-top: 3px;
+}
+
+#resetSaveButton {
+    background: linear-gradient(#ff6d6d, #be4b4b);
+}
+
+.setting button:hover {
+    background: linear-gradient(#b6b6b6, #888888);
+}
+
+#resetSaveButton:hover{
+    background: linear-gradient(#da5555, #a93636);
+}
+
+.setting button:active {
+    transform: translate(1px, 1px);
+}
+
+.setting label {
+    font-size: 17px;
+    display: inline-block;
+    margin: 5px 0 0 0;
+}
+
+.setting-text {
+    margin: 0 0 0 20px;
+}
+
+.setting-input-div {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    margin-right: 33px;
+}
+
+.setting-input[type = "text"] {
+    background-color: #c6c6c6;
+    border-radius: 4px;
+    border: 2px solid #848484;
+}
+
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+/* Hide the browser's default checkbox */
+ .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
