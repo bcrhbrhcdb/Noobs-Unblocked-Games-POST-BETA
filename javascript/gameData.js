@@ -757,7 +757,7 @@ const games = {
     superMario64: {
         title: "Super Mario 64",
         url: "game-template.html?id=superMario64",
-        image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
+        image: "images/proxyandgameimages/gameimages/sm64.png",
         originalUrl: "Games/html5-games/sm64/index.html",
         description:"You know this game.",
         type: "folder",
