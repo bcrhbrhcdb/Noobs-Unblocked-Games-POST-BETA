@@ -359,6 +359,15 @@ const games = {
         image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
         originalUrl: "https://ekoerp1.github.io/lbannana-remake.github.io/lbannana-assets/retro/mariobros.html",
         description:"You know this game.",
+        controls: `
+        <ul>
+        <li>Up Arrow, Down Arrow, Left Arrow, Right Arrow - movement</li>
+        <li>A (QWERTY) / Q (AZERTY) - Button A</li>
+        <li>S (QWERTY/AZERTY) or O (Dvorak) - Button B</li>
+        <li>Tab - button select</li>
+        <li>Enter - Start/Pause</li>
+        </ul>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
