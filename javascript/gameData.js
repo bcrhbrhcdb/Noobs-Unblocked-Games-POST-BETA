@@ -359,6 +359,23 @@ const games = {
         image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
         originalUrl: "https://ekoerp1.github.io/lbannana-remake.github.io/lbannana-assets/retro/mariobros.html",
         description:"You know this game.",
+        controls: `
+        <ul>
+        <li>W, A, S, D - movement</li>
+        <li>Click screen + drag or LEFT/RIGHT ARROWS - turn</li>
+        <li>SPACE - fire</li>
+        <li>R - use door/switch</li>
+        <li>SHIFT - run</li>
+        <li>ESCAPE - menu</li>
+        <li>TAB - map</li>
+        <li>NUMBER KEYS - change weapon</li>
+        <li>[ and ] - cycle through inventory (Heretic/Hexen only)</li>
+        <li>ENTER - use inventory item (Heretic/Hexen only)</li>
+        <li>Q - Jump (Heretic/Hexen only)</li>
+        <li>No music (wompity womp)</li>
+        <li>Very laggy tbh</li>
+        </ul>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
