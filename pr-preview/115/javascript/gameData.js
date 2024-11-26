@@ -837,5 +837,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     }, 
+    trimps:{
+        title: "Trimps",
+        url: "game-template.html?id=trimps",
+        image: "images/proxyandgameimages/gameimages/trimps.jpeg",
+        originalUrl: "https://trimps.github.io/index.html",
+        description: "An idle game. I do not know what this game is. womp womp",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    }, 
+
 
 }
