@@ -732,6 +732,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+     fnf:{
+        title: "Friday night funkin",
+        url: "game-template.html?id=fnf",
+        image: "images/proxyandgameimages/gameimages/fnf.png",
+        originalUrl: "Games/html5-games/fnf/index.html",
+        description: "Funk the friday away.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     fnaf:{
         title: "Five Nights at Freddy's",
         url: "game-template.html?id=fnaf",
