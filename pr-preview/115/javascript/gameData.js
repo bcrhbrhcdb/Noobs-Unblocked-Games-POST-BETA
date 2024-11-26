@@ -608,6 +608,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    FBWG1: {
+        title: "Fire Boy and Water Girl 1",
+        url: "game-template.html?id=FBWG1",
+        image: "images/proxyandgameimages/gameimages/FBWG1.jpeg",
+        originalUrl: "Games/html5-games/FBWG1/index.html",
+        description: "Back to 2016",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     pingPong: {
         title: "Ping Pong",
         url: "game-template.html?id=pingPong",
