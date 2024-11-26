@@ -721,6 +721,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    littlealchemy2:{
+        title: "Little Alchemy 2",
+        url: "game-template.html?id=littlealchemy2",
+        image: "images/proxyandgameimages/gameimages/littlealchemy2.png",
+        originalUrl: "Games/html5-games/littlealchemy2y/index.html",
+        description: "Make a variety of modern or prehestoric things by combining the elements!",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     learnToFly3:{
         title: "Learn to Fly 3",
         url: "game-template.html?id=learnToFly3",
