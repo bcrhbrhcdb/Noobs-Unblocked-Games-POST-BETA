@@ -15,6 +15,10 @@ const games = {
         originalUrl: "https://ozh.github.io/cookieclicker/",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
+        controls: `
+        Cookie clicker hacks and cheats here: <br>
+        <a href="../hacks.html#cookie-clicker">Cookie Clicker Hacks</a>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -25,6 +29,8 @@ const games = {
         originalUrl: "Games/html5-games/cookieclicker/index.html",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
+        controls: ` Cookie clicker hacks and cheats here: <br>
+        <a href="../hacks.html#cookie-clicker">Cookie Clicker Hacks</a>`,
         ratings: [],
         likes: 0,
         dislikes: 0,
