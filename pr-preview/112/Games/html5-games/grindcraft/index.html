@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title></title>
+    <link id="iconLink" rel="icon" type="image/x-icon" href=""#>
+
+    <link rel="stylesheet" type="text/css" href="css/grindcraft.css">
+
+    <meta property="og:site_name" content="Mira The Cat's Website">
+    <meta property="og:title" content="Grindcraft Ages">
+    <meta property="og:description" content="A game where you grind resources and craft new items and buildings to progress!">
+    <meta property='og:image' content='/images/pfp.png'>
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#60ff52">
+</head>
+<body>
+
+<div class="top-div">
+    <h1>Grind</h1>
+    <h1>Craft</h1>
+    <div class="top-sub-div">
+        <h2 class="tps-text"></h2>
+        <button class="settings-top-button"><img src="images/system/settings.png"></button>
+    </div>
+</div>
+
+<div class="main-div">
+    <div class="left-div">
+        <div class="left-top-div"></div>
+        <h1>Ages</h1>
+        <div class="left-bottom-div"></div>
+    </div>
+    <div class="right-div"></div>
+</div>
+
+<div class="recipe-div">
+    <p class="recipe-name"></p>
+    <div class="recipe-cost-div"></div>
+    <p class="recipe-desc"></p>
+</div>
+
+<div class="grind-resource-div"></div>
+
+<div class="message-div">
+    <p class="message-text"></p>
+    <button class="message-button">Ok</button>
+</div>
+
+<div class="settings-div">
+    <h2 class="setting-header">Settings:</h2>
+    <div class="setting">
+        <p class="setting-text">Max FPS: </p>
+        <div class="setting-input-div">
+            <label for="maxFPSInput" id="maxFPSLabel">100</label>
+            <input id="maxFPSInput" type="range" min="1" max="1000" value="100" class="settingInput">
+        </div>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Show Grind Materials: </p>
+        <label class="container">
+            <input id="showGrindMaterialsInput" checked="true" type="checkbox" class="setting-input">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Show Craft Recipes: </p>
+        <label class="container">
+            <input id="showCraftRecipesInput" checked="true" type="checkbox" class="setting-input">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Enable Auto-Crafts: </p>
+        <label class="container">
+            <input id="enableAutobuysInput" checked="true" type="checkbox" class="setting-input">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Auto-Save: </p>
+        <label class="container">
+            <input id="autoSaveInput" type="checkbox" checked="true" class="setting-input">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Manual Save: </p>
+        <div>
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Import Save: </p>
+        <div>
+            <input id="importSaveInput" type="text" class="setting-input">
+            <button id="importSaveButton">Import</button>
+        </div>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Export Save: </p>
+        <div>
+            <button id="copySaveButton">Copy Save</button>
+        </div>
+    </div>
+
+    <div class="setting">
+        <p class="setting-text">Reset Save: </p>
+        <div>
+            <button id="resetSaveButton">Reset Save</button>
+        </div>
+    </div>
+
+    <p class="setting-text">Made with the <a href="https://github.com/MiraTheCat/Grindcraft-Game-Maker" target="_blank">Grindcraft Game Maker</a> tool!</p>
+    <p id="toolVersion" class="setting-text">(Version X)</p>
+
+    <button class="settings-button">Ok</button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/areas.js"></script>
+
+<script>
+    // Set up game
+    setupGame();
+
+    // Check if there is a saved game version and tool version
+    if (player.savedGameVersion === undefined) player.savedGameVersion = player.gameInfo.gameVersion;
+    if (player.savedToolVersion === undefined) player.savedToolVersion = player.toolVersion;
+
+    // Fix things that have been changed between updates
+    onLoad(player.savedGameVersion);
+
+    // Start the screen update function
+    screenUpdate(Date.now() - player.lastScreenUpdate);
+</script>
+
+</body>
+</html>
