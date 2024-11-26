@@ -672,6 +672,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    madalinstuntcars2:{
+        title: "Madalin Stunt Cars 2",
+        url: "game-template.html?id=madalinstuntcars2",
+        image: "images/proxyandgameimages/gameimages/madalinstuntcars2.png",
+        originalUrl: "Games/html5-games/madalinstuntcars2/index.html",
+        description: "Racing game where you do stunts and go fast.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     bloxorz:{
         title: "Bloxorz",
         url: "game-template.html?id=bloxorz",
