@@ -108,11 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('movieLink').href = movie.originalUrl;
 
         const iframe = document.getElementById('movieFrame');
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        loadingScreen.style.display = 'block';
+        
+        const minLoadTime = 3500; // 3.5 seconds in milliseconds
+        const loadStartTime = Date.now();
 
         iframe.src = movie.originalUrl;
 
         iframe.onload = function() {
-            this.style.display = 'block';
+            const loadEndTime = Date.now();
+            const loadDuration = loadEndTime - loadStartTime;
+
+            if (loadDuration < minLoadTime) {
+                setTimeout(() => {
+                    fadeOutLoadingScreen();
+                }, minLoadTime - loadDuration);
+            } else {
+                fadeOutLoadingScreen();
+            }
 
             try {
                 const link = document.createElement('link');
@@ -123,7 +138,21 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (e) {
                 console.error('Error loading CSS into iframe:', e);
             }
+            this.style.display = 'block';
         };
+
+        function fadeOutLoadingScreen() {
+            let opacity = 1;
+            const fadeEffect = setInterval(() => {
+                if (opacity > 0) {
+                    opacity -= 0.1;
+                    loadingScreen.style.opacity = opacity;
+                } else {
+                    clearInterval(fadeEffect);
+                    loadingScreen.style.display = 'none';
+                }
+            }, 50);
+        }
 
         const fullscreenButton = document.getElementById('fullscreenButton');
         if (fullscreenButton) {
@@ -140,16 +169,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Add information to the movieInfo div
+        // Add controls and credits information to the movieInfo div
         const movieInfoContainer = document.getElementById('movieInfo');
         let movieInfoHTML = '';
 
-        if (movie.director) {
-            movieInfoHTML += `<div class="director"><h3>Director:</h3>${movie.director}</div>`;
+        if (movie.controls) {
+            movieInfoHTML += `<div class="controls"><h3>Controls:</h3>${movie.controls}</div>`;
         }
 
-        if (movie.cast) {
-            movieInfoHTML += `<div class="cast"><h3>Cast:</h3>${movie.cast}</div>`;
+        if (movie.credits) {
+            movieInfoHTML += `<div class="credits"><h3>Credits:</h3>${movie.credits}</div>`;
         }
 
         if (movieInfoHTML) {
@@ -162,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Failed to load movie');
             this.style.display = 'none';
             document.getElementById('movieTitle').textContent = 'Failed to load movie';
+            loadingScreen.style.display = 'none';
         });
 
         function adjustIframeHeight() {
