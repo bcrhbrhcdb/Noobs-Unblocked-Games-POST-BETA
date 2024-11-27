@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='icon' href="images/favicon/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Game Title</title>
+    <link type='text/css' href="styles.css" rel="stylesheet">
+    <style>
+        .game-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #loadingScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('./images/loading-screen.png') no-repeat center center;
+            background-size: cover;
+            z-index: 1000;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class='box'>
+        <h1 class='title' id="gameTitle">Game Title</h1>
+    </div>
+    <div class="nav-container">
+        <nav>
+            <a href='index.html'><button id="navBar">Home</button></a>
+            <a href='games.html'><button id="navBar">Games</button></a>
+            <a href='movies.html'><button id="navBar">Movies</button></a>
+            <a href='proxies.html'><button id="navBar">Proxies</button></a>
+            <a href='hacks.html'><button id="navBar">Hacks</button></a>
+            <a href='credits.html'><button id="navBar">Credits</button></a>
+            <a href='update-log.html'><button id="navBar">Updates</button></a>
+            <a href='privateBrowser.html'><button id="navBar">My Other Projects</button></a>
+        </nav>
+    </div>
+    <div class='box'>
+        <div class="game-container">
+            <div id="loadingScreen"></div>
+            <iframe class='frame' src="" id="gameFrame" title="Game Frame" allowfullscreen></iframe>
+        </div>
+        <hr>
+        <button class="allButton" id="fullscreenButton">Play in Fullscreen!</button>
+        <hr>
+        <a id="gameLink" href="" target="_blank"><button class='allButton'>Link to the game</button></a>
+    </div>
+    <!-- New separate area for controls and credits -->
+    <div class='box' id="gameInfo">
+        <!-- Controls and credits will be inserted here by JavaScript -->
+    </div>
+    <div class="box">
+        <iframe class="frame" src="https://bcrhbrhcdb.github.io/chat-room-using-ably/" name="chatroom"></iframe>
+    </div>
+    <!--stat counter stuff
+    11/21/24
+    --> 
+    <!-- Default Statcounter code for nub
+https://bcrhbrhcdb.github.io/Nooby/ -->
+<script type="text/javascript">
+    var sc_project=13058758; 
+    var sc_invisible=1; 
+    var sc_security="7ddedbc6"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="https://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="https://c.statcounter.com/13058758/0/7ddedbc6/1/"
+    alt="Web Analytics"
+    referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+    <script src='javascript/gameData.js'></script>
+    <script src='javascript/gameLoader.js'></script>
+    <script src='javascript/ratingSystem.js'></script>
+</body>
+</html>
