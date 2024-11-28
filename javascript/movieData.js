@@ -19,5 +19,15 @@ const movies = {
         likes: 0,
         dislikes: 0,
     },
+     fnafmovie: {
+        title: "The FNAF Movie",
+        url: "movie-template.html?id=fnafmovie",
+        originalUrl: "https://vimeo.com/1034322497?share=copy",
+        image: "images/movie-images/fnafmovie.jpeg",
+        description: "Made in 2023, Pretty good movie!",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
 }
 
