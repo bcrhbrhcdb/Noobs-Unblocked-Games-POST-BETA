@@ -10,7 +10,7 @@ const movies = {
         dislikes: 0,
     },
     thelegomovie: {
-        title: "The lego movie",
+        title: "The Lego Movie",
         url: "movie-template.html?id=thelegomovie",
         originalUrl: "https://drive.google.com/file/d/1m5E6o5BU7hiDlJMmGbwt8ipcETxk4MJQ/preview",
         image: "images/movie-images/thelegomovie.jpeg",
