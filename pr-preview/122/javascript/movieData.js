@@ -19,5 +19,15 @@ const movies = {
         likes: 0,
         dislikes: 0,
     },
+     fnafmovie: {
+        title: "The FNAF Movie",
+        url: "movie-template.html?id=fnafmovie",
+        originalUrl: "https://p-def7.pcloud.com/cBZoptYo3ZSRtKXh7ZZZiThpXkZQ5ZZ3BVZkZ9m0RWZ1RZARZPRZ98ZAQZVLZoQZlHZ67ZNLZnLZV8Zi8ZDpZl9Q05ZS0em5108VcHUiwyhztnQEXi48kXX/122.mp4",
+        image: "images/movie-images/fnafmovie.jpeg",
+        description: "Made in 2023, Pretty good movie!",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
 }
 
