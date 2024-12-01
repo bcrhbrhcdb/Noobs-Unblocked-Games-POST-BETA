@@ -15,6 +15,10 @@ const games = {
         originalUrl: "https://ozh.github.io/cookieclicker/",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
+        controls: `
+        Cookie clicker hacks and cheats here: <br>
+        <a href="../hacks.html#cookie-clicker">Cookie Clicker Hacks</a>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -25,6 +29,8 @@ const games = {
         originalUrl: "Games/html5-games/cookieclicker/index.html",
         image: "images/proxyandgameimages/gameimages/cookie.jpeg",
         description: "Won't be blocked if it's on GitHub! (this one click link to the game)",
+        controls: ` Cookie clicker hacks and cheats here: <br>
+        <a href="../hacks.html#cookie-clicker">Cookie Clicker Hacks</a>`,
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -177,6 +183,28 @@ const games = {
         originalUrl: "https://memalign.github.io/m/universal-paperclips/index2.html",
         image: "images/proxyandgameimages/gameimages/paperclip.jpeg",
         description: "Paperclips... Amazing",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    amongus1: {
+        title: "Among us (server 1)",
+        url: "game-template.html?id=amongus1",
+        originalUrl: "Games/html5-games/amongus/index.html",
+        image: "images/proxyandgameimages/gameimages/amongus.png",
+        description: "Whos sus...",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    amongus2: {
+        title: "Among us (server 2)",
+        url: "game-template.html?id=amongus2",
+        originalUrl: "Games/html5-games/amongus2/index.html",
+        image: "images/proxyandgameimages/gameimages/amongus.png",
+        description: "Whos sus...",
+        type: "folder",
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -357,8 +385,18 @@ const games = {
         title: "Super Mario",
         url: "game-template.html?id=superMario",
         image: "images/proxyandgameimages/gameimages/super-mario-bros.png",
-        originalUrl: "https://ekoerp1.github.io/lbannana-remake.github.io/lbannana-assets/retro/mariobros.html",
+        originalUrl: "Games/html5-games/super-mario/mariobros.html",
         description:"You know this game.",
+        type: "folder",
+        controls: `
+        <ul>
+        <li>Up Arrow, Down Arrow, Left Arrow, Right Arrow - movement</li>
+        <li>A (QWERTY) / Q (AZERTY) - Button A</li>
+        <li>S (QWERTY/AZERTY) or O (Dvorak) - Button B</li>
+        <li>Tab - button select</li>
+        <li>Enter - Start/Pause</li>
+        </ul>
+        `,
         ratings: [],
         likes: 0,
         dislikes: 0,
@@ -570,6 +608,50 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    FBWG1: {
+        title: "Fire Boy and Water Girl 1",
+        url: "game-template.html?id=FBWG1",
+        image: "images/proxyandgameimages/gameimages/FBWG1.jpeg",
+        originalUrl: "Games/html5-games/FBWG1/index.html",
+        description: "Back to 2016",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    FBWG2: {
+        title: "Fire Boy and Water Girl 2",
+        url: "game-template.html?id=FBWG2",
+        image: "images/proxyandgameimages/gameimages/FBWG1.jpeg",
+        originalUrl: "Games/html5-games/FBWG2/index.html",
+        description: "Back to 2016",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    FBWG3: {
+        title: "Fire Boy and Water Girl 3",
+        url: "game-template.html?id=FBWG3",
+        image: "images/proxyandgameimages/gameimages/FBWG1.jpeg",
+        originalUrl: "Games/html5-games/FBWG3/index.html",
+        description: "Back to 2016",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    FBWG4: {
+        title: "Fire Boy and Water Girl 4",
+        url: "game-template.html?id=FBWG4",
+        image: "images/proxyandgameimages/gameimages/FBWG1.jpeg",
+        originalUrl: "Games/html5-games/FBWG4/index.html",
+        description: "Back to 2016",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     pingPong: {
         title: "Ping Pong",
         url: "game-template.html?id=pingPong",
@@ -634,6 +716,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    madalinstuntcars2:{
+        title: "Madalin Stunt Cars 2",
+        url: "game-template.html?id=madalinstuntcars2",
+        image: "images/proxyandgameimages/gameimages/madalinstuntcars2.png",
+        originalUrl: "Games/html5-games/madalinstuntcars2/index.html",
+        description: "Racing game where you do stunts and go fast.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     bloxorz:{
         title: "Bloxorz",
         url: "game-template.html?id=bloxorz",
@@ -689,12 +782,34 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    "1v1lol": {
+        title: "1v1.lol",
+        url: "game-template.html?id=1v1lol",
+        image: "images/proxyandgameimages/gameimages/1v1lol.png",
+        originalUrl: "Games/html5-games/1v1.lol/index.html",
+        description: "1v1 eachother lol.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     learnToFly2:{
         title: "Learn to Fly 2",
         url: "game-template.html?id=learnToFly2",
         image: "images/proxyandgameimages/gameimages/learn-to-fly2.jpeg",
         originalUrl: "Games/html5-games/learn-to-fly/index2.html",
         description: "Making something that can't fly fly.",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
+    littlealchemy2:{
+        title: "Little Alchemy 2",
+        url: "game-template.html?id=littlealchemy2",
+        image: "images/proxyandgameimages/gameimages/littlealchemy2.png",
+        originalUrl: "Games/html5-games/littlealchemy2/index.html",
+        description: "Make a variety of modern or prehestoric things by combining the elements!",
         type: "folder",
         ratings: [],
         likes: 0,
@@ -744,6 +859,28 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    superMario64: {
+        title: "Super Mario 64",
+        url: "game-template.html?id=superMario64",
+        image: "images/proxyandgameimages/gameimages/sm64.png",
+        originalUrl: "Games/html5-games/sm64/index.html",
+        description:"You know this game.",
+        type: "folder",
+        controls: `
+        <ul>
+        <li>Arrow Keys - movement</li>
+        <li>X- Button A</li>
+        <li>C- Button B</li>
+        <li>Q- Button L</li>
+        <li>Space - Button Z (crouch)</li>
+        <li>Enter - Start/pause</li>
+        <li>W,A,S,D - C stick (camera movement)</li>
+        </ul>
+        `,
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     bloonsTD5:{
         title: "Bloons Tower Defense Five",
         url: "game-template.html?id=bloonsTD5",
@@ -755,5 +892,17 @@ const games = {
         likes: 0,
         dislikes: 0,
     }, 
+    trimps:{
+        title: "Trimps",
+        url: "game-template.html?id=trimps",
+        image: "images/proxyandgameimages/gameimages/trimps.jpeg",
+        originalUrl: "https://trimps.github.io/index.html",
+        description: "An idle game. I do not know what this game is. womp womp",
+        type: "folder",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    }, 
+
 
 }
