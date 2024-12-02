@@ -22,7 +22,7 @@ const movies = {
      fnafmovie: {
         title: "The FNAF Movie",
         url: "movie-template.html?id=fnafmovie",
-        originalUrl: "https://p-def7.pcloud.com/cBZoptYo3ZSRtKXh7ZZZiThpXkZQ5ZZ3BVZkZ9m0RWZ1RZARZPRZ98ZAQZVLZoQZlHZ67ZNLZnLZV8Zi8ZDpZl9Q05ZS0em5108VcHUiwyhztnQEXi48kXX/122.mp4",
+        originalUrl: "https://u.pcloud.link/publink/show?code=XZl9Q05ZotkfAara6Wy6YezCMu7nQ7hV616y#returl=https%3A//u.pcloud.link/publink/show%3Fcode%3DXZl9Q05ZotkfAara6Wy6YezCMu7nQ7hV616y&page=login",
         image: "images/movie-images/fnafmovie.jpeg",
         description: "Made in 2023, Pretty good movie!",
         ratings: [],
