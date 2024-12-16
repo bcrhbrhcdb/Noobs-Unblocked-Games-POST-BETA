@@ -10,3 +10,7 @@ Want to contribute? Email me for instructions (if your adding hacks or games!)
 
 [![Star History Chart](https://api.star-history.com/svg?repos=bcrhbrhcdb/Nooby&type=Date)](https://star-history.com/#bcrhbrhcdb/Nooby&Date)
 
+The site is growing (real)
+Visitors currently:
+
+<div align="center"><a href="https://www.free-website-hit-counter.com"><img src="https://www.free-website-hit-counter.com/zc.php?d=9&amp;id=1109&amp;s=2" border="0" alt=""></a><br><small><a href="https://www.free-website-hit-counter.com" title="Free Website Hit Counter"></a></small></div>
