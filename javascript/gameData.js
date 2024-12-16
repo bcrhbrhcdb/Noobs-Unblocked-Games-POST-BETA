@@ -699,7 +699,7 @@ const games = {
         title: "Eaglercraft 1.8.8",
         url: "game-template.html?id=eaglercraft1",
         image: "images/proxyandgameimages/gameimages/eaglercraft1.png",
-        originalUrl: "Games/html5-games/eaglercraft-1.8.8/EaglercraftX_1.8_u37_Offline_Signed.html",
+        originalUrl: "Games/html5-games/eaglercraft-1.8.8/EaglercraftX_1.8_u45_Offline_Signed.html",
         description: "Eaglercraft is just older versions of mimecraft.",
         ratings: [],
         likes: 0,
