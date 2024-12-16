@@ -705,6 +705,16 @@ const games = {
         likes: 0,
         dislikes: 0,
     },
+    eaglercraft2:{
+        title: "Eaglercraft 1.8.8 (WASM-GC)",
+        url: "game-template.html?id=eaglercraft2",
+        image: "images/proxyandgameimages/gameimages/eaglercraft1.png",
+        originalUrl: "Games/html5-games/eaglercraft-1.8.8-WASM-GC/EaglercraftX_1.8_WASM-GC_Offline_Download.html",
+        description: "Faster version of Eaglercraft 1.8.8 it uses chrome flags might not work on your browser.",
+        ratings: [],
+        likes: 0,
+        dislikes: 0,
+    },
     grindcraft:{
         title: "Grindcraft",
         url: "game-template.html?id=grindcraft",
